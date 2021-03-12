@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Switch, Route } from 'react-router-dom'
+import StudentNav from './components/student/studentnav'
 
 
 function App() {
@@ -8,6 +10,9 @@ function App() {
 
   return (
     <div className="App">
+      <Switch>
+        <Route path='/student' component={() => <StudentNav />} />
+      </Switch>
       TITA
     </div>
   );
