@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -12,12 +13,13 @@ import App from './App';
 import rootReducer from './redux/reducers/rootReducer';
 
 const store = createStore(rootReducer, composeWithDevTools());
+const browserHistory = createBrowserHistory();
 
 ReactDOM.render(
-  <Provider store = {store}>
-    <BrowserRouter>
+    <Provider store = {store}>
+    <Router history={browserHistory}>
       <App />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
