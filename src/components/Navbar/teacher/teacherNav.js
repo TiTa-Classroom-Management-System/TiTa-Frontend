@@ -5,10 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 
-import './studentnav.css';
 
-const StudentNav=()=>{
-    return (
+const TeacherNav=()=>{
+    return(
         <div>
             <Navbar light expand="lg">
                 <Nav navbar className="flex-column">
@@ -30,17 +29,9 @@ const StudentNav=()=>{
                             <span className="link-text"> Classroom</span>
                         </Link>
                     </NavItem>
-                    <NavItem>
-                        <Link className="nav-link" to="#">
-                            <i className="fa fa-folder fa-2x" aria-hidden="true"></i> 
-                            <span className="link-text"> Assignments</span>
-                        </Link>
-                    </NavItem>
                 </Nav>
             </Navbar>
         </div>
     )
 }
-
-export default StudentNav;
-
+export default TeacherNav;

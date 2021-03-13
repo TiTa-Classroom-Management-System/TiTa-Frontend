@@ -4,19 +4,19 @@
     height: 100vh;
     position: fixed;
     background-color: #f5f5ff;
-    padding-bottom: 10rem;
+    padding-bottom:10rem;
     margin-bottom: auto;
     transition: width 300ms ease;
 }
 
-.navbar:hover {
+.navbar:hover{
     width: 11rem;
 }
 
-.navbar:hover .link-text {
+.navbar:hover .link-text{
     display: block;
     color: #fd7b7b;
-    transition: opacity 300ms;
+    transition: opacity 300ms
 }
 
 .nav-link {
@@ -42,6 +42,8 @@
     min-width: 2rem;
 }
 
+
 .fa {
     color: #fd7b7b;
 }
+
