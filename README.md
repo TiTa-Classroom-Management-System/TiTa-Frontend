@@ -1,16 +1,13 @@
 # Tita - Classroom management system
 
-<hr>
-
 ## About
 
-<hr>
 Students and teachers often face difficulties while managing time-tables, assignments, and quizzes. Such problems arise due to the unavailability of a centralized management system where-in the communication between the teachers and students can be made efficient. <br>
 The purpose of TiTa- Classroom Management System, at a University level, is to manage time-tables, assignments, and quizzes for teachers and students
 
-## Installation
-
 <hr>
+
+## Installation
 
 ### Clone to your local repo
 
@@ -33,9 +30,9 @@ Create a new file .env in root of project and add the following contents.
     REACT_APP_GOOGLE_SECRET=<your_client_secret>
 ```
 
-## Technoglogies used:
-
 <hr>
+
+## Technoglogies used:
 
 <img src="https://img.icons8.com/plasticine/48/000000/react.png"/> &nbsp; <img src="https://img.icons8.com/color/48/000000/redux.png"/> &nbsp; <img src="https://img.icons8.com/color/48/000000/bootstrap.png"/>
 
@@ -44,3 +41,4 @@ Create a new file .env in root of project and add the following contents.
 -   React-router
 -   Reactstrap
 -   Fontawesome
+<hr>
