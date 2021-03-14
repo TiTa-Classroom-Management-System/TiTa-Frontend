@@ -5,16 +5,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 
-
+import "./teacherNav.css";
+import logo from "./../logo.png";
+import logoText from "./../logoText.png";
 const TeacherNav=()=>{
     return(
         <div>
             <Navbar light expand="lg">
                 <Nav navbar className="flex-column">
                     <NavItem>
-                        <Link className="nav-link" to="#">
-                            <i className="fa fa-user fa-2x" aria-hidden="true"></i>
-                            <span className="link-text"> Profile</span>
+                        <Link className="logo2" to="#">
+                            <img className="logo-image2" src={logo} alt="logo" />
+                            <span className="logo-text2"> <img src={logoText} alt="TITA" /></span>
                         </Link>
                     </NavItem>
                     <NavItem>

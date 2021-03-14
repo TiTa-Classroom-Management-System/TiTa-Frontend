@@ -6,6 +6,8 @@ import "font-awesome/css/font-awesome.min.css";
 import "bootstrap-social/bootstrap-social.css";
 
 import "./studentnav.css";
+import logo from "./../logo.png";
+import logoText from "./../logoText.png";
 
 const StudentNav = () => {
     return (
@@ -13,12 +15,9 @@ const StudentNav = () => {
             <Navbar light expand="lg">
                 <Nav navbar className="flex-column">
                     <NavItem>
-                        <Link className="nav-link" to="#">
-                            <i
-                                className="fa fa-user fa-2x"
-                                aria-hidden="true"
-                            ></i>
-                            <span className="link-text"> Profile</span>
+                        <Link className="logo" to="#">
+                            <img className="logo-image" src={logo} alt="logo" />
+                            <span className="logo-text"> <img src={logoText} alt="TITA" /></span>
                         </Link>
                     </NavItem>
                     <NavItem>
