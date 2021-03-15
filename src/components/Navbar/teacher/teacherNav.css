@@ -44,30 +44,30 @@
 
 .fa {
     color: #fd7b7b;
-    text-align: center;
 }
 
-.logo-text {
+.logo-text2 {
     display: none;
+    margin-bottom: 20vh;
     margin-left: 1rem;
 }
 
-.navbar:hover .logo-text {
+.navbar:hover .logo-text2 {
     display: block;
 }
 
-.logo {
+.logo2 {
     display: flex;
     align-items: center;
     height: 5rem;
     text-decoration: none;
     transition: 600ms;
-    padding-bottom: 20vh;
+    padding-bottom:10vh;
 }
 
-.logo-image {
+.logo-image2 {
     width:7vh;
     height:7vh;
     align-items: center;
-    margin-top: 9px;
+    margin-bottom: 20vh
 }
