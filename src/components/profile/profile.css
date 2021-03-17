@@ -1,8 +1,11 @@
+.row {
+  margin-right: 0px
+}
 .profile-box {
   align-items: right;
   /* padding-left: 78vw; */
   padding-top: 2.1vh;
-  margin-left: 72vw;
+  margin-left: 75vw;
   height: 7rem;
 }
 
