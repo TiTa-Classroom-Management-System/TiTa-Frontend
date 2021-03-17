@@ -27,7 +27,8 @@ const Login = (props) => {
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                 buttonText="Login with Google"
                 onSuccess={login}
-              
+                isSignedIn={true}
+                cookiePolicy={'single_host_origin'}
             />
         </div>
     );

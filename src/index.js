@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 import { Router } from "react-router-dom";
-import  createHistory  from "history/createBrowserHistory";
+import createHistory from "history/createBrowserHistory";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -16,12 +16,12 @@ const store = createStore(rootReducer, composeWithDevTools());
 const history = createHistory();
 
 ReactDOM.render(
-    <Router history={history}>
-        <Provider store={store}>
-            <App />
-        </Provider>
-     </Router>,
-    document.getElementById("root")
+  <Router history={history}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
