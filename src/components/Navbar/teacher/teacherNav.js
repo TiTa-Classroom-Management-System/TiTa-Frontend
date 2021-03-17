@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
-import { Navbar, NavItem, Nav } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap-social/bootstrap-social.css';
+import React, { useState } from "react";
+import { Navbar, NavItem, Nav } from "reactstrap";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import "bootstrap-social/bootstrap-social.css";
 
 import "./teacherNav.css";
 import logo from "./../logo.png";
 import logoText from "./../logoText.png";
 import ClassModal from "../../Modal/teacher/createClassModal";
+import Profile from "./../../profile/profile";
 
 import { createClassroom } from "../../../functions/classroom";
 
@@ -100,6 +101,7 @@ const TeacherNav=()=>{
                         setValues = {setValues} 
                         handleChange = {handleChange}
                         handleSubmit = {handleSubmit} /> : ""}
+            <Profile />
         </div>
     )
 }
