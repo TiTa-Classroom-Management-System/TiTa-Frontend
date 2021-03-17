@@ -10,13 +10,8 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/login" component={() => <Login />} />
-        <PrivateRoute>
-          {" "}
-          <Route path="/student" component={() => <StudentNav />} />
-        </PrivateRoute>
-        <PrivateRoute>
-          <Route path="/teacher" component={() => <TeacherNav />} />
-        </PrivateRoute>
+        <PrivateRoute path="/student" component={() => <StudentNav />} />
+        <PrivateRoute path="/teacher" component={() => <TeacherNav />} />
       </Switch>
       TITA
     </div>
