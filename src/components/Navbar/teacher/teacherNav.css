@@ -57,12 +57,13 @@
 }
 
 .logo2 {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  text-decoration: none;
-  transition: 600ms;
-  padding-bottom: 10vh;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    text-decoration: none;
+    transition: 600ms;
+    padding-bottom: 10vh;
+    padding-top: 10vh;
 }
 
 .logo-image2 {
@@ -70,4 +71,19 @@
   height: 7vh;
   align-items: center;
   margin-bottom: 20vh;
+}
+
+.classModal input  {
+    font-size: 15px;
+}
+
+.createClass__model-footer
+{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.createClass__model-footer button
+{
+    margin: 10px;
 }

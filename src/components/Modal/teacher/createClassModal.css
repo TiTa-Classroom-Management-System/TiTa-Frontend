@@ -1,0 +1,49 @@
+hr
+{
+    width: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-top: dotted 5px #cccccc;
+}
+
+.classModal .modal-content
+{
+    width: max-content;
+}
+
+.createClass__close-modal
+{
+    font-size: 25px;
+    color: #6673fd;
+    transition: 0.3s;
+}
+
+.createClass__close-modal:hover
+{
+    color: #fd7b7b;
+}
+
+.createClass__drop-down
+{
+    max-width: 60% !important;
+    border: solid #cccccc 1px;
+}
+
+#createClass__modal-footer
+{
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+#createClass__create
+{
+    width: 80%;
+    text-align: center;
+    background-color: #6673fd;
+    transition: 0.3s;
+}
+
+#createClass__create:hover
+{
+    background-color: #fd7b7b;
+}
