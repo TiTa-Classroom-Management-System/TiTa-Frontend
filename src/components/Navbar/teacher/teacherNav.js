@@ -10,6 +10,8 @@ import logo from "./../logo.png";
 import logoText from "./../logoText.png";
 import ClassModal from "../../Modal/teacher/createClassModal";
 
+import { createClassroom } from "../../../functions/classroom";
+
 const TeacherNav=()=>{
 
     const [modal, setModal] = useState(false);
@@ -33,7 +35,15 @@ const TeacherNav=()=>{
     const handleSubmit = (e) =>
     {
         e.preventDefault();
-        console.log(values);
+        createClassroom(values)
+        .then((res) =>
+        {
+            console.log(res);
+        })
+        .catch((err) =>
+        {
+            console.log(err);
+        })
     }
 
     const handleChange = (e) =>

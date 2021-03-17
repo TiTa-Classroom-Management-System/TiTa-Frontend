@@ -49,7 +49,7 @@ const ClassModal = ({ toggle, className, modal, values, setValues, handleSubmit,
                 </InputGroup>
             </ModalBody>
             <ModalFooter id = "createClass__modal-footer">
-                <Button color="primary" id = "createClass__create">Create</Button>
+                <Button color="primary" id = "createClass__create">Submit</Button>
             </ModalFooter>
             </form>
 
