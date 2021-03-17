@@ -8,6 +8,8 @@ import 'bootstrap-social/bootstrap-social.css';
 import "./teacherNav.css";
 import logo from "./../logo.png";
 import logoText from "./../logoText.png";
+import Profile from "./../../profile/profile"
+
 const TeacherNav=()=>{
     return(
         <div>
@@ -33,6 +35,7 @@ const TeacherNav=()=>{
                     </NavItem>
                 </Nav>
             </Navbar>
+            <Profile />
         </div>
     )
 }

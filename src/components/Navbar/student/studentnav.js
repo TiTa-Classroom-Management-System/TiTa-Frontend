@@ -8,6 +8,7 @@ import "bootstrap-social/bootstrap-social.css";
 import "./studentnav.css";
 import logo from "./../logo.png";
 import logoText from "./../logoText.png";
+import Profile from "./../../profile/profile"
 
 const StudentNav = () => {
     return (
@@ -49,7 +50,11 @@ const StudentNav = () => {
                     </NavItem>
                 </Nav>
             </Navbar>
+            <div>
+                <Profile />
+            </div>
         </div>
+
     );
 };
 
