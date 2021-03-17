@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 import { Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import  createHistory  from "history/createBrowserHistory";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -13,14 +13,14 @@ import App from "./App";
 import rootReducer from "./redux/reducers/rootReducer";
 
 const store = createStore(rootReducer, composeWithDevTools());
-const browserHistory = createBrowserHistory();
+const history = createHistory();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router history={browserHistory}>
+    <Router history={history}>
+        <Provider store={store}>
             <App />
-        </Router>
-    </Provider>,
+        </Provider>
+     </Router>,
     document.getElementById("root")
 );
 
