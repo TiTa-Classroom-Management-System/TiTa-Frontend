@@ -2,13 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import GoogleLogin from "react-google-login";
 import { loginUser } from "../../redux/actions/userAction";
-import { createBrowserHistory } from "history";
+import {withRouter} from 'react-router-dom';
 import "./Login.css";
 
-const history = createBrowserHistory({ forceRefresh: true });
 
 const Login = (props) => {
     const dispatch = props.dispatch;
+    const history = props.history;
     const login = (res) => {
         var user = res.profileObj;
         if (user.email.includes("bt")) {
@@ -28,9 +28,10 @@ const Login = (props) => {
                 buttonText="Login with Google"
                 onSuccess={login}
                 isSignedIn={true}
+                cookiePolicy={'single_host_origin'}
             />
         </div>
     );
 };
 
-export default connect()(Login);
+export default connect()(withRouter(Login));
