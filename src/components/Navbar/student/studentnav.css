@@ -62,7 +62,8 @@
   height: 5rem;
   text-decoration: none;
   transition: 600ms;
-  padding-bottom: 20vh;
+  padding-bottom: 12vh;
+  margin-top: 10%;
 }
 
 .logo-image {

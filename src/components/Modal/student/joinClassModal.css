@@ -1,0 +1,39 @@
+hr
+{
+    width: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-top: dotted 5px #cccccc;
+}
+.classModal .modal-content
+{
+    width: max-content;
+}
+.joinClassCloseModal
+{
+    font-size: 25px;
+    color: #cccccc;
+    transition: 0.2s;
+}
+.joinClassCloseModal:hover
+{
+    color: #fd7b7b;
+}
+
+#joinClassModalFooter
+{
+    justify-content: center;
+}
+
+#JoinClassButton
+{
+    width: 80%;
+    text-align: center;
+    background-color: #cccccc;
+    transition: 0.2s;
+}
+
+#JoinClassButton:hover
+{
+    background-color: #fd7b7b;
+}
