@@ -34,7 +34,7 @@ const Profile = ({ user, dispatch, history }) => {
                 disabled={renderProps.disabled}
                 className="logout-btn"
               >
-                Logout
+                <i class="fas fa-sign-out-alt"></i> Logout
               </button>
             )}
           />
