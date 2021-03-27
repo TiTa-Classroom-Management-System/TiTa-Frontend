@@ -28,6 +28,7 @@ Create a new file .env in root of project and add the following contents.
 ```
     REACT_APP_GOOGLE_CLIENT_ID=<your_client_id>
     REACT_APP_GOOGLE_SECRET=<your_client_secret>
+    REACT_APP_API=http://localhost:3001
 ```
 
 <hr>
@@ -38,7 +39,7 @@ Create a new file .env in root of project and add the following contents.
 
 ### Other technologies:
 
--   React-router
--   Reactstrap
--   Fontawesome
+- React-router
+- Reactstrap
+- Fontawesome
 <hr>
