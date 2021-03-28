@@ -39,7 +39,7 @@ Create a new file .env in root of project and add the following contents.
 
 ### Other technologies:
 
-- React-router
-- Reactstrap
-- Fontawesome
+-  React-router
+-  Reactstrap
+-  Fontawesome
 <hr>

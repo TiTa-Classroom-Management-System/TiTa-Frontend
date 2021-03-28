@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import GoogleLogin from "react-google-login";
-import { loginUser } from "../../redux/actions/userAction";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+
+import { loginUser } from "../../redux/actions/userAction";
 
 const Login = (props) => {
   const dispatch = props.dispatch;
