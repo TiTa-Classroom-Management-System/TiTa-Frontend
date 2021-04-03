@@ -4,11 +4,11 @@ import { connect, useSelector } from "react-redux";
 import axios from "axios";
 
 import Timetable from "../../components/Timetable/Timetable";
-import TeacherNav from "../../components/Navbar/teacher/teacherNav";
+import StudentNav from "../../components/Navbar/student/studentnav";
 
 import "./Timetable.css";
 
-const TimetablePage = () =>
+const StudTimetablePage = () =>
 {
     const [tt, setTt] = useState(null);
     const { user } = useSelector(state => ({...state}));
@@ -18,7 +18,7 @@ const TimetablePage = () =>
         axios(
         {
             method: "GET",
-            url: `${process.env.REACT_APP_API}/teachers/timetable/${user.email}`,
+            url: `${process.env.REACT_APP_API}/students/timetable/${user.email}`,
         })
         .then((res) => 
         {
@@ -38,7 +38,7 @@ const TimetablePage = () =>
     return (
         <div class = "row">
             <div class = "col-12">
-                <TeacherNav />
+                <StudentNav />
             </div>
             <div class = "col-11 Timetable__timetable-component">
 
@@ -49,4 +49,4 @@ const TimetablePage = () =>
     )
 }
 
-export default connect()(withRouter(TimetablePage));
+export default connect()(withRouter(StudTimetablePage));

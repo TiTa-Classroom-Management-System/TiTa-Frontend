@@ -32,7 +32,7 @@ const StudentNav = () => {
             </Link>
           </NavbarBrand>
           <NavItem>
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/studtimetable">
               <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
               <span className="link-text"> Time table</span>
             </Link>
