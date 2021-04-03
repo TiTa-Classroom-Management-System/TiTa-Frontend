@@ -9,7 +9,7 @@ import "./teacherNav.css";
 import logo from "./../logo.png";
 import logoText from "./../logoText.png";
 import ClassModal from "../../Modal/teacher/createClassModal";
-import Profile from "./../../profile/profile";
+import Profile from "./../../Profile/profile";
 
 import { createClassroom } from "../../../functions/classroom";
 
@@ -73,7 +73,7 @@ const TeacherNav=()=>{
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="#">
+                        <Link className="nav-link" to="/timetable">
                             <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
                             <span className="link-text"> Time table</span>
                         </Link>
