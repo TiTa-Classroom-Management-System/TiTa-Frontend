@@ -25,14 +25,14 @@ const Timetable = ({ tt }) =>
     events.push(
       {
         id: t.tt_id,
-        title: t.type,
+        title: `${t.type}${t.course_code ? " | " + t.course_code : ""}`,
         startTime: `${t.start_time}`,
         endTime: `${t.end_time}`,
         daysOfWeek: [getDateFromDay(t.day)]
       }
     )
   });
-  
+  console.log(events);
   return (
       <FullCalendar
         plugins = {[ timeGridPlugin  ]}
