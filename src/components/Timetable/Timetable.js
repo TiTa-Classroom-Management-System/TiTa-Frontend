@@ -14,13 +14,7 @@ const getDateFromDay = (day) =>
     "Saturday" : 6
   }
 
-  const today = new Date();
-  const week_day = today.getDay();
-  const month = today.getMonth();
-  const year = today.getFullYear();
-  const date = today.getDate();
-
-  return(`${year}-0${month + 1}-0${date + Math.abs((dayMap[day] - week_day))}`);
+  return dayMap[day];
 }
 
 const Timetable = ({ tt }) =>
@@ -32,12 +26,13 @@ const Timetable = ({ tt }) =>
       {
         id: t.tt_id,
         title: t.type,
-        start: `${getDateFromDay(t.day)}T${t.start_time}`,
-        end: `${getDateFromDay(t.day)}T${t.end_time}`
+        startTime: `${t.start_time}`,
+        endTime: `${t.end_time}`,
+        daysOfWeek: [getDateFromDay(t.day)]
       }
     )
   });
-  console.log(events);
+  
   return (
       <FullCalendar
         plugins = {[ timeGridPlugin  ]}

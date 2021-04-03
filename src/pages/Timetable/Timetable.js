@@ -22,7 +22,6 @@ const Timetablepage = () =>
         })
         .then((res) => 
         {
-            console.log(res);
             setTt(res.data);
         })
         .catch((err) => 
