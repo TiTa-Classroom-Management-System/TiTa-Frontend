@@ -73,7 +73,7 @@ const TeacherNav=()=>{
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/timetable">
+                        <Link className="nav-link" to="/teachtimetable">
                             <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
                             <span className="link-text"> Time table</span>
                         </Link>

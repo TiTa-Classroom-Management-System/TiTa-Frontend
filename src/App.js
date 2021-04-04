@@ -4,7 +4,7 @@ import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
 import Login from "./components/Login/Login";
 // import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import TimetablePage from "./pages/Timetable/Timetable";
+import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Route strict path = "/login" component = {() => <Login />} />
         <Route strict path = "/student" component = {() => <StudentNav />} />
         <Route strict path = "/teacher" component = {() => <TeacherNav />} />
-        <Route strict path = "/timetable" component = {() => <TimetablePage />} />
+        <Route strict path = "/teachtimetable" component = {() => <TeachTimetablePage />} />
         <Route strict path = "/studtimetable" component = {() => <StudTimetablePage />} />
       </Switch>
       TITA

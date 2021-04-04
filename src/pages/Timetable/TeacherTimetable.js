@@ -8,7 +8,7 @@ import TeacherNav from "../../components/Navbar/teacher/teacherNav";
 
 import "./Timetable.css";
 
-const TimetablePage = () =>
+const TeachTimetablePage = () =>
 {
     const [tt, setTt] = useState(null);
     const { user } = useSelector(state => ({...state}));
@@ -49,4 +49,4 @@ const TimetablePage = () =>
     )
 }
 
-export default connect()(withRouter(TimetablePage));
+export default connect()(withRouter(TeachTimetablePage));
