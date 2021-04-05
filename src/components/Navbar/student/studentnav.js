@@ -10,7 +10,7 @@ import JoinClassModal from "../../Modal/student/joinClassModal";
 import "./studentnav.css";
 import logo from "./../logo.png";
 import logoText from "./../logoText.png";
-import Profile from "./../../profile/profile";
+import Profile from "./../../Profile/profile";
 
 const StudentNav = () => {
 
@@ -32,7 +32,7 @@ const StudentNav = () => {
             </Link>
           </NavbarBrand>
           <NavItem>
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/studtimetable">
               <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
               <span className="link-text"> Time table</span>
             </Link>

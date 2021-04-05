@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { GoogleLogout } from "react-google-login";
 import { withRouter } from "react-router-dom";
 import { logoutUser } from "../../redux/actions/userAction";
-import "./profile.css";
+import "../Profile/profile.css";
 
 const Profile = ({ user, dispatch, history }) => {
   console.log(history);
