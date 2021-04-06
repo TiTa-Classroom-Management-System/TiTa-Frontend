@@ -2,4 +2,10 @@
 {
     margin-top: 5vh;
     margin-left: 7rem;
+    padding-bottom: 0;
+}
+
+.fc-event-main
+{
+    font-size: 10px;
 }

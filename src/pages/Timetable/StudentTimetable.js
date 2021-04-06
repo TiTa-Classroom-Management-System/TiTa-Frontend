@@ -42,7 +42,7 @@ const StudTimetablePage = () =>
             </div>
             <div class = "col-11 Timetable__timetable-component">
 
-            {(tt && tt.length > 0) ? <Timetable tt = {tt} /> : <h5>Loading timetable...</h5>}
+            {tt ? (tt.length > 0 ? <Timetable tt = {tt} /> : <p>Join some classrooms first...</p>) : <p>Loading timetable...</p>}
 
             </div>
         </div>
