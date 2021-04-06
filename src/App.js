@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 // import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
+import ShowClassroom from "./components/Classroom/showclassroom";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route strict path = "/teacher" component = {() => <TeacherNav />} />
         <Route strict path = "/teachtimetable" component = {() => <TeachTimetablePage />} />
         <Route strict path = "/studtimetable" component = {() => <StudTimetablePage />} />
+        <Route strict path = "/classrooms" component = {() => <ShowClassroom />} />
       </Switch>
       TITA
     </div>
