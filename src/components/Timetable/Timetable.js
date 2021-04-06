@@ -17,6 +17,11 @@ const getDateFromDay = (day) =>
   return dayMap[day];
 }
 
+const getTitle = (t) =>
+{
+  return (t.type && t.course_code && t.branchName && t.branchYear) ? (`${t.type} | ${t.course_code} | ${t.branchName} | ${t.branchYear}`) : (`${t.type} | ${t.course_code}`);
+}
+
 const Timetable = ({ tt }) =>
 {
   let events = [];
@@ -25,14 +30,13 @@ const Timetable = ({ tt }) =>
     events.push(
       {
         id: t.tt_id,
-        title: `${t.type}${t.course_code ? " | " + t.course_code : ""}`,
+        title: getTitle(t),
         startTime: `${t.start_time}`,
         endTime: `${t.end_time}`,
         daysOfWeek: [getDateFromDay(t.day)]
       }
     )
   });
-  console.log(events);
   return (
       <FullCalendar
         plugins = {[ timeGridPlugin  ]}
