@@ -1,6 +1,7 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from "@fullcalendar/list";
 
 const getDateFromDay = (day) =>
 {
@@ -38,6 +39,8 @@ const Timetable = ({ tt }) =>
     )
   });
   return (
+    <div>
+      <div className = "tt-large">
       <FullCalendar
         plugins = {[ timeGridPlugin  ]}
         initialView = "timeGridWeek"
@@ -46,6 +49,15 @@ const Timetable = ({ tt }) =>
         slotMaxTime = "18:00"
         events = {events}
       />
+      </div>
+      <div className = "tt-small">
+        <FullCalendar
+          plugins = {[listPlugin]}
+          initialView = 'listWeek'
+          events = {events}
+        />
+      </div>
+    </div>
     )
 }
 

@@ -9,3 +9,32 @@
 {
     font-size: 10px;
 }
+
+.tt-small
+{
+    display: none;
+}
+
+@media only screen and (max-width : 768px)
+{
+    .row
+    {
+        justify-content: center;
+    }
+
+    .tt-large
+    {
+        display: none;
+    }
+
+    .tt-small
+    {
+        display: block;
+    }
+
+    .Timetable__timetable-component
+    {
+        justify-content: center;
+        margin-left: 0;
+    }
+}

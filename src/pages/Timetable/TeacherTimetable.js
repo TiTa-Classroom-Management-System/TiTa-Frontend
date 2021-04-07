@@ -40,7 +40,7 @@ const TeachTimetablePage = () =>
             <div class = "col-12">
                 <TeacherNav />
             </div>
-            <div class = "col-11 Timetable__timetable-component">
+            <div class = "col-lg-11 col-md-11 col-sm-10 Timetable__timetable-component">
 
             {tt ? (tt.length > 0 ? <Timetable tt = {tt} /> : <p>You have not created any timetable yet...</p>) : <p>Loading timetable...</p>}
 
