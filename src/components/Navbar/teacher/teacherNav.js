@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Navbar, NavItem, Nav } from "reactstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,22 +17,24 @@ import { createClassroom } from "../../../functions/classroom";
 const TeacherNav=()=>{
 
     const [modal, setModal] = useState(false);
+    const { user } = useSelector(state => ({...state}));
     const initialState = {
         branchYear : "",
         branchName : "Choose Branch",
         subjectName : "",
         subjectCode : "",
         subGroups : "",
+        email : user.email
     };
     const [values, setValues] = useState(initialState);
-    const branchOptions = [["Aerospace Engineering", 1], 
-                        ["Civil Engineering", 2], 
-                        ["Computer Science and Engineering", 3], 
-                        ["Electrical Engineering", 4], 
-                        ["Electronics and Communication Engineering", 5], 
-                        ["Mechanical Engineering", 6], 
-                        ["Metallurgical Engineering", 7], 
-                        ["Production Engineering", 8]]
+    const branchOptions = ["AE", 
+                        "CivE", 
+                        "CSE", 
+                        "EE", 
+                        "ECE", 
+                        "MechE", 
+                        "MetE", 
+                        "PE"]
 
     const handleSubmit = (e) =>
     {

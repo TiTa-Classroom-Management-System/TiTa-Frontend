@@ -22,7 +22,7 @@ const ClassModal = ({ toggle, className, modal, values, setValues, handleSubmit,
                         <select name = "branchName" className = "createClass__drop-down" onChange = {handleChange}>
                             <option>Select Branch Name</option>
                             {branches.map((b) => (
-                                <option key = {b[1]} value = {b[1]}>{b[0]}</option>
+                                <option key = {b} value = {b}>{b}</option>
                             ))}
                         </select>
                 </InputGroup>
