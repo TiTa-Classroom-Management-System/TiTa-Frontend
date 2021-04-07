@@ -6,16 +6,30 @@ import Login from "./components/Login/Login";
 // import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
+import TeacherClassroom from "./components/Classroom/TeacherClassrom";
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route strict path = "/login" component = {() => <Login />} />
-        <Route strict path = "/student" component = {() => <StudentNav />} />
-        <Route strict path = "/teacher" component = {() => <TeacherNav />} />
-        <Route strict path = "/teachtimetable" component = {() => <TeachTimetablePage />} />
-        <Route strict path = "/studtimetable" component = {() => <StudTimetablePage />} />
+        <Route strict path="/login" component={() => <Login />} />
+        <Route strict path="/student" component={() => <StudentNav />} />
+        <Route strict path="/teacher" component={() => <TeacherNav />} />
+        <Route
+          strict
+          path="/teachtimetable"
+          component={() => <TeachTimetablePage />}
+        />
+        <Route
+          strict
+          path="/studtimetable"
+          component={() => <StudTimetablePage />}
+        />
+        <Route
+          strict
+          path="/classrooms/:id"
+          component={() => <TeacherClassroom />}
+        />
       </Switch>
       TITA
     </div>
