@@ -7,6 +7,7 @@ import Login from "./components/Login/Login";
 import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
 import TeacherClassroom from "./components/Classroom/TeacherClassrom";
+import StudentClassroom from "./components/Classroom/StudentClassroom";
 
 function App() {
   return (
@@ -27,8 +28,13 @@ function App() {
         />
         <Route
           strict
-          path="/classrooms/:id"
+          path="/teacher/classrooms/:id"
           component={() => <TeacherClassroom />}
+        />
+        <Route
+          strict
+          path="/student/classrooms/:id"
+          component={() => <StudentClassroom />}
         />
       </Switch>
       TITA
