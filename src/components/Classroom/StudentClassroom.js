@@ -29,7 +29,7 @@ const StudentClassroom = ({ dispatch, tt }) => {
 
   useEffect(() => {
     loadTimetable(user);
-    setTimetable(() => tt.filter((t) => t.class_id == id));
+    setTimetable(() => tt.filter((t) => t.class_id === id));
     console.log(timetable);
   }, []);
 

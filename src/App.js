@@ -28,12 +28,12 @@ function App() {
         />
         <Route
           strict
-          path="/teacher/classrooms/:id"
+          path="/teachers/classrooms/:id"
           component={() => <TeacherClassroom />}
         />
         <Route
           strict
-          path="/student/classrooms/:id"
+          path="/students/classrooms/:id"
           component={() => <StudentClassroom />}
         />
       </Switch>
