@@ -59,11 +59,6 @@ const TeacherNav = () => {
     setModal(!modal);
   };
 
-  const toggleModal = () =>
-  {
-      setModal(!modal);
-  }
-
   return(
       <div>
           <Navbar light expand="lg">

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
 import axios from "axios";
+import { CardGroup } from "reactstrap";
 
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
-import "./Classrooms.css";
+import "../Classroooms/Classrooms.css";
 import StudentNav from "../../components/Navbar/student/studentnav";
 
 const StudentClassrooms = () =>
@@ -36,15 +37,15 @@ const StudentClassrooms = () =>
     
 
     return (
-        <div class = "row">
-            <div class = "col-12">
+        <div className = "row">
+            <div className = "col-12">
                 <StudentNav />
                 <h3 className="heading">Classrooms</h3>
             </div>
             <div className="cards-row row">
 
                 {classroom && Array.isArray(classroom) ? (classroom.length > 0 ? classroom.map((c) => <ShowClassroom classR = {c} /> ) : <p className="class-loading">You have not joined any classroom yet...</p>) : <p className="class-loading">Loading classrooms...</p>}
-
+    
             </div>
         </div>
     )

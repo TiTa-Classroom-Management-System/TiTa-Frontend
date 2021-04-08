@@ -1,12 +1,14 @@
-.class-cards {
-  left: 13.5rem;
-  border-radius: 20px;
-  /* width: 16vw; */
-  /* padding: 2% 3%; */
-  box-shadow: 8px 8px 10px 0.1px #999999;
-  padding: 0;
-  margin: 0 15px;
-  margin-bottom: 15px;
+.text-left
+{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 1s;
+}
+
+.text-left:hover
+{
+  box-shadow: none;
 }
 
 .card-body {
@@ -21,6 +23,11 @@
   padding: 5%;
   height: 120px;
   color: white;
+}
+
+#teacher
+{
+  width: 70%;
 }
 
 .card-image {
@@ -39,6 +46,11 @@
   /* padding-top: 10%; */
   background-color: #6673fd;
   margin: 0 7%;
+}
+
+.card-button:hover
+{
+  background-color: #fd7b7b;
 }
 
 @media only screen and (min-width: 768px) {

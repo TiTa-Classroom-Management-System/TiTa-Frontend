@@ -36,8 +36,8 @@ const TeacherClassrooms = () =>
     
 
     return (
-        <div class = "row">
-            <div class = "col-12">
+        <div className = "row">
+            <div className = "col-12">
                 <TeacherNav />
                 <h3 className="heading">Classrooms</h3>
             </div>
