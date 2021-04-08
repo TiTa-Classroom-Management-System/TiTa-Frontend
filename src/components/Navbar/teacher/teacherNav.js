@@ -82,7 +82,7 @@ const TeacherNav=()=>{
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/classrooms">
+                        <Link className="nav-link" to="/teacherclassrooms">
                             <i className="fa fa-users fa-2x" aria-hidden="true"></i>
                             <span className="link-text"> Classrooms</span>
                         </Link>

@@ -9,10 +9,6 @@
   margin-bottom: 15px;
 }
 
-.class-cards :hover {
-  box-shadow: none;
-}
-
 .card-body {
   border: 0.0625rem solid #dadce0;
   padding-left: 0;
@@ -34,7 +30,7 @@
   height: 50px;
   position: relative;
   margin-top: -3.5rem;
-  margin-left: 70%;
+  margin-left: 82%;
   margin-bottom: 10px;
   width: 50px;
 }

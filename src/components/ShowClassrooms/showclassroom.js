@@ -13,7 +13,7 @@ const ShowClassroom = ({classR}) => {
                         <Card body className="text-left">
                             <div className="card-heading">
                                 <CardTitle tag="h5">{classR.course_name} - {classR.course_code}</CardTitle>
-                                {classR.name ? <h6>Rajesh Bhatia</h6> : <p>{classR.branchName} - {classR.branchYear}</p>}
+                                {classR.name ? <h6>{classR.name}</h6> : <p>{classR.branchName} - {classR.branchYear}</p>}
                                 <img className="card-image"src={logo} alt="Hello" ></img>
                             </div>
                             <br></br>
