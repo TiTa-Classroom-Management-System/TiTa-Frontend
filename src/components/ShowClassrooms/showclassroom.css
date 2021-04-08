@@ -1,0 +1,48 @@
+.class-cards {
+  left: 13.5rem;
+  border-radius: 20px;
+  /* width: 16vw; */
+  /* padding: 2% 3%; */
+  box-shadow: 8px 8px 10px 0.1px #999999;
+  padding: 0;
+  margin: 0 15px;
+  margin-bottom: 15px;
+}
+
+.card-body {
+  border: 0.0625rem solid #dadce0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.card-heading {
+  background-color: #6673fd;
+  padding: 5%;
+  height: 120px;
+  color: white;
+}
+
+.card-image {
+  /* border-radius: 50%; */
+  /* left: 50vw; */
+  /* float: left; */
+  height: 50px;
+  position: relative;
+  margin-top: -3.5rem;
+  margin-left: 82%;
+  margin-bottom: 10px;
+  width: 50px;
+}
+
+.card-button {
+  /* padding-top: 10%; */
+  background-color: #6673fd;
+  margin: 0 7%;
+}
+
+@media only screen and (min-width: 768px) {
+  .class-cards {
+    width: 43vw;
+  }
+}
