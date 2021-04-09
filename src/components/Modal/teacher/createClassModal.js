@@ -1,15 +1,20 @@
 import React from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Link } from "react-router-dom";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Tooltip} from 'reactstrap';
 import { InputGroup, Input } from 'reactstrap';
 
 import "./createClassModal.css";
 
-const ClassModal = ({ toggle, className, modal, values, setValues, handleSubmit, handleChange, branches }) => {
+const copy=()=>{
+    
+}
+
+const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, handleSubmit, handleChange, branches }) => {
 
     return (
         <div>
         <Modal isOpen={modal} toggle={toggle} className={className}>
-        <form onSubmit = {handleSubmit}>
+        {!code && <form  className="FillDetail" onSubmit = {handleSubmit} >
             <ModalHeader toggle={toggle} close = {<i onClick = {toggle} class="fas fa-times-circle createClass__close-modal"></i>}>Create a new Classroom</ModalHeader>
             <ModalBody>
                 <InputGroup>
@@ -52,8 +57,24 @@ const ClassModal = ({ toggle, className, modal, values, setValues, handleSubmit,
                 <Button color="primary" id = "createClass__create">Submit</Button>
             </ModalFooter>
             </form>
-
+        }
+        {
+            code && 
+            <>
+            <ModalHeader toggle={toggle} close = {<i onClick ={toggle} class="fas fa-times-circle createClass__close-modal"></i>}>Classroom Created</ModalHeader>
+            <ModalBody>
+                <hr />
+                <h3>Classroom code: <strong>{code}</strong></h3>
+                <Button id = "copyToClipboard" onClick={copy}>Copy to Clipboard <i class="fas fa-copy"></i></Button>
+                <hr />
+            </ModalBody>
+            <ModalFooter id = "createClass__modal-footer">
+                <Link to={`/classroom/${code}`}>Go to Created Classroom</Link>
+            </ModalFooter>
+            </>
+        }
             {/* Add Loading here */}
+            
 
         </Modal>
         </div>
