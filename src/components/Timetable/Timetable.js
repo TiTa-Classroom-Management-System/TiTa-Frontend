@@ -47,6 +47,8 @@ const Timetable = ({ tt }) =>
         aspectRatio = "2.5"
         slotMinTime = "08:00"
         slotMaxTime = "18:00"
+        nowIndicator={true}
+        allDaySlot={false}
         events = {events}
       />
       </div>

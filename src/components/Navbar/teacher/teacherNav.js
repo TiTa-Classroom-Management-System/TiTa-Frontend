@@ -16,6 +16,7 @@ import { createClassroom } from "../../../functions/classroom";
 
 const TeacherNav = () => {
   const [modal, setModal] = useState(false);
+  const [code,setCode]=useState(null);
   const { user } = useSelector((state) => ({ ...state }));
   const initialState = {
     branchYear: "",
@@ -41,6 +42,7 @@ const TeacherNav = () => {
     e.preventDefault();
     createClassroom(values)
       .then((res) => {
+        setCode(res.data);
         console.log(res);
       })
       .catch((err) => {
@@ -55,52 +57,56 @@ const TeacherNav = () => {
     });
   };
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+  const toggleModal = () =>{
+        setValues(initialState);
+        setCode(null);
+        setModal(!modal);
+  }
 
   return(
-      <div>
-          <Navbar light expand="lg">
-              <Nav navbar className="flex-column">
-                  <NavItem>
-                      <Link className="logo2" to="#">
-                          <img className="logo-image2" src={logo} alt="logo" />
-                          <span className="logo-text2"> <img src={logoText} alt="TITA" /></span>
-                      </Link>
-                  </NavItem>
-                  <NavItem>
-                      <Link className="nav-link" to="/teachtimetable">
-                          <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
-                          <span className="link-text"> Time table</span>
-                      </Link>
-                  </NavItem>
-                  <NavItem>
-                      <Link className="nav-link" to="/teacherclassrooms">
-                          <i className="fa fa-users fa-2x" aria-hidden="true"></i>
-                          <span className="link-text"> Classrooms</span>
-                      </Link>
-                  </NavItem>
-                  <NavItem onClick = {toggleModal}>
-                      <Link className="nav-link" to="#">
-                          <i className="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-                          <span className="link-text"> Create Classroom</span>
-                      </Link>
-                  </NavItem>
-              </Nav>
-          </Navbar>
-          {modal ? <ClassModal 
-                      toggle = {toggleModal} 
-                      modal = {modal} 
-                      className = "classModal"
-                      branches = {branchOptions}
-                      values = {values}
-                      setValues = {setValues} 
-                      handleChange = {handleChange}
-                      handleSubmit = {handleSubmit} /> : ""}
-          <Profile />
-      </div>
-  )
+        <div>
+            <Navbar light expand="lg">
+                <Nav navbar className="flex-column">
+                    <NavItem>
+                        <Link className="logo2" to="#">
+                            <img className="logo-image2" src={logo} alt="logo" />
+                            <span className="logo-text2"> <img src={logoText} alt="TITA" /></span>
+                        </Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className="nav-link" to="/teachtimetable">
+                            <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                            <span className="link-text"> Time table</span>
+                        </Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className="nav-link" to="#">
+                            <i className="fa fa-users fa-2x" aria-hidden="true"></i>
+                            <span className="link-text"> Classrooms</span>
+                        </Link>
+                    </NavItem>
+                    <NavItem onClick = {toggleModal}>
+                        <Link className="nav-link" to="#">
+                            <i className="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                            <span className="link-text"> Create Classroom</span>
+                        </Link>
+                    </NavItem>
+                </Nav>
+            </Navbar>
+            {modal ? <ClassModal 
+                        code={code}
+                        setCode={setCode}
+                        toggle = {toggleModal} 
+                        modal = {modal} 
+                        className = "classModal"
+                        branches = {branchOptions}
+                        values = {values}
+                        setValues = {setValues} 
+                        handleChange = {handleChange}
+                        handleSubmit = {handleSubmit} /> : ""}
+            <Profile />
+        </div>
+    )
 }
 
 export default TeacherNav;
