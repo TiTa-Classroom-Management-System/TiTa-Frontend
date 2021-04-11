@@ -9,7 +9,7 @@ import TeacherNav from "../Navbar/teacher/teacherNav";
 
 import "../../pages/Timetable/Timetable.css";
 
-const TeacherTimetable = ({ dispatch, tt, params }) => {
+const TeacherClassroom = ({ dispatch, tt, params }) => {
   const { user } = useSelector((state) => ({ ...state }));
   const [timetable, setTimetable] = useState([]);
   let { id } = useParams();
@@ -57,4 +57,4 @@ const dispatchStateToProp = (state) => {
   return { tt: state.timetable };
 };
 
-export default connect(dispatchStateToProp)(withRouter(TeacherTimetable));
+export default connect(dispatchStateToProp)(withRouter(TeacherClassroom));

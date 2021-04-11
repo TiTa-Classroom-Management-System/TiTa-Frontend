@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
 import Login from "./components/Login/Login";
@@ -8,6 +8,8 @@ import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
 import TeacherClassroom from "./components/Classroom/TeacherClassrom";
 import StudentClassroom from "./components/Classroom/StudentClassroom";
+import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
+import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";
 
 function App() {
   return (
@@ -25,6 +27,16 @@ function App() {
           strict
           path="/studtimetable"
           component={() => <StudTimetablePage />}
+        />
+        <Route
+          strict
+          path="/teacherclassrooms"
+          component={() => <TeacherClassrooms />}
+        />
+        <Route
+          strict
+          path="/studentclassrooms"
+          component={() => <StudentClassrooms />}
         />
         <Route
           strict

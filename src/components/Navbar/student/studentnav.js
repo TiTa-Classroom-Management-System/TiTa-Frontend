@@ -37,7 +37,7 @@ const StudentNav = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/studentclassrooms">
               <i className="fa fa-users fa-2x" aria-hidden="true"></i>
               <span className="link-text"> Classroom</span>
             </Link>
