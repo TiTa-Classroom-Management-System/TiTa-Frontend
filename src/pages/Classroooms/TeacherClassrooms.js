@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
+import { updateTimetable } from "../../redux/actions/timetableAction";
 import axios from "axios";
 
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
 import "./Classrooms.css";
 import TeacherNav from "../../components/Navbar/teacher/teacherNav";
 
-const TeacherClassrooms = () => {
+const TeacherClassrooms = ({ dispatch }) => {
   const [classroom, setClassroom] = useState(null);
   const { user } = useSelector((state) => ({ ...state }));
 
@@ -24,8 +25,22 @@ const TeacherClassrooms = () => {
       });
   };
 
+  const loadTimetable = (user) => {
+    axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/teachers/timetable/${user.email}`,
+    })
+      .then((res) => {
+        dispatch(updateTimetable(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     loadClassroom(user);
+    loadTimetable(user);
   }, []);
 
   return (
