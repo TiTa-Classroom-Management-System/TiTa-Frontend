@@ -7,8 +7,9 @@ import { CardGroup } from "reactstrap";
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
 import "../Classroooms/Classrooms.css";
 import StudentNav from "../../components/Navbar/student/studentnav";
+import { updateTimetable } from "../../redux/actions/timetableAction";
 
-const StudentClassrooms = () => {
+const StudentClassrooms = ({ dispatch }) => {
   const [classroom, setClassroom] = useState(null);
   const { user } = useSelector((state) => ({ ...state }));
 
@@ -25,8 +26,22 @@ const StudentClassrooms = () => {
       });
   };
 
+  const loadTimetable = (user) => {
+    axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/students/timetable/${user.email}`,
+    })
+      .then((res) => {
+        dispatch(updateTimetable(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     loadClassroom(user);
+    loadTimetable(user);
   }, []);
 
   return (
