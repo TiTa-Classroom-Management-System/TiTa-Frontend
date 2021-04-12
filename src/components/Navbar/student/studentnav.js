@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Navbar, NavItem, Nav, NavbarBrand } from "reactstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,10 +13,9 @@ import logoText from "./../logoText.png";
 import Profile from "./../../Profile/profile";
 
 const StudentNav = () => {
-
   const [modal, setModal] = useState(false);
 
-  const toggleModal= () => setModal(!modal);
+  const toggleModal = () => setModal(!modal);
 
   return (
     <div>
@@ -57,9 +56,17 @@ const StudentNav = () => {
           </NavItem>
         </Nav>
       </Navbar>
-      {modal ? <JoinClassModal toggle = {toggleModal} modal = {modal} className = "classModal"/>:""}
+      {modal ? (
+        <JoinClassModal
+          toggle={toggleModal}
+          modal={modal}
+          className="classModal"
+        />
+      ) : (
+        ""
+      )}
       <div>
-        <Profile/>
+        <Profile />
       </div>
     </div>
   );

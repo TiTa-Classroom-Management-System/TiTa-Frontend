@@ -16,6 +16,7 @@ import { createClassroom } from "../../../functions/classroom";
 
 const TeacherNav = () => {
   const [modal, setModal] = useState(false);
+  const [code, setCode] = useState(null);
   const { user } = useSelector((state) => ({ ...state }));
   const initialState = {
     branchYear: "",
@@ -41,6 +42,7 @@ const TeacherNav = () => {
     e.preventDefault();
     createClassroom(values)
       .then((res) => {
+        setCode(res.data);
         console.log(res);
       })
       .catch((err) => {
@@ -56,6 +58,8 @@ const TeacherNav = () => {
   };
 
   const toggleModal = () => {
+    setValues(initialState);
+    setCode(null);
     setModal(!modal);
   };
 
@@ -94,6 +98,11 @@ const TeacherNav = () => {
       </Navbar>
       {modal ? (
         <ClassModal
+<<<<<<< HEAD
+=======
+          code={code}
+          setCode={setCode}
+>>>>>>> 3adadfee0b4103ae26fd6bfbe04d4ee4d370d9b1
           toggle={toggleModal}
           modal={modal}
           className="classModal"
@@ -110,4 +119,8 @@ const TeacherNav = () => {
     </div>
   );
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3adadfee0b4103ae26fd6bfbe04d4ee4d370d9b1
 export default TeacherNav;
