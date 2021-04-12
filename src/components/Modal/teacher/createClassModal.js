@@ -69,7 +69,7 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
                 <hr />
             </ModalBody>
             <ModalFooter id = "createClass__modal-footer">
-                <Link to={`/classroom/${code}`}>Go to Created Classroom</Link>
+                <Link to={`/teacher/classrooms/${code}`}>Go to Created Classroom</Link>
             </ModalFooter>
             </>
         }
