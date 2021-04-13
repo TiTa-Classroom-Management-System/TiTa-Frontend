@@ -5,21 +5,7 @@ import {Input } from 'reactstrap';
 import "./joinClassModal.css";
 
 const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChange,handleCodeSubmit,handleJoin,handleSelect,className, modal,setGrp}) => {
-//   const {
-//     buttonLabel,
-//     className
-//   } = props;
-
-  //const [modal, setModal] = useState(false);
-
-  //const toggle = () => setModal(!modal); 
-
-  // const card = [];
-  // _.times(parseInt(classroom.split('+')[3]), () => {
-  //   card.push(<span className="busterCards">♦</span>);
-  // });
-
-  
+ 
 
   return (
     <div>
