@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
+import { useSelector } from "react-redux";
 import { Navbar, NavItem, Nav, NavbarBrand } from "reactstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,10 +13,51 @@ import logo from "./../logo.png";
 import logoText from "./../logoText.png";
 import Profile from "./../../Profile/profile";
 
-const StudentNav = () => {
-  const [modal, setModal] = useState(false);
 
-  const toggleModal = () => setModal(!modal);
+import { getClassroom, joinClassroom } from "../../../functions/classroom";
+
+const StudentNav = () => {
+
+  const [modal, setModal] = useState(false);
+  
+  const { user } = useSelector((state) => ({ ...state }));
+  const [code,setCode]=useState('');
+  const [classroom,setClassroom]=useState("");
+  const [grp,setGrp]=useState();
+
+  const toggleModal= () => setModal(!modal);
+
+  const handleCodeSubmit = (e) => {
+    e.preventDefault();
+    getClassroom(code)
+      .then((res) => {
+        setClassroom(`${res.data.course_name}+${res.data.course_code}+${res.data.branchName}+${res.data.branchYear}+${res.data.num_groups}+${user.email}`)
+        console.log(res);
+        console.log(classroom)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const handleJoin=(e)=>{
+    console.log(code,user.email,grp)
+    joinClassroom({
+      classid: code,
+      email: user.email,
+      selected_grp_no: grp
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+  const handleChange = (e) => {
+    setCode(e.target.value);
+    console.log(code)
+  };
 
   return (
     <div>
@@ -56,17 +98,21 @@ const StudentNav = () => {
           </NavItem>
         </Nav>
       </Navbar>
-      {modal ? (
-        <JoinClassModal
-          toggle={toggleModal}
-          modal={modal}
-          className="classModal"
-        />
-      ) : (
-        ""
-      )}
+      {modal ? <JoinClassModal 
+                toggle = {toggleModal} 
+                modal = {modal} 
+                code={code} 
+                setCode={setCode} 
+                classroom={classroom} 
+                setClassroom={setClassroom} 
+                handleCodeSubmit={handleCodeSubmit} 
+                handleChange={handleChange} 
+                handleJoin={handleJoin}
+                setGrp={setGrp}
+                className = "classModal"/>
+      :""}
       <div>
-        <Profile />
+        <Profile/>
       </div>
     </div>
   );
