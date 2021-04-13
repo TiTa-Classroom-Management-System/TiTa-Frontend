@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ShowClassroom = ({ classR, who }) => {
   return (
-    <div className="class-cards col-lg-3 col-md-6 col-sm-12">
+    <div className="class-cards col-lg-4 col-md-6 col-sm-12">
       <Card body className="text-left">
         <div className="card-heading">
           <CardTitle tag="h5">
