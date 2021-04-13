@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { useSelector } from "react-redux";
 import { Navbar, NavItem, Nav, NavbarBrand } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link , withRouter} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap-social/bootstrap-social.css";
@@ -16,7 +16,7 @@ import Profile from "./../../Profile/profile";
 
 import { getClassroom, joinClassroom } from "../../../functions/classroom";
 
-const StudentNav = () => {
+const StudentNav = ({history}) => {
 
   const [modal, setModal] = useState(false);
   
@@ -40,6 +40,7 @@ const StudentNav = () => {
       });
   };
   const handleJoin=(e)=>{
+    e.preventDefault()
     console.log(code,user.email,grp)
     joinClassroom({
       classid: code,
@@ -48,6 +49,7 @@ const StudentNav = () => {
     })
     .then((res) => {
       console.log(res);
+      history.push(`/students/classrooms/${code}`)
     })
     .catch((err) => {
       console.log(err);
@@ -58,6 +60,11 @@ const StudentNav = () => {
     setCode(e.target.value);
     console.log(code)
   };
+  const handleSelect = (e) =>
+  {
+    console.log(e.target.value);
+    setGrp(e.target.value);
+  }
 
   return (
     <div>
@@ -107,6 +114,7 @@ const StudentNav = () => {
                 setClassroom={setClassroom} 
                 handleCodeSubmit={handleCodeSubmit} 
                 handleChange={handleChange} 
+                handleSelect={handleSelect}
                 handleJoin={handleJoin}
                 setGrp={setGrp}
                 className = "classModal"/>
@@ -118,4 +126,4 @@ const StudentNav = () => {
   );
 };
 
-export default StudentNav;
+export default withRouter(StudentNav);

@@ -4,7 +4,7 @@ import {Input } from 'reactstrap';
 
 import "./joinClassModal.css";
 
-const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChange,handleCodeSubmit,handleJoin,className, modal,setGrp}) => {
+const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChange,handleCodeSubmit,handleJoin,handleSelect,className, modal,setGrp}) => {
 //   const {
 //     buttonLabel,
 //     className
@@ -19,11 +19,7 @@ const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChang
   //   card.push(<span className="busterCards">♦</span>);
   // });
 
-  const handleSelect = (e) =>
-  {
-    console.log(e.target.value);
-    setGrp(e.target.value);
-  }
+  
 
   return (
     <div>
@@ -41,7 +37,7 @@ const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChang
                   <h3>Course Code:{classroom.split('+')[1]}</h3>
                   <h3>Branch Name:{classroom.split('+')[2]}</h3>
                   <h3>Branch Year:{classroom.split('+')[3]}</h3>
-                  <select name = "goup_num" className = "group_num__drop-down" onChange = {handleChange} onSelect = {handleSelect}>
+                  <select name = "group_num" className = "group_num__drop-down" onChange = {handleSelect}>
                       <option>Select Group Number</option>
                       {([...Array(parseInt(classroom.split('+')[4])+1).keys()].slice(1)).map((o) => (
                         <option key = {o} value={o}>{`Group ${o}`}</option>
