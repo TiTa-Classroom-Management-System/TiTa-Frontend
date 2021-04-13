@@ -20,7 +20,7 @@ const getDateFromDay = (day) =>
 
 const getTitle = (t) =>
 {
-  return (t.type && t.course_code && t.branchName && t.branchYear) ? (`${t.type} | ${t.course_code} | ${t.branchName} | ${t.branchYear}`) : (`${t.type} | ${t.course_code}`);
+  return (t.type && t.course_code && t.branchname && t.branchyear && t.grp_no) ? (`${t.type} | ${t.course_code} | ${t.branchname}-${t.grp_no} | ${t.branchyear}`) : (`${t.type} | ${t.course_code}`);
 }
 
 const Timetable = ({ tt }) =>

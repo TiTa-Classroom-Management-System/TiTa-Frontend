@@ -18,6 +18,7 @@ const TeacherClassrooms = ({ dispatch }) => {
       url: `${process.env.REACT_APP_API}/teachers/classrooms/${user.email}`,
     })
       .then((res) => {
+        console.log(res.data);
         setClassroom(res.data);
       })
       .catch((err) => {
