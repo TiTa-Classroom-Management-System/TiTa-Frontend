@@ -35,9 +35,10 @@ const TeacherClassroom = ({ dispatch, tt, params }) => {
 
   useEffect(() => {
     loadTimetable(user);
-    setTimetable(() => tt.filter((t) => t.class_id === id));
+    if(Array.isArray(tt))
+      setTimetable(() => tt.filter((t) => t.class_id === id));
     console.log(timetable);
-  }, []);
+  }, [tt]);
 
   return (
     <div>

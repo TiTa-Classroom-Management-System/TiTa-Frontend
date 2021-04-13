@@ -20,6 +20,12 @@ hr
     color: #fd7b7b;
 }
 
+.group_num__drop-down
+{
+    max-width: 60% !important;
+    border: solid #cccccc 1px;
+}
+
 #joinClassModalFooter
 {
     justify-content: center;
