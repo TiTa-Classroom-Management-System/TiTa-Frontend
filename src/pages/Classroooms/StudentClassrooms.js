@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
 import axios from "axios";
+import { CardGroup } from "reactstrap";
 
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
-import "./Classrooms.css";
+import "../Classroooms/Classrooms.css";
 import StudentNav from "../../components/Navbar/student/studentnav";
 import { updateTimetable } from "../../redux/actions/timetableAction";
 

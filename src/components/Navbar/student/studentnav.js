@@ -11,7 +11,7 @@ import JoinClassModal from "../../Modal/student/joinClassModal";
 import "./studentnav.css";
 import logo from "./../logo.png";
 import logoText from "./../logoText.png";
-import Profile from "./../../Profile/profile";
+import Profile from "../../Profile/profile";
 
 
 import { getClassroom, joinClassroom } from "../../../functions/classroom";

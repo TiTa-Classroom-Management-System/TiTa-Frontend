@@ -4,7 +4,11 @@
 }
 
 .cards-row {
-  height: 10vh;
+  margin-left: 15vw;
+  display: flex;
+  flex-direction: row;
+  margin-right: 5vw;
+  width: 100%;
 }
 
 .class-loading {
