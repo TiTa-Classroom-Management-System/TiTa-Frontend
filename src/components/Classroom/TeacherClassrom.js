@@ -37,7 +37,6 @@ const TeacherClassroom = ({ dispatch, tt, params }) => {
     loadTimetable(user);
     if(Array.isArray(tt))
       setTimetable(() => tt.filter((t) => t.class_id === id));
-    console.log(timetable);
   }, [tt]);
 
   return (

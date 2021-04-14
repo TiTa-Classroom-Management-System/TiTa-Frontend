@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Tooltip} from 'reactstrap';
 import { InputGroup, Input } from 'reactstrap';
 
 import "./createClassModal.css";
 
-const copy=()=>{
-    
-}
-
 const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, handleSubmit, handleChange, branches }) => {
+
+    const [clipboard, setClipboard] = useState(`Copy to Clipboard.`);
+    const [cbicon, setCbicon] = useState(`fas fa-clipboard`);
+    const copy = () => 
+    {
+        const ele = document.getElementById("createClassModal__created-classroom-code").innerHTML;
+        navigator.clipboard.writeText(ele)
+        .then(() =>
+        {
+            setClipboard(`Copied to Clipboard.`);
+            setCbicon(`fas fa-clipboard-check`);
+            console.log("Copied.");
+        })
+        .catch((err) =>
+        {
+            console.log(`Couldn't copy.`);
+        });
+    }
 
     return (
         <div>
@@ -64,8 +78,8 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
             <ModalHeader toggle={toggle} close = {<i onClick ={toggle} class="fas fa-times-circle createClass__close-modal"></i>}>Classroom Created</ModalHeader>
             <ModalBody>
                 <hr />
-                <h3>Classroom code: <strong>{code}</strong></h3>
-                <Button id = "copyToClipboard" onClick={copy}>Copy to Clipboard <i class="fas fa-copy"></i></Button>
+                <h3>Classroom code: <strong id = "createClassModal__created-classroom-code">{code}</strong></h3>
+                <Button id = "copyToClipboard" onClick={copy}>{clipboard} <i class = {cbicon}></i></Button>
                 <hr />
             </ModalBody>
             <ModalFooter id = "createClass__modal-footer">
