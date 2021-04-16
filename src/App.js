@@ -6,7 +6,7 @@ import Login from "./components/Login/Login";
 // import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
-import TeacherClassroom from "./components/Classroom/TeacherClassrom";
+import TeacherClassroom from "./components/Classroom/TeacherClassroom";
 import StudentClassroom from "./components/Classroom/StudentClassroom";
 import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
 import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";

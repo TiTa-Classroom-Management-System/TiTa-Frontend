@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
 import { updateTimetable } from "../../redux/actions/timetableAction";
+import { updateClassrooms } from "../../redux/actions/classroomsAction";
 import axios from "axios";
 
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
@@ -18,7 +19,7 @@ const TeacherClassrooms = ({ dispatch }) => {
       url: `${process.env.REACT_APP_API}/teachers/classrooms/${user.email}`,
     })
       .then((res) => {
-        console.log(res.data);
+        dispatch(updateClassrooms(res.data));
         setClassroom(res.data);
       })
       .catch((err) => {
