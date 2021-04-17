@@ -35,10 +35,10 @@ const StudentClassroom = ({ dispatch, tt }) => {
 
   useEffect(() => {
     loadTimetable(user);
-    if(Array.isArray(tt))
+    if (Array.isArray(tt))
       setTimetable(() => tt.filter((t) => t.class_id === id));
     console.log(timetable);
-  }, [tt]);
+  }, []);
 
   return (
     <div class="row">
