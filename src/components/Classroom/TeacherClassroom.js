@@ -7,10 +7,11 @@ import axios from "axios";
 
 import Timetable from "../Timetable/Timetable";
 import TeacherNav from "../Navbar/teacher/teacherNav";
+import Assignments from "../Tabs/teacher/assignments/Assignments";
 
 import "../../pages/Timetable/Timetable.css";
 
-const TeacherClassroom = ({ dispatch, tt, params }) => {
+const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
   const { user } = useSelector((state) => ({ ...state }));
   const [timetable, setTimetable] = useState([]);
   let { id } = useParams();
@@ -37,7 +38,6 @@ const TeacherClassroom = ({ dispatch, tt, params }) => {
     loadTimetable(user);
     if(Array.isArray(tt))
       setTimetable(() => tt.filter((t) => t.class_id === id));
-    console.log(timetable);
   }, [tt]);
 
   return (
@@ -74,7 +74,7 @@ const TeacherClassroom = ({ dispatch, tt, params }) => {
             </div>
           </TabPane>
           <TabPane tabId="2">
-            <div class="col-11 Timetable__timetable-component">Assignments</div>
+            <div class="col-11 Timetable__timetable-component"><Assignments /></div>
           </TabPane>
           <TabPane tabId="3">
             <div class="col-11 Timetable__timetable-component">Quizzes</div>
@@ -86,7 +86,7 @@ const TeacherClassroom = ({ dispatch, tt, params }) => {
 };
 
 const dispatchStateToProp = (state) => {
-  return { tt: state.timetable };
+  return { tt: state.timetable, classrooms: state.classrooms };
 };
 
 export default connect(dispatchStateToProp)(withRouter(TeacherClassroom));
