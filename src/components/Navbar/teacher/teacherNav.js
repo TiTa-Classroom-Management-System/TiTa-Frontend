@@ -116,5 +116,4 @@ const TeacherNav = () => {
     </div>
   );
 };
-
 export default TeacherNav;

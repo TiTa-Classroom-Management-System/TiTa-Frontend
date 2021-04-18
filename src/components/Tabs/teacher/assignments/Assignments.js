@@ -180,4 +180,56 @@ const Assignments = () => {
   );
 };
 
+    return (
+        <div>
+            <h2><strong>Assignments</strong></h2>
+            <p>Create and view assignments.</p>
+
+            <button id = "Assignments__create-ass" onClick={toggleAssModal}>Create New Assignment</button>
+            <Modal isOpen={assmodal} toggle={toggleAssModal}>
+                <ModalHeader toggle={toggleAssModal}>Create Assignment</ModalHeader>
+                <ModalBody>
+                    <div class = "Assignment__file-upload">
+                        <label for = "file-upload" id = "Assignments__file-upload">Choose File to Upload</label>
+                        <input hidden id = "file-upload" type = "file" accept = "application/pdf, .csv, application/msword, .odt, text/plain" onChange = {assSelect} />
+                    </div>
+                    {assignment && assignment.length > 0 && (
+                        <p>File added: {assignment[0].name}</p>
+                    )}
+                    <hr />
+
+                    <Input placeholder = "Name of the assignment" onChange = {(e) => setAssname(e.target.value)}></Input>
+                    <hr />
+                    
+                    <label for = "Assignments__submit-date">Choose Submission Deadline</label>
+                    <div class = "Assignments__submit-date-time row">
+                        <input class = "col-lg-5" id = "Assignments__submit-date" type = "date" onChange = {handleDateChange} />
+                        <input class = "col-lg-5" id = "Assignments__submit-time" type = "time" onChange = {handleTimeChange} />
+                    </div>
+                    <hr />
+                    
+                    {/* Add Group Numbers from State */}
+                    <h6>Choose Groups:</h6>
+                    <div className = "row p-2">
+                        {Array.from(Array(num_grps).keys()).map((v) =>
+                        (
+                            <>
+                                <button className = "Assignments__choose-group col-2 m-1" value = {v} onClick = {handleCheck}>Group {v+1}</button>
+                            </>
+                        ))}
+                    </div>
+                    <p className = "row m-2">Groups added: {grps.map((g) => (<li className = "col-2">{g}</li>))}</p>
+                    <button className = "Assignments__choose-group clear-grp" onClick = {() => setGrps([])}>Clear selection</button>
+                </ModalBody>
+                <ModalFooter>
+                    <Button className = "Assignments__submit" onClick={handleAssSubmit}>Create and Upload</Button>{' '}
+                    <Button className = "Assignments__submit" onClick={toggleAssModal}>Cancel</Button>
+                </ModalFooter>
+            </Modal>
+            <hr />
+            <AssignmentList />
+        </div>
+    )
+}
+
 export default Assignments;

@@ -1,0 +1,75 @@
+.upload {
+  display: flex;
+  justify-content: center;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+}
+
+#Assignments__upload-ass {
+  border-radius: 5px;
+  align-items: center;
+  padding: 5px 10px;
+  border: none;
+  background-color: #6673fd;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+}
+
+#Assignments__upload-ass:hover {
+  background-color: #f19b84;
+  box-shadow: none;
+}
+
+#Assignments__view-ass {
+  border-radius: 5px;
+  align-items: center;
+  padding: 0 20px;
+  border: none;
+  background-color: #6673fd;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+}
+
+#Assignments__view-ass:hover {
+  background-color: #f19b84;
+  box-shadow: none;
+}
+
+#Assignments__file-upload {
+  width: 100%;
+  background-color: #6673fd;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+#Assignments__file-upload:hover {
+  box-shadow: none;
+}
+
+.Assignments__submit {
+  padding: 10px;
+  background-color: #6673fd;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+}
+
+.Assignments__submit:hover {
+  box-shadow: none;
+  background-color: #6673fd;
+}
+
+#AssignmentList__header {
+  text-align: center;
+}
