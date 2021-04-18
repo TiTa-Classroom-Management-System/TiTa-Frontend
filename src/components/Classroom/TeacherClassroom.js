@@ -19,6 +19,7 @@ import {
     DropdownToggle,
 } from "reactstrap";
 import axios from "axios";
+import Select from "react-select";
 
 import Timetable from "../Timetable/Timetable";
 import TeacherNav from "../Navbar/teacher/teacherNav";
@@ -39,6 +40,8 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     const [groups, SetGroups] = useState([]);
     const [day, setDay] = useState("Monday");
     const [type, setType] = useState("Lecture");
+    const [numGroups, setNumGroups] = useState(0);
+    const [options, setOptions] = useState([]);
 
     const toggle = (tab) => {
         if (activeTab !== tab) setActiveTab(tab);
@@ -57,11 +60,33 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
             });
     };
 
+    const loadSubclassNum = () => {
+        axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API}/classroom/count/${id}`,
+        }).then((res) => {
+            setNumGroups(() => res.data.count);
+            console.log(numGroups);
+        });
+    };
+
     useEffect(() => {
         loadTimetable(user);
+        loadSubclassNum();
         if (Array.isArray(tt))
             setTimetable(() => tt.filter((t) => t.class_id === id));
     }, []);
+
+    useEffect(() => {
+        setOptions(() => {
+            var arr = [];
+            for (var i = 1; i <= numGroups; i++) {
+                var ob = { label: `Group ${i}`, value: `${i}` };
+                arr.push(ob);
+            }
+            return arr;
+        });
+    }, [numGroups]);
 
     const toggleModal = () => {
         setModal((cur) => !cur);
@@ -124,7 +149,12 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                             setDropDown((cur) => !cur);
                                         }}
                                     >
-                                        <DropdownToggle caret>
+                                        <DropdownToggle
+                                            style={{
+                                                backgroundColor: "#6673fd",
+                                            }}
+                                            caret
+                                        >
                                             Choose day
                                         </DropdownToggle>
                                         <DropdownMenu>
@@ -173,6 +203,24 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                         </DropdownMenu>
                                     </Dropdown>
                                     <label for="Assignments__submit-date">
+                                        Choose groups
+                                    </label>
+                                    <Select
+                                        isMulti
+                                        name="colors"
+                                        options={options}
+                                        className="basic-multi-select"
+                                        classNamePrefix="select"
+                                        onChange={(selectedOption) => {
+                                            SetGroups(() =>
+                                                selectedOption.map((ob) =>
+                                                    parseInt(ob.value)
+                                                )
+                                            );
+                                        }}
+                                    />
+                                    <br />
+                                    <label for="Assignments__submit-date">
                                         Choose class start time
                                     </label>
                                     <input
@@ -203,13 +251,17 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                     Current type: {type}
                                     <br />
                                     <Dropdown
-                                        color="#6673fd"
                                         isOpen={typeDropDown}
                                         toggle={() => {
                                             setTypeDropDown((cur) => !cur);
                                         }}
                                     >
-                                        <DropdownToggle caret>
+                                        <DropdownToggle
+                                            style={{
+                                                backgroundColor: "#6673fd",
+                                            }}
+                                            caret
+                                        >
                                             Choose class type
                                         </DropdownToggle>
                                         <DropdownMenu>
