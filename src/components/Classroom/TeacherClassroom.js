@@ -92,6 +92,25 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
         setModal((cur) => !cur);
     };
 
+    const handleTimetableCreation = async () => {
+        setModal(() => false);
+        await axios({
+            method: "POST",
+            url: `${process.env.REACT_APP_API}/timetable/create`,
+            data: {
+                class_id: id,
+                group_number: groups,
+                start_time: startTime,
+                end_time: endTime,
+                day: day,
+                type: type,
+            },
+        });
+        loadTimetable(user);
+    };
+
+    useEffect(() => {}, [tt]);
+
     return (
         <div>
             <div class="row">
@@ -240,9 +259,10 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                         id="Assignments__submit-time"
                                         type="time"
                                         value={endTime}
-                                        onChange={(e) =>
-                                            setEndTime(e.target.value)
-                                        }
+                                        onChange={(e) => {
+                                            console.log(e.target.value);
+                                            return setEndTime(e.target.value);
+                                        }}
                                     />
                                     <br />
                                     <label for="Assignments__submit-date">
@@ -290,7 +310,10 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                     </Dropdown>
                                 </ModalBody>
                                 <ModalFooter>
-                                    <Button className="Assignments__submit">
+                                    <Button
+                                        className="Assignments__submit"
+                                        onClick={handleTimetableCreation}
+                                    >
                                         Create and Upload
                                     </Button>{" "}
                                     <Button
