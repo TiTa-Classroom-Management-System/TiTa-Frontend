@@ -36,11 +36,7 @@ const TeachTimetablePage = ({ dispatch, tt }) => {
       </div>
       <div class="col-11 Timetable__timetable-component">
         {tt ? (
-          tt.length > 0 ? (
-            <Timetable tt={tt} />
-          ) : (
-            <p>You have not created any timetable yet...</p>
-          )
+          <Timetable tt={tt} /> 
         ) : (
           <p>Loading timetable...</p>
         )}

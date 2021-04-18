@@ -98,11 +98,8 @@ const TeacherNav = () => {
       </Navbar>
       {modal ? (
         <ClassModal
-<<<<<<< HEAD
-=======
           code={code}
           setCode={setCode}
->>>>>>> 3adadfee0b4103ae26fd6bfbe04d4ee4d370d9b1
           toggle={toggleModal}
           modal={modal}
           className="classModal"
@@ -119,8 +116,4 @@ const TeacherNav = () => {
     </div>
   );
 };
-<<<<<<< HEAD
-=======
-
->>>>>>> 3adadfee0b4103ae26fd6bfbe04d4ee4d370d9b1
 export default TeacherNav;

@@ -38,7 +38,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     loadTimetable(user);
     if(Array.isArray(tt))
       setTimetable(() => tt.filter((t) => t.class_id === id));
-  }, [tt]);
+  }, []);
 
   return (
     <div>
@@ -63,11 +63,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
           <TabPane tabId="1">
             <div class="col-11 Timetable__timetable-component">
               {tt ? (
-                tt.length > 0 ? (
-                  <Timetable tt={timetable} />
-                ) : (
-                  <p>You have not created any timetable yet...</p>
-                )
+                <Timetable tt={timetable} />
               ) : (
                 <p>Loading timetable...</p>
               )}

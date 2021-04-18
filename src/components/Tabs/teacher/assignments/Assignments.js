@@ -120,7 +120,7 @@ const Assignments = () =>
                         {Array.from(Array(num_grps).keys()).map((v) =>
                         (
                             <>
-                                <button className = "Assignments__choose-group col-2 m-1" value = {v} onClick = {handleCheck}>Group {v}</button>
+                                <button className = "Assignments__choose-group col-2 m-1" value = {v} onClick = {handleCheck}>Group {v+1}</button>
                             </>
                         ))}
                     </div>
