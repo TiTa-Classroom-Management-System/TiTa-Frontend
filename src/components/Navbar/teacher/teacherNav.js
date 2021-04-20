@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, connect } from "react-redux";
 import { Navbar, NavItem, Nav } from "reactstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,8 +13,9 @@ import ClassModal from "../../Modal/teacher/createClassModal";
 import Profile from "../../Profile/profile";
 
 import { createClassroom } from "../../../functions/classroom";
+import { updateClassrooms } from "../../../redux/actions/classroomsAction";
 
-const TeacherNav = () => {
+const TeacherNav = ({ dispatch, classrooms }) => {
   const [modal, setModal] = useState(false);
   const [code, setCode] = useState(null);
   const { user } = useSelector((state) => ({ ...state }));
@@ -42,7 +43,8 @@ const TeacherNav = () => {
     e.preventDefault();
     createClassroom(values)
       .then((res) => {
-        setCode(res.data);
+        setCode(res.data.classroom_id);
+        dispatch(updateClassrooms([res.data]));
         console.log(res);
       })
       .catch((err) => {
@@ -116,4 +118,9 @@ const TeacherNav = () => {
     </div>
   );
 };
-export default TeacherNav;
+
+const dispatchStateToProp = (state) => {
+  return { tt: state.timetable, classrooms: state.classrooms };
+};
+
+export default connect(dispatchStateToProp)(TeacherNav);
