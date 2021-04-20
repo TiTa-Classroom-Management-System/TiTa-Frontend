@@ -1,82 +1,176 @@
-#Assignments__create-ass
-{
-    border-radius: 5px;
-    padding: 10px;
-    border: none;
-    background-color: #6673fd;
-    color: white;
-    box-shadow: 4px 4px 8px #9a9a9a;
-    transition: 0.5s;
+#Assignments__create-ass {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  background-color: #6673fd;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
 }
 
-#Assignments__create-ass:hover
-{
-    background-color: #f19b84;
-    box-shadow: none;
+#Assignments__create-ass:hover {
+  background-color: #f19b84;
+  box-shadow: none;
 }
 
-#Assignments__file-upload
-{
-    width: 100%;
-    background-color: #6673fd;
-    padding: 2%;
-    text-align: center;
-    color: white;
-    box-shadow: 4px 4px 8px #9a9a9a;
-    transition: 0.5s;
-    border-radius: 5px;
+#Assignments__file-upload {
+  width: 100%;
+  background-color: #6673fd;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
 }
 
-#Assignments__file-upload:hover
-{
-    box-shadow: none;
+#Assignments__file-upload:hover {
+  box-shadow: none;
 }
 
-.Assignments__choose-group
-{
-    background-color: #f19b84;
-    border-radius: 5px;
-    width: 20%;
-    color: white;
-    border: none;
-    box-shadow: 4px 4px 8px #9a9a9a;
-    transition: 0.5s;
+.Assignments__choose-group {
+  background-color: #f19b84;
+  border-radius: 5px;
+  width: 20%;
+  color: white;
+  border: none;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
 }
 
-.Assignments__submit-date-time
-{
-    justify-content: center;
+.Assignments__submit-date-time {
+  justify-content: center;
 }
 
-.clear-grp
-{
-    width: 100%;
-    padding: 2%;
+.clear-grp {
+  width: 100%;
+  padding: 2%;
 }
 
-.Assignments__choose-group:hover
-{
-    box-shadow: none;
+.Assignments__choose-group:hover {
+  box-shadow: none;
 }
 
-.Assignments__submit
-{
-    padding: 10px;
-    background-color: #6673fd;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 4px 4px 8px #9a9a9a;
-    transition: 0.5s;
+.Assignments__submit {
+  padding: 10px;
+  background-color: #6673fd;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
 }
 
-.Assignments__submit:hover
-{
-    box-shadow: none;
-    background-color: #6673fd;
+.Assignments__submit:hover {
+  box-shadow: none;
+  background-color: #6673fd;
 }
 
-#AssignmentList__header
+#AssignmentList__header {
+  text-align: center;
+}
+
+.AssignmentList__object
 {
-    text-align: center;
+  text-align: center;
+  border-bottom: solid grey;
+}
+
+.AssignmentList__object div
+{
+  padding: 1%;
+}
+
+.Assignments__view-assignment
+{
+  width: 100%;
+  background-color: #f19b84;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Assignments__view-assignment:hover
+{
+  box-shadow: none;
+}
+
+.Assignments__view-assignment a
+{
+  text-decoration: none;
+  color: white;
+}
+
+.Assignments__submissions
+{
+  width: 100%;
+  background-color: #6673fd;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Assignments__submissions:hover
+{
+  box-shadow: none;
+}
+
+.Assignments__submissions a
+{
+  text-decoration: none;
+  color: white;
+}
+
+.Assignments__loading
+{
+  text-align: center;
+}
+
+.Assignment_Solved
+{
+  margin-left: 7.5%;
+}
+
+.Assignment_Solved__header
+{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.Assignment_Solved__header div
+{
+  text-align: center;
+}
+
+.Assignment_Solved__object
+{
+  text-align: center;
+  justify-content: center;
+  border-bottom: solid grey;
+}
+
+.Assignment_Solved__object div
+{
+  padding: 1%;
+}
+
+.Assignment_Solved__on-time
+{
+  color: #9ede73;
+  font-size: large;
+}
+
+.Assignment_Solved__late
+{
+  color: #fb3640;
+  font-size: large;
 }

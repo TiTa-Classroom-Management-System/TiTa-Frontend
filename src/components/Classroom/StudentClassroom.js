@@ -7,6 +7,7 @@ import axios from "axios";
 
 import Timetable from "../../components/Timetable/Timetable";
 import StudentNav from "../../components/Navbar/student/studentnav";
+import Assignments from "../Tabs/student/assignments/Assignments"
 
 import "../../pages/Timetable/Timetable.css";
 
@@ -35,7 +36,7 @@ const StudentClassroom = ({ dispatch, tt }) => {
 
   useEffect(() => {
     loadTimetable(user);
-    if(Array.isArray(tt))
+    if (Array.isArray(tt))
       setTimetable(() => tt.filter((t) => t.class_id === id));
     console.log(timetable);
   }, []);
@@ -62,18 +63,14 @@ const StudentClassroom = ({ dispatch, tt }) => {
         <TabPane tabId="1">
           <div class="col-11 Timetable__timetable-component">
             {tt ? (
-              tt.length > 0 ? (
-                <Timetable tt={timetable} />
-              ) : (
-                <p>Classroom has no timetable...</p>
-              )
+              <Timetable tt={timetable} />
             ) : (
               <p>Loading timetable...</p>
             )}
           </div>
         </TabPane>
         <TabPane tabId="2">
-          <div class="col-11 Timetable__timetable-component">Assignments</div>
+          <div class="col-11 Timetable__timetable-component"><Assignments /></div>
         </TabPane>
         <TabPane tabId="3">
           <div class="col-11 Timetable__timetable-component">Quizzes</div>
