@@ -11,8 +11,45 @@ const PrivateRoute = ({ isLoggedIn, component: Component, ...rest }) => (
     />
 );
 
+export const StudentRoute = ({
+    isLoggedIn,
+    type,
+    component: Component,
+    ...rest
+}) => (
+    <Route
+        {...rest}
+        component={(props) =>
+            type !== "student" ? (
+                <Component {...props} />
+            ) : (
+                <Redirect to="/login" />
+            )
+        }
+    />
+);
+
+export const TeacherRoute = ({
+    isLoggedIn,
+    type,
+    component: Component,
+    ...rest
+}) => (
+    <Route
+        {...rest}
+        component={(props) =>
+            type !== "teacher" ? (
+                <Component {...props} />
+            ) : (
+                <Redirect to="/studtimetable" />
+            )
+        }
+    />
+);
+
 const mapStateToProps = (state) => ({
     isLoggedIn: !!state.user,
+    type: state.user.type,
 });
 
 export default connect(mapStateToProps)(withRouter(PrivateRoute));
