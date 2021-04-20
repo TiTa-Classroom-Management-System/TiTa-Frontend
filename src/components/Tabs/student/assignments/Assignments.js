@@ -35,28 +35,33 @@ const Assignments = () =>
     {
         loadAssignments(user);
     }, []);
+    const parseDates = (date) =>
+    {
+        const this_date = date.split("T")[0];
+        const this_time = date.split("T")[1];
+        return `${this_date.split("-")[2]}-${this_date.split("-")[1]}-${this_date.split("-")[0]} ${this_time.slice(0, 8)}`;
+    }
 
     return(
-        <div class = "AssignmentList__list">
+        <div className = "AssignmentList__list">
             <div id = "AssignmentList__header" class = "row">
-                <div class = "col-lg-3"><h5>Assignment Name</h5></div>
-                <div class = "col-lg-2"><h5>Deadline</h5></div>
-                <div class = "col-lg-3"><h5>Assignment</h5></div>
-                <div class = "col-lg-3"><h5>Upload solution</h5></div>
+                <div className = "col-lg-3"><h5>Assignment Name</h5></div>
+                <div className = "col-lg-2"><h5>Deadline</h5></div>
+                <div className = "col-lg-3"><h5>Assignment</h5></div>
+                <div className = "col-lg-3"><h5>Upload/View solution</h5></div>
             </div>
 
             {(assignments && Array.isArray(assignments) && assignments.length > 0) ? (
                 assignments.map((a) => 
-                <div class = "AssignmentList__object row">
-                    <div class = "col-lg-3 assign">{a.assignment_name}</div>
-                    <div class = "col-lg-2 assign">{a.submission_date}</div>
-                    <div class = "col-lg-3 assign"><a href={a.assignment_link} target="_blank" ><button id = "Assignments__view-ass" >View Assignment</button></a></div>
-                    <div class = "col-lg-3 assign"><AssignmentUpload assign={a}/></div>
+                <div className = "AssignmentList__object row">
+                    <div className = "col-lg-3">{a.assignment_name}</div>
+                    <div className = "col-lg-2">{parseDates(a.submission_date)}</div>
+                    <div className = "col-lg-3"><a href={a.assignment_link} target="_blank" ><button id = "Assignments__view-ass" >View Assignment</button></a></div>
+                    <AssignmentUpload assign={a}/>
                 </div>
                 )   
             ) : (
                 <>
-                <hr/>
                 <p className="text-center">Sorry, you haven't received any assignments for this class yet.</p>
                 </>
             )}
