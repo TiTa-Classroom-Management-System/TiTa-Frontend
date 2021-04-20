@@ -10,6 +10,7 @@ import TeacherClassroom from "./components/Classroom/TeacherClassroom";
 import StudentClassroom from "./components/Classroom/StudentClassroom";
 import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
 import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";
+import Assignments_Solved from "./components/Tabs/teacher/assignments/Assignments_Solved";
 
 function App() {
   return (
@@ -48,8 +49,12 @@ function App() {
           path="/students/classrooms/:id"
           component={() => <StudentClassroom />}
         />
+        <Route
+          strict
+          path="/teachers/:class_id/assignments/:assignment_id"
+          component={() => <Assignments_Solved />}
+        />
       </Switch>
-      TITA
     </div>
   );
 }

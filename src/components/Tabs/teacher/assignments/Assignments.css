@@ -69,3 +69,108 @@
 #AssignmentList__header {
   text-align: center;
 }
+
+.AssignmentList__object
+{
+  text-align: center;
+  border-bottom: solid grey;
+}
+
+.AssignmentList__object div
+{
+  padding: 1%;
+}
+
+.Assignments__view-assignment
+{
+  width: 100%;
+  background-color: #f19b84;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Assignments__view-assignment:hover
+{
+  box-shadow: none;
+}
+
+.Assignments__view-assignment a
+{
+  text-decoration: none;
+  color: white;
+}
+
+.Assignments__submissions
+{
+  width: 100%;
+  background-color: #6673fd;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Assignments__submissions:hover
+{
+  box-shadow: none;
+}
+
+.Assignments__submissions a
+{
+  text-decoration: none;
+  color: white;
+}
+
+.Assignments__loading
+{
+  text-align: center;
+}
+
+.Assignment_Solved
+{
+  margin-left: 7.5%;
+}
+
+.Assignment_Solved__header
+{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.Assignment_Solved__header div
+{
+  text-align: center;
+}
+
+.Assignment_Solved__object
+{
+  text-align: center;
+  justify-content: center;
+  border-bottom: solid grey;
+}
+
+.Assignment_Solved__object div
+{
+  padding: 1%;
+}
+
+.Assignment_Solved__on-time
+{
+  color: #9ede73;
+  font-size: large;
+}
+
+.Assignment_Solved__late
+{
+  color: #fb3640;
+  font-size: large;
+}
