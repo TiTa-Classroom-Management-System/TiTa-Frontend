@@ -21,7 +21,7 @@ const Assignments_Solved = () =>
         {
             setLoading(false);
             setAllass(res.data);
-            console.log(allass);
+            console.log(res.data);
         })
         .catch((err) =>
         {

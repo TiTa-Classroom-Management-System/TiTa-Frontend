@@ -52,10 +52,13 @@ const StudentClassroom = ({ dispatch, tt }) => {
             <NavLink onClick={() => toggle("1")}>Timetable</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink onClick={() => toggle("2")}>Assignments</NavLink>
+            <NavLink onClick={() => toggle("2")}>Resources</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink onClick={() => toggle("3")}>Quizzes</NavLink>
+            <NavLink onClick={() => toggle("3")}>Assignments</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink onClick={() => toggle("4")}>Quizzes</NavLink>
           </NavItem>
         </Nav>
       </div>
@@ -70,9 +73,12 @@ const StudentClassroom = ({ dispatch, tt }) => {
           </div>
         </TabPane>
         <TabPane tabId="2">
-          <div class="col-11 Timetable__timetable-component"><Assignments /></div>
+          <div class="col-11 Timetable__timetable-component">Resources</div>
         </TabPane>
         <TabPane tabId="3">
+          <div class="col-11 Timetable__timetable-component"><Assignments /></div>
+        </TabPane>
+        <TabPane tabId="4">
           <div class="col-11 Timetable__timetable-component">Quizzes</div>
         </TabPane>
       </TabContent>

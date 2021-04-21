@@ -10,7 +10,7 @@ import TeacherClassroom from "./components/Classroom/TeacherClassroom";
 import StudentClassroom from "./components/Classroom/StudentClassroom";
 import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
 import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";
-import Assignments_Solved from "./components/Tabs/teacher/assignments/Assignments_Solved";
+import AssignmentsSolved from "./components/Tabs/teacher/assignments/AssignmentsSolved";
 import PrivateRoute, {
     TeacherRoute,
     StudentRoute,
@@ -87,7 +87,7 @@ const App = ({ user }) => {
                 <Route
                     strict
                     path="/teachers/:class_id/assignments/:assignment_id"
-                    component={() => <Assignments_Solved />}
+                    component={() => <AssignmentsSolved />}
                 />
                 <Redirect exact to="/teachtimetable" />
             </Switch>

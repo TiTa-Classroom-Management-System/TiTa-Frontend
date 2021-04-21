@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
@@ -7,7 +7,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
 import "./Assignments.css";
 import logo from "../../../Navbar/logo.png";
 
-const AssignmentUpload = ({assign}) =>
+const AssignmentUpload = ({ assign }) =>
 {
     const { user } = useSelector((state) => ({ ...state }));
     const [assmodal, setAssmodal] = useState(false);
@@ -22,6 +22,7 @@ const AssignmentUpload = ({assign}) =>
     {
         setAssmodal(!assmodal);
         setAssignment(null);
+        console.log(assign);
     }
 
     const assSelect = (e) =>
@@ -106,7 +107,7 @@ const AssignmentUpload = ({assign}) =>
             </Modal>
             </div>
             ) : 
-            solution && (<div className = "col-lg-3"><a href={solution} target="_blank" ><button id = "Assignments__view-ass" >View Solution</button></a>{(assign.submission_date >= submitted_at) ? (<i class="fas fa-clock Assignment_Solved__on-time"></i>) : (<i class="fas fa-clock Assignment_Solved__late"></i>)}</div>)
+            solution && (<><a href={solution} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" ></button></a></>)
             }
         </>
     )
