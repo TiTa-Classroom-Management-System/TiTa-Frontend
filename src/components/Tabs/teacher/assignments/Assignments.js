@@ -10,6 +10,8 @@ import {
   ModalFooter,
   Input,
 } from "reactstrap";
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
 
 import AssignmentList from "./AssignmentList";
 
@@ -28,8 +30,14 @@ const Assignments = () => {
   const classrooms = useStore().getState().classrooms;
   const params = useParams();
 
+  const animatedComponents = makeAnimated();
   const num_grps = classrooms.find((c) => c.classroom_id === params.id).num_groups;
   const today = new Date();
+  const options = [];
+  Array.from(Array(num_grps).keys()).forEach((v) =>
+  {
+    options.push({ value: v + 1, label: `Group ${v + 1}` });
+  }) 
 
   const toggleAssModal = () => {
     setAssmodal(!assmodal);
@@ -44,14 +52,6 @@ const Assignments = () => {
     }
   };
 
-  const handleCheck = (e) => {
-    if (!grps.includes(e.target.value)) {
-      setGrps([...grps, e.target.value]);
-      console.log(grps);
-    }
-    console.log(grps);
-  };
-
   const handleDateChange = (e) => {
     setDeadline(e.target.value);
     console.log(deadline);
@@ -59,6 +59,7 @@ const Assignments = () => {
   const handleTimeChange = (e) => {
     setDeadlinetime(e.target.value);
     console.log(e.target.value);
+    console.log(grps);
   };
 
   const createFormData = () =>
@@ -151,31 +152,17 @@ const Assignments = () => {
 
           {/* Add Group Numbers from State */}
           <h6>Choose Groups:</h6>
-          <div className="row p-2">
-            {Array.from(Array(num_grps).keys()).map((v) => (
-              <>
-                <button
-                  className="Assignments__choose-group col-2 m-1"
-                  value={v + 1}
-                  onClick={handleCheck}
-                >
-                  Group {v + 1}
-                </button>
-              </>
-            ))}
-          </div>
-          <p className="row m-2">
-            Groups added:{" "}
-            {grps.map((g) => (
-              <li className="col-2">{parseInt(g)}</li>
-            ))}
-          </p>
-          <button
-            className="Assignments__choose-group clear-grp"
-            onClick={() => setGrps([])}
-          >
-            Clear selection
-          </button>
+          <Select
+            isMulti
+            options = {options}
+            className = "basic-multi-select"
+            classNamePrefix = "select"
+            components = {animatedComponents}
+            onChange = {(selectedValues) =>
+            {
+              setGrps(selectedValues.map((value) => (value.value)));
+            }}
+            />
         </ModalBody>
         <ModalFooter>
           <Button className="Assignments__submit" onClick={handleAssSubmit}>

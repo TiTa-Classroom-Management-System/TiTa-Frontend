@@ -74,11 +74,17 @@
 .Assignment_Solved__on-time {
   color: #9ede73;
   font-size: large;
+  background-color: white;
+  padding: 2px;
+  border-radius: 20px;
 }
 
 .Assignment_Solved__late {
   color: #fb3640;
   font-size: large;
+  background-color: white;
+  padding: 2px;
+  border-radius: 20px;
 }
 
 .Assignments__loading {

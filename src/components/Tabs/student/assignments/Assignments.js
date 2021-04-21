@@ -12,6 +12,7 @@ const Assignments = () =>
     const params = useParams();
 
     const [assignments, setAssignments] = useState([]);
+
     const loadAssignments = (user) =>
     {
         axios(
@@ -35,6 +36,7 @@ const Assignments = () =>
     {
         loadAssignments(user);
     }, []);
+
     const parseDates = (date) =>
     {
         const this_date = date.split("T")[0];
@@ -56,8 +58,8 @@ const Assignments = () =>
                 <div className = "AssignmentList__object row">
                     <div className = "col-lg-3">{a.assignment_name}</div>
                     <div className = "col-lg-2">{parseDates(a.submission_date)}</div>
-                    <div className = "col-lg-3"><a href={a.assignment_link} target="_blank" ><button id = "Assignments__view-ass" >View Assignment</button></a></div>
-                    <AssignmentUpload assign={a}/>
+                    <div className = "col-lg-3"><a href={a.assignment_link} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" >View Assignment</button></a></div>
+                    {a.solution_link ? (<div className = "col-lg-3"><a href={a.solution_link} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" >View Your Solution {(a.submission_date > a.submitted_at) ? (<i class="fas fa-clock Assignment_Solved__on-time"></i>) : (<i class="fas fa-clock Assignment_Solved__late"></i>)}</button></a></div>) : (<AssignmentUpload assign = {a}/>)}
                 </div>
                 )   
             ) : (
