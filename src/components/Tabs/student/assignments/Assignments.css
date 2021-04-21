@@ -1,17 +1,16 @@
-.upload {
-  display: flex;
-  justify-content: center;
+.AssignmentList__object {
+  text-align: center;
+  border-bottom: solid grey;
 }
 
-.view {
-  display: flex;
-  justify-content: center;
+.AssignmentList__object div {
+  padding: 1%;
 }
 
 #Assignments__upload-ass {
   border-radius: 5px;
   align-items: center;
-  padding: 5px 10px;
+  padding: 5px 80px;
   border: none;
   background-color: #6673fd;
   color: white;
@@ -20,23 +19,21 @@
 }
 
 #Assignments__upload-ass:hover {
-  background-color: #f19b84;
   box-shadow: none;
 }
 
 #Assignments__view-ass {
   border-radius: 5px;
   align-items: center;
-  padding: 0 20px;
+  padding: 5px 30px;
   border: none;
-  background-color: #6673fd;
+  background-color: #f19b84;
   color: white;
   box-shadow: 4px 4px 8px #9a9a9a;
   transition: 0.5s;
 }
 
 #Assignments__view-ass:hover {
-  background-color: #f19b84;
   box-shadow: none;
 }
 
@@ -71,5 +68,19 @@
 }
 
 #AssignmentList__header {
+  text-align: center;
+}
+
+.Assignment_Solved__on-time {
+  color: #9ede73;
+  font-size: large;
+}
+
+.Assignment_Solved__late {
+  color: #fb3640;
+  font-size: large;
+}
+
+.Assignments__loading {
   text-align: center;
 }
