@@ -20,6 +20,7 @@ import {
 } from "reactstrap";
 import axios from "axios";
 import Select from "react-select";
+import makeAnimated from "react-select/animated";
 
 import Timetable from "../Timetable/Timetable";
 import TeacherNav from "../Navbar/teacher/teacherNav";
@@ -42,6 +43,8 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     const [type, setType] = useState("Lecture");
     const [numGroups, setNumGroups] = useState(0);
     const [options, setOptions] = useState([]);
+
+    const animatedComponents = makeAnimated();
 
     const toggle = (tab) => {
         if (activeTab !== tab) setActiveTab(tab);
@@ -128,11 +131,16 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                         </NavItem>
                         <NavItem>
                             <NavLink onClick={() => toggle("2")}>
-                                Assignments
+                                Resources
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink onClick={() => toggle("3")}>
+                                Assignments
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink onClick={() => toggle("4")}>
                                 Quizzes
                             </NavLink>
                         </NavItem>
@@ -232,6 +240,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                         options={options}
                                         className="basic-multi-select"
                                         classNamePrefix="select"
+                                        components = {animatedComponents}
                                         onChange={(selectedOption) => {
                                             SetGroups(() =>
                                                 selectedOption.map((ob) =>
@@ -342,10 +351,15 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     </TabPane>
                     <TabPane tabId="2">
                         <div class="col-11 Timetable__timetable-component">
-                            <Assignments />
+                            Resources
                         </div>
                     </TabPane>
                     <TabPane tabId="3">
+                        <div class="col-11 Timetable__timetable-component">
+                            <Assignments />
+                        </div>
+                    </TabPane>
+                    <TabPane tabId="4">
                         <div class="col-11 Timetable__timetable-component">
                             Quizes
                         </div>
