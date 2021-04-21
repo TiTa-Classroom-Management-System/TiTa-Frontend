@@ -41,8 +41,8 @@ const Login = (props) => {
             }
         }
         dispatch(loginUser(user));
-        if (user.type === "student") history.push("/student");
-        else history.push("/teacher");
+        if (user.type === "student") history.push("/studtimetable");
+        else history.push("/teachtimetable");
     };
 
     return (

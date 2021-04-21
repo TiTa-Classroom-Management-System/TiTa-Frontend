@@ -20,7 +20,7 @@ export const StudentRoute = ({
     <Route
         {...rest}
         component={(props) =>
-            type !== "student" ? (
+            type === "student" ? (
                 <Component {...props} />
             ) : (
                 <Redirect to="/login" />
@@ -38,10 +38,10 @@ export const TeacherRoute = ({
     <Route
         {...rest}
         component={(props) =>
-            type !== "teacher" ? (
+            type === "teacher" ? (
                 <Component {...props} />
             ) : (
-                <Redirect to="/studtimetable" />
+                <Redirect to="/login" />
             )
         }
     />

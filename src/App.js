@@ -1,9 +1,9 @@
 import React from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
 import Login from "./components/Login/Login";
-// import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
 import TeacherClassroom from "./components/Classroom/TeacherClassroom";
@@ -16,59 +16,88 @@ import PrivateRoute, {
     StudentRoute,
 } from "./components/PrivateRoute/PrivateRoute";
 
-function App() {
-    return (
-        <div className="App">
+const App = ({ user }) => {
+    let routes = null;
+    if (user === null || user.type === null) {
+        console.log(routes);
+        routes = (
             <Switch>
                 <Route strict path="/login" component={() => <Login />} />
-                <StudentRoute
+            </Switch>
+        );
+        console.log(routes);
+    } else if (user.type === "student") {
+        console.log(user.type);
+        routes = (
+            <Switch>
+                <Route strict path="/login" component={() => <Login />} />
+                <Route
                     strict
                     path="/student"
                     component={() => <StudentNav />}
                 />
-                <TeacherRoute
-                    strict
-                    path="/teacher"
-                    component={() => <TeacherNav />}
-                />
-                <TeacherRoute
-                    strict
-                    path="/teachtimetable"
-                    component={() => <TeachTimetablePage />}
-                />
-                <StudentRoute
+                <Route
                     strict
                     path="/studtimetable"
                     component={() => <StudTimetablePage />}
                 />
-                <TeacherRoute
-                    strict
-                    path="/teacherclassrooms"
-                    component={() => <TeacherClassrooms />}
-                />
-                <StudentRoute
+                <Route
                     strict
                     path="/studentclassrooms"
                     component={() => <StudentClassrooms />}
                 />
-                <TeacherRoute
-                    strict
-                    path="/teachers/classrooms/:id"
-                    component={() => <TeacherClassroom />}
-                />
-                <StudentRoute
+                <Route
                     strict
                     path="/students/classrooms/:id"
                     component={() => <StudentClassroom />}
                 />
-                <TeacherRoute
+                <Redirect exact to="/studtimetable" />
+            </Switch>
+        );
+    } else if (user.type === "teacher") {
+        console.log("hello");
+        console.log(user.type);
+        console.log(user);
+        routes = (
+            <Switch>
+                <Route strict path="/login" component={() => <Login />} />
+                <Route
+                    strict
+                    path="/teacher"
+                    component={() => <TeacherNav />}
+                />
+                <Route
+                    strict
+                    path="/teachtimetable"
+                    component={() => <TeachTimetablePage />}
+                />
+
+                <Route
+                    strict
+                    path="/teacherclassrooms"
+                    component={() => <TeacherClassrooms />}
+                />
+
+                <Route
+                    strict
+                    path="/teachers/classrooms/:id"
+                    component={() => <TeacherClassroom />}
+                />
+
+                <Route
                     strict
                     path="/teachers/:class_id/assignments/:assignment_id"
                     component={() => <Assignments_Solved />}
                 />
+                <Redirect exact to="/teachtimetable" />
             </Switch>
-        </div>
-    );
-}
+        );
+    }
+    return <div className="App">{routes}</div>;
+};
 
-export default App;
+const mapStateToProps = (state) => {
+    return { user: state.user };
+};
+
+export default connect(mapStateToProps)(App);
