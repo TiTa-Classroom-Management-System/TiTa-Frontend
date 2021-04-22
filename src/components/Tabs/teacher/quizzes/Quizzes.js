@@ -29,6 +29,7 @@ const Quizzes = () => {
   const [enddate, setEnddate] = useState(null);
   const [endtime, setEndtime] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [quizzes, setQuizzes]=useState([]);
 
   const classrooms = useStore().getState().classrooms;
   const params = useParams();
@@ -86,16 +87,35 @@ const Quizzes = () => {
       url:`${process.env.REACT_APP_API}/quiz/create`,
       data:createFormData()
     })
+    .then((res)=>{
+      console.log(res);
+      setLoading(false);
+      setQuizlink(null);
+    })
+    .catch((err)=>{
+      console.log(err);
+      setLoading(false);
+    })
+    loadQuizzes();
+    toggleQuizModal();
+  };
+
+  const loadQuizzes=()=>
+  {
+      axios(
+          {
+              method:"GET",
+              url:`${process.env.REACT_APP_API}/teachers/quiz/${params.id}`
+          }
+      )
       .then((res)=>{
-        console.log(res);
-        setLoading(false);
-        setQuizlink(null);
+          setQuizzes(res.data);
+          console.log(res.data);
       })
       .catch((err)=>{
-        console.log(err);
-        setLoading(false);
+          console.log(err);
       })
-  };
+  }
 
   return (
     <div>
@@ -199,7 +219,7 @@ const Quizzes = () => {
         
       </Modal>
       <hr />
-      <QuizList/>
+      <QuizList loadQuizzes = {loadQuizzes} quizzes = {quizzes} />
     </div>
   );
 }

@@ -5,30 +5,8 @@ import { useParams } from "react-router";
 
 import "./Quizzes.css";
 
-const QuizList = () =>
+const QuizList = ({ loadQuizzes, quizzes }) =>
 {
-    const params=useParams();
-
-    const [quizzes, setQuizzes]=useState([]);
-
-    const loadQuizzes=()=>
-    {
-
-        axios(
-            {
-                metod:"GET",
-                url:`${process.env.REACT_APP_API}/teachers/quiz/${params.id}`
-            }
-        )
-        .then((res)=>{
-            setQuizzes(res.data);
-            console.log(res.data);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-    }
-
     useEffect(()=>
     {
         loadQuizzes();
