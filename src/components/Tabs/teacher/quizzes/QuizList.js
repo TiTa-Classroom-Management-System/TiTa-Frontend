@@ -43,7 +43,7 @@ const QuizList = () =>
 
     const getClickableLink = (link) => 
     {
-        return link.startsWith("http://") || link.startsWith("https://") ? link : `http://${link}`;
+        return link.startsWith("http://") || link.startsWith("https://") ? link : `https://${link}`;
     };
 
     return(
