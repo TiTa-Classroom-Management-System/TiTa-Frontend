@@ -20,10 +20,12 @@ import {
 } from "reactstrap";
 import axios from "axios";
 import Select from "react-select";
+import makeAnimated from "react-select/animated";
 
 import Timetable from "../Timetable/Timetable";
 import TeacherNav from "../Navbar/teacher/teacherNav";
 import Assignments from "../Tabs/teacher/assignments/Assignments";
+import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
 
 import "../../pages/Timetable/Timetable.css";
 
@@ -43,6 +45,8 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     const [numGroups, setNumGroups] = useState(0);
     const [options, setOptions] = useState([]);
 
+    const animatedComponents = makeAnimated();
+
     const toggle = (tab) => {
         if (activeTab !== tab) setActiveTab(tab);
     };
@@ -59,7 +63,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                 console.log(err);
             });
     };
-    
+
     const loadSubclassNum = () => {
         axios({
             method: "GET",
@@ -94,18 +98,20 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
 
     const handleTimetableCreation = async () => {
         setModal(() => false);
-        await axios({
-            method: "POST",
-            url: `${process.env.REACT_APP_API}/timetable/create`,
-            data: {
-                class_id: id,
-                group_number: groups,
-                start_time: startTime,
-                end_time: endTime,
-                day: day,
-                type: type,
-            },
-        });
+        for (var i = 0; i < groups.length; i++) {
+            await axios({
+                method: "POST",
+                url: `${process.env.REACT_APP_API}/timetable/create`,
+                data: {
+                    class_id: id,
+                    group_number: groups[i],
+                    start_time: startTime,
+                    end_time: endTime,
+                    day: day,
+                    type: type,
+                },
+            });
+        }
         loadTimetable(user);
     };
 
@@ -126,11 +132,16 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                         </NavItem>
                         <NavItem>
                             <NavLink onClick={() => toggle("2")}>
-                                Assignments
+                                Resources
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink onClick={() => toggle("3")}>
+                                Assignments
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink onClick={() => toggle("4")}>
                                 Quizzes
                             </NavLink>
                         </NavItem>
@@ -230,6 +241,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                         options={options}
                                         className="basic-multi-select"
                                         classNamePrefix="select"
+                                        components = {animatedComponents}
                                         onChange={(selectedOption) => {
                                             SetGroups(() =>
                                                 selectedOption.map((ob) =>
@@ -340,12 +352,17 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     </TabPane>
                     <TabPane tabId="2">
                         <div class="col-11 Timetable__timetable-component">
-                            <Assignments />
+                            Resources
                         </div>
                     </TabPane>
                     <TabPane tabId="3">
                         <div class="col-11 Timetable__timetable-component">
-                            Quizes
+                            <Assignments />
+                        </div>
+                    </TabPane>
+                    <TabPane tabId="4">
+                        <div class="col-11 Timetable__timetable-component">
+                            <Quizzes/>
                         </div>
                     </TabPane>
                 </TabContent>
