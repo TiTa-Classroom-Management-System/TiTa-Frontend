@@ -28,7 +28,6 @@ import Assignments from "../Tabs/teacher/assignments/Assignments";
 import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
 
 import "../../pages/Timetable/Timetable.css";
-import "./NavTab.css";
 
 const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     const { user } = useSelector((state) => ({ ...state }));
