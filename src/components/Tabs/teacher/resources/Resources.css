@@ -70,20 +70,20 @@
   text-align: center;
 }
 
-.ResourceList__object
+.ResourceList_object
 {
   text-align: center;
   border-bottom: solid grey;
 }
 
-.ResourceList__object div
+.ResourceList_object div
 {
   padding: 1%;
 }
 
 .Resources__view-resource
 {
-  width: 100%;
+  width: 60%;
   background-color: #f19b84;
   padding: 2%;
   text-align: center;

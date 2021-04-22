@@ -13,7 +13,21 @@ const ResourceList = () =>
 
     const loadResources=()=>
     {
-        console.log('aa')
+        axios(
+            {
+                method: "GET",
+                url: `${process.env.REACT_APP_API}/teachers/resource/${params.id}`
+            }
+        )
+        .then((res) =>
+        {
+            setResources(res.data);
+            console.log(res.data);
+        })
+        .catch((err) =>
+        {
+            console.log(err);
+        })
     }
 
     useEffect(()=>
@@ -31,8 +45,8 @@ const ResourceList = () =>
 
             {(resources && resources.length>0) ? (resources.map((r)=>(
                 <div className="ResourceList_object row">
-                    <div className="col-lg-6">{r.resource_name}</div>
-                    <div className="col-lg-6"><a href={r.resource_link} target="_blank" rel="noreferrer"><button className="Resources__view-resource">View Resource</button></a></div>
+                    <div className="col-lg-6">{r.name}</div>
+                    <div className="col-lg-6"><a href={r.link} target="_blank" rel="noreferrer"><button className="Resources__view-resource">View Resource</button></a></div>
                 </div>
             ))):(
                 <>

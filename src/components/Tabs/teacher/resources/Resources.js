@@ -51,8 +51,8 @@ const Resources=()=>{
     const createFormData = () =>
     {
         let formData = new FormData();
-        formData.append("res_file", resource[0]);
-        formData.append("resName", resname);
+        formData.append("file", resource[0]);
+        formData.append("resource_name", resname);
         formData.append("subGroups", grps);
         formData.append("classroom_id", params.id);
         return formData;
@@ -60,7 +60,21 @@ const Resources=()=>{
 
     const handleResSubmit = () =>
     {
-        console.log('submit');
+        setLoading(true);
+        axios({
+            method: "POST",
+            url: `${process.env.REACT_APP_API}/resource/create`,
+            data: createFormData()
+        })
+        .then((res) => {
+            setLoading(false);
+            setResource(null);
+            console.log(res);
+        })
+        .catch((err) => {
+            setLoading(false);
+            console.log(err);
+        });
     }
 
     return (
@@ -70,7 +84,7 @@ const Resources=()=>{
             </h2>
             <p>Create and view resources.</p>
     
-            <button id="Resources__create-resource" onClick={toggleResModal}>
+            <button id="Resources__create-res" onClick={toggleResModal}>
                 Create New Resource
             </button>
             <Modal isOpen={resmodal} toggle={toggleResModal}>
