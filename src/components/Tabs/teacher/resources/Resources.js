@@ -13,6 +13,8 @@ import {
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
+import ResourceList from "./ResourceList";
+import "./Resources.css";
 
 import logo from "../../../Navbar/logo.png";
 
@@ -130,7 +132,7 @@ const Resources=()=>{
                 )}
             </Modal>
             <hr />
-            ResourceList
+            <ResourceList/>
         </div>
       );
 }
