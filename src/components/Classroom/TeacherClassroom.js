@@ -62,7 +62,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                 console.log(err);
             });
     };
-    
+
     const loadSubclassNum = () => {
         axios({
             method: "GET",
@@ -97,18 +97,20 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
 
     const handleTimetableCreation = async () => {
         setModal(() => false);
-        await axios({
-            method: "POST",
-            url: `${process.env.REACT_APP_API}/timetable/create`,
-            data: {
-                class_id: id,
-                group_number: groups,
-                start_time: startTime,
-                end_time: endTime,
-                day: day,
-                type: type,
-            },
-        });
+        for (var i = 0; i < groups.length; i++) {
+            await axios({
+                method: "POST",
+                url: `${process.env.REACT_APP_API}/timetable/create`,
+                data: {
+                    class_id: id,
+                    group_number: groups[i],
+                    start_time: startTime,
+                    end_time: endTime,
+                    day: day,
+                    type: type,
+                },
+            });
+        }
         loadTimetable(user);
     };
 
