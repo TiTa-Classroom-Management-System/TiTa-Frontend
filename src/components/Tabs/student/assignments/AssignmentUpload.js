@@ -7,7 +7,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
 import "./Assignments.css";
 import logo from "../../../Navbar/logo.png";
 
-const AssignmentUpload = ({ assign }) =>
+const AssignmentUpload = ({ assign, loadAssignments }) =>
 {
     const { user } = useSelector((state) => ({ ...state }));
     const [assmodal, setAssmodal] = useState(false);
@@ -63,13 +63,14 @@ const AssignmentUpload = ({ assign }) =>
             setLoading(false);
             setUpload(!uploaded);
             setSolution(res.data.assignment_link);
-            console.log(res.data);
+            toggleAssModal();
         })
         .catch((err) =>
         {
             setLoading(false);
             console.log(err);
         })
+        loadAssignments(user);
     }
 
     return (

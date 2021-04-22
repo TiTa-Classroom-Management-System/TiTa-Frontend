@@ -134,6 +134,13 @@
   text-align: center;
 }
 
+.Assignments__loading .tita-load
+{
+  height: 150px;
+  width: 150px;
+  margin-bottom: 50px;
+}
+
 .Assignment_Solved
 {
   margin-left: 7.5%;

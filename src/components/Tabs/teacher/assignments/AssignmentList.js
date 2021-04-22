@@ -6,29 +6,8 @@ import { Link } from "react-router-dom";
 
 import "./Assignments.css";
 
-const AssignmentList = () =>
+const AssignmentList = ({ loadAssignments, assignments, params }) =>
 {
-    const params = useParams();
-
-    const [assignments, setAssignments] = useState([]);
-    const loadAssignments = () =>
-    {
-        axios(
-            {
-                method: "GET",
-                url: `${process.env.REACT_APP_API}/teachers/assignment/${params.id}`
-            }
-        )
-        .then((res) =>
-        {
-            setAssignments(res.data);
-            console.log(res.data);
-        })
-        .catch((err) =>
-        {
-            console.log(err);
-        })
-    }
 
     useEffect(() =>
     {

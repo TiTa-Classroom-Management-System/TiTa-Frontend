@@ -16,11 +16,12 @@ import makeAnimated from "react-select/animated";
 import AssignmentList from "./AssignmentList";
 
 import "./Assignments.css";
-import logo from "../../../Navbar/logo.png";
+import TiTa_Load from "./TiTa_Load.gif";
 
 const Assignments = () => {
   const [assmodal, setAssmodal] = useState(false);
   const [assignment, setAssignment] = useState(null);
+  const [assignments, setAssignments] = useState([]);
   const [assname, setAssname] = useState("");
   const [grps, setGrps] = useState([]);
   const [deadline, setDeadline] = useState(null);
@@ -75,6 +76,25 @@ const Assignments = () => {
     return formData;
   }
 
+  const loadAssignments = () =>
+  {
+      axios(
+          {
+              method: "GET",
+              url: `${process.env.REACT_APP_API}/teachers/assignment/${params.id}`
+          }
+      )
+      .then((res) =>
+      {
+          setAssignments(res.data);
+          console.log(res.data);
+      })
+      .catch((err) =>
+      {
+          console.log(err);
+      })
+  }
+
   const handleAssSubmit = async () => {
     setLoading(true);
     await axios({
@@ -85,12 +105,13 @@ const Assignments = () => {
       .then((res) => {
         setLoading(false);
         setAssignment(null);
-        console.log(res);
+        toggleAssModal();
       })
       .catch((err) => {
         setLoading(false);
         console.log(err);
       });
+      loadAssignments();
   };
 
   return (
@@ -176,7 +197,7 @@ const Assignments = () => {
         ) : (
           <ModalBody>
           <div className = "Assignments__loading">
-            <img className = "logo-image2" src = {logo} alt = "tita-logo" />
+            <img className = "tita-load" src = {TiTa_Load} alt = "tita-logo" />
             <h5>Uploading assignment...</h5>
           </div>
           </ModalBody>
@@ -184,7 +205,7 @@ const Assignments = () => {
         
       </Modal>
       <hr />
-      <AssignmentList />
+      <AssignmentList loadAssignments = {loadAssignments} assignments = {assignments} params = {params} />
     </div>
   );
 }
