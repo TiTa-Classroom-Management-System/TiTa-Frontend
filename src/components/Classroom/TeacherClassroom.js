@@ -25,6 +25,7 @@ import makeAnimated from "react-select/animated";
 import Timetable from "../Timetable/Timetable";
 import TeacherNav from "../Navbar/teacher/teacherNav";
 import Assignments from "../Tabs/teacher/assignments/Assignments";
+import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
 
 import "../../pages/Timetable/Timetable.css";
 
@@ -361,7 +362,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     </TabPane>
                     <TabPane tabId="4">
                         <div class="col-11 Timetable__timetable-component">
-                            Quizes
+                            <Quizzes/>
                         </div>
                     </TabPane>
                 </TabContent>
