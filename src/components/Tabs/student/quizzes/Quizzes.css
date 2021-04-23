@@ -1,0 +1,33 @@
+#QuizList__header {
+  text-align: center;
+}
+
+.QuizList_object {
+  text-align: center;
+  border-bottom: solid grey;
+}
+
+.QuizList_object div {
+  padding: 1%;
+}
+
+.Quizzes__view-quiz {
+  width: 100%;
+  background-color: #f19b84;
+  padding: 2%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Quizzes__view-quiz:hover {
+  box-shadow: none;
+}
+
+.Quizzes__view-quiz a {
+  text-decoration: none;
+  color: white;
+}

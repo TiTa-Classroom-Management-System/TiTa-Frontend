@@ -38,7 +38,7 @@ const AssignmentUpload = ({ assign, loadAssignments }) =>
 
     const form=() => {
         let formData = new FormData();
-        formData.append("assignment_file", assignment ? assignment[0] : "");
+        formData.append("file", assignment ? assignment[0] : "");
         formData.append("assignment_id", assign.assignment_id);
         formData.append("classroom_id", params.id);
         formData.append("submitted_at", submitted_at);

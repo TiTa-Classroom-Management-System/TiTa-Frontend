@@ -8,6 +8,7 @@ import axios from "axios";
 import Timetable from "../../components/Timetable/Timetable";
 import StudentNav from "../../components/Navbar/student/studentnav";
 import Assignments from "../Tabs/student/assignments/Assignments"
+import QuizList from "../Tabs/student/quizzes/QuizList"
 
 import "../../pages/Timetable/Timetable.css";
 
@@ -79,7 +80,7 @@ const StudentClassroom = ({ dispatch, tt }) => {
           <div class="col-11 Timetable__timetable-component"><Assignments /></div>
         </TabPane>
         <TabPane tabId="4">
-          <div class="col-11 Timetable__timetable-component">Quizzes</div>
+          <div class="col-11 Timetable__timetable-component"><QuizList /></div>
         </TabPane>
       </TabContent>
     </div>
