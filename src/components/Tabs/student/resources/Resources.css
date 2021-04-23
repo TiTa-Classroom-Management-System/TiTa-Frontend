@@ -1,0 +1,33 @@
+#ResourceList__header {
+  text-align: center;
+}
+
+.ResourceList_object {
+  text-align: center;
+  border-bottom: solid grey;
+}
+
+.ResourceList_object div {
+  padding: 1%;
+}
+
+.Resources__view-resource {
+  width: 60%;
+  background-color: #f19b84;
+  padding: 1%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Resources__view-resource:hover {
+  box-shadow: none;
+}
+
+.Resources__view-resource a {
+  text-decoration: none;
+  color: white;
+}
