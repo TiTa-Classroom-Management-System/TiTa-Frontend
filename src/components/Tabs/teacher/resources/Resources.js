@@ -140,7 +140,7 @@ const Resources=()=>{
                     <ModalBody>
                         <div className = "Resources__loading">
                             <img className = "logo-image2" src = {logo} alt = "tita-logo" />
-                            <h5>Uploading resorce...</h5>
+                            <h5>Uploading resource...</h5>
                         </div>
                     </ModalBody>
                 )}
