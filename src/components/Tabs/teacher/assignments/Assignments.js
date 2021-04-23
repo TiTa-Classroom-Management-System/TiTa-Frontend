@@ -65,7 +65,7 @@ const Assignments = () => {
   const createFormData = () =>
   {
     let formData = new FormData();
-    formData.append("assignment_file", assignment[0]);
+    formData.append("file", assignment[0]);
     formData.append("assignment_name", assname);
     formData.append("subGroups", grps);
     formData.append("classroom_id", params.id);

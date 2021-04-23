@@ -64,6 +64,7 @@ const Assignments = () =>
                 )   
             ) : (
                 <>
+                <hr/>
                 <p className="text-center">Sorry, you haven't received any assignments for this class yet.</p>
                 </>
             )}
