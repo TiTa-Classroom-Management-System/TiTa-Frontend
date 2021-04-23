@@ -11,6 +11,7 @@ import StudentClassroom from "./components/Classroom/StudentClassroom";
 import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
 import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";
 import AssignmentsSolved from "./components/Tabs/teacher/assignments/AssignmentsSolved";
+import ToDoList from "./pages/ToDo/ToDoList";
 import PrivateRoute, {
     TeacherRoute,
     StudentRoute,
@@ -51,6 +52,7 @@ const App = ({ user }) => {
                     path="/students/classrooms/:id"
                     component={() => <StudentClassroom />}
                 />
+                <Route strict path = "/todolist" component = {() => <ToDoList />}/>
                 <Redirect exact to="/studtimetable" />
             </Switch>
         );

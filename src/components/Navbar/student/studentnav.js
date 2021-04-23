@@ -92,9 +92,9 @@ const StudentNav = ({history}) => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/todolist">
               <i className="fa fa-folder fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Assignments</span>
+              <span className="link-text"> To-Do List</span>
             </Link>
           </NavItem>
           <NavItem onClick={toggleModal}>

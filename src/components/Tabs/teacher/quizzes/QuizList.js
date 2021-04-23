@@ -19,11 +19,6 @@ const QuizList = ({ loadQuizzes, quizzes }) =>
         return `${this_date.split("-")[2]}-${this_date.split("-")[1]}-${this_date.split("-")[0]} ${this_time.slice(0, 8)}`;
     }
 
-    const getClickableLink = (link) => 
-    {
-        return link.startsWith("http://") || link.startsWith("https://") ? link : `https://${link}`;
-    };
-
     return(
         <div className="QuizList_list">
             <div id="QuizList__header" className="row">
@@ -38,7 +33,7 @@ const QuizList = ({ loadQuizzes, quizzes }) =>
                     <div className="col-lg-3">{q.quiz_name}</div>
                     <div className="col-lg-3">{parseDates(q.start_time)}</div>
                     <div className="col-lg-3">{parseDates(q.end_time)}</div>
-                    <div className="col-lg-3"><a href={getClickableLink(q.quiz_link)} target="_blank" rel="noreferrer"><button className="Quizzes__view-quiz">View Quiz</button></a></div>
+                    <div className="col-lg-3"><a href = {`//${q.quiz_link}`} target = "_blank" rel = "noreferrer"><button className = "Quizzes__view-quiz">View Quiz</button></a></div>
                 </div>
             ))):(
                 <>

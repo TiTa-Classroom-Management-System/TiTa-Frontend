@@ -1,0 +1,94 @@
+.Todolist
+{
+    margin-left: 15%;
+}
+
+.Todolist h4
+{
+    margin-bottom: 5%;
+}
+
+.Todolist__assignments-item, .Todolist__quizzes-item
+{
+    margin-bottom: 5%;
+}
+
+.Todolist__assignments-item .card, .Todolist__quizzes-item .card
+{
+    width: 90%;
+    height: 10vh;
+}
+
+.Todolist__assignments-item .card .card-body, .Todolist__quizzes-item .card .card-body
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+.Todolist__assignments-item .card .card-body i
+{
+    font-size: x-large;
+    color: #fd7b7b;
+    cursor: pointer;
+}
+
+.Todolist__assignments-item-button
+{
+    width: 90%;
+    background-color: #6673fd;
+    text-align: left;
+    padding: 2%;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.Todolist__assignments-item-button:hover
+{
+    background-color: #fd7b7b;
+    transition: 0.5s;
+}
+
+.Todolist__assignments-item-button #due-ass, #comp-ass, #miss-ass
+{
+    float: right;
+    font-size: x-large;
+}
+
+.Todolist__assignments-item-button #due-ass:hover, #comp-ass:hover, #miss-ass:hover
+{
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.Todolist__quizzes-item-button
+{
+    width: 90%;
+    background-color: #fd7b7b;
+    text-align: left;
+    padding: 2%;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.Todolist__quizzes-item .card .card-body i
+{
+    font-size: x-large;
+    color: #6673fd;
+    cursor: pointer;
+}
+
+.Todolist__quizzes-item-button #sched-quiz, #past-quiz
+{
+    float: right;
+    font-size: x-large;
+}
+
+.Todolist__quizzes-item-button #sched-quiz:hover, #past-quiz:hover
+{
+    transform: rotate(360deg);
+    transition: 1s;
+}
+

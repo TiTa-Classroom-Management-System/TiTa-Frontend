@@ -68,10 +68,12 @@ const Quizzes = () => {
     console.log(e.target.value);
   };
 
+  const getClickableLink = (link) => link.startsWith("http://") || link.startsWith("https://") ? link : `https://${link}`;
+
   const createFormData = () =>
   {
     let formData = new FormData();
-		formData.append("quizLink", quizlink);
+		formData.append("quizLink", getClickableLink(quizlink));
     formData.append("quizName", quizname);
     formData.append("subGroups", grps);
     formData.append("classroom_id", params.id);
