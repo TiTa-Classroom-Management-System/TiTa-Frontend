@@ -26,6 +26,7 @@ import Timetable from "../Timetable/Timetable";
 import TeacherNav from "../Navbar/teacher/teacherNav";
 import Assignments from "../Tabs/teacher/assignments/Assignments";
 import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
+import Resources from "../Tabs/teacher/resources/Resources";
 
 import "../../pages/Timetable/Timetable.css";
 
@@ -352,7 +353,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     </TabPane>
                     <TabPane tabId="2">
                         <div class="col-11 Timetable__timetable-component">
-                            Resources
+                            <Resources/>
                         </div>
                     </TabPane>
                     <TabPane tabId="3">
