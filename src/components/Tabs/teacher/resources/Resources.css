@@ -78,9 +78,23 @@
 .ResourceList_object div {
   padding: 1%;
 }
+.Resources_Card{
+  margin-bottom: 1%;
+}
+.Resources_CardHeader:hover{
+  background-color: #6673fd;
+  transition: 0.5s;
+  color: whitesmoke;
+}
+.Resources_Description{
+  padding: 1.5%;
+}
+.Resources_Link{
+  padding: 0% 1.5%;
+}
 
 .Resources__view-resource {
-  width: 60%;
+  width: 20%;
   background-color: #f19b84;
   padding: 1%;
   text-align: center;
@@ -98,6 +112,14 @@
 .Resources__view-resource a {
   text-decoration: none;
   color: white;
+}
+
+.Resources_Name{
+  float: left;
+}
+
+.Resources_Date{
+  float: right;
 }
 
 .Resources__loading {

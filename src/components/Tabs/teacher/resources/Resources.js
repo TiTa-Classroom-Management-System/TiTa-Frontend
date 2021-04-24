@@ -22,6 +22,7 @@ const Resources=()=>{
     const [resmodal,setResmodal]=useState(false);
     const [resource,setResource]=useState(null);
     const [resname,setResname]=useState("");
+    const [resdesc,setResDesc]=useState("");
     const [grps,setGrps]=useState([]);
     const [loading,setLoading]=useState(false);
 
@@ -30,6 +31,7 @@ const Resources=()=>{
 
     const animatedComponents=makeAnimated();
     const num_grps=classrooms.find((c) => c.classroom_id === params.id).num_groups;
+    const today=new Date();
     const options=[];
     Array.from(Array(num_grps).keys()).forEach((v) =>
     {
@@ -54,7 +56,9 @@ const Resources=()=>{
         formData.append("file", resource[0]);
         formData.append("resource_name", resname);
         formData.append("subGroups", grps);
+        formData.append("description", resdesc)
         formData.append("classroom_id", params.id);
+        formData.append("uploaded_at",`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`)
         return formData;
     }
 
@@ -113,6 +117,8 @@ const Resources=()=>{
                                 onChange={(e) => setResname(e.target.value)}
                             ></Input>
                             <hr />     
+                            <Input type="textarea" name="desc" id="desc" placeholder="Enter Description" onChange={(e)=>setResDesc(e.target.value)}/>
+                            <hr/>
                             {/* Add Group Numbers from State */}
                             <h6>Choose Groups:</h6>
                             <Select
