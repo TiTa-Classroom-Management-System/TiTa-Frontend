@@ -59,7 +59,7 @@ const Assignments = () =>
                     <div className = "col-lg-3">{a.assignment_name}</div>
                     <div className = "col-lg-2">{parseDates(a.submission_date)}</div>
                     <div className = "col-lg-3"><a href={a.assignment_link} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" >View Assignment</button></a></div>
-                    {a.solution_link ? (<div className = "col-lg-3"><a href={a.solution_link} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" >View Your Solution {(a.submission_date > a.submitted_at) ? (<i class="fas fa-clock Assignment_Solved__on-time"></i>) : (<i class="fas fa-clock Assignment_Solved__late"></i>)}</button></a></div>) : (<AssignmentUpload assign = {a}/>)}
+                    {a.solution_link ? (<div className = "col-lg-3"><a href={a.solution_link} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" >View Your Solution {(a.submission_date > a.submitted_at) ? (<i class="fas fa-clock Assignment_Solved__on-time"></i>) : (<i class="fas fa-clock Assignment_Solved__late"></i>)}</button></a></div>) : (<AssignmentUpload assign = {a} loadAssignments = {loadAssignments} />)}
                 </div>
                 )   
             ) : (

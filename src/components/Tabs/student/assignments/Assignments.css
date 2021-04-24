@@ -73,17 +73,17 @@
 
 .Assignment_Solved__on-time {
   color: #9ede73;
-  font-size: large;
+  font-size: 15px;
   background-color: white;
-  padding: 2px;
+  padding: 3px;
   border-radius: 20px;
 }
 
 .Assignment_Solved__late {
   color: #fb3640;
-  font-size: large;
+  font-size: 15px;
   background-color: white;
-  padding: 2px;
+  padding: 3px;
   border-radius: 20px;
 }
 

@@ -5,30 +5,8 @@ import { useParams } from "react-router";
 
 import "./Quizzes.css";
 
-const QuizList = () =>
+const QuizList = ({ loadQuizzes, quizzes }) =>
 {
-    const params=useParams();
-
-    const [quizzes, setQuizzes]=useState([]);
-
-    const loadQuizzes=()=>
-    {
-
-        axios(
-            {
-                metod:"GET",
-                url:`${process.env.REACT_APP_API}/teachers/quiz/${params.id}`
-            }
-        )
-        .then((res)=>{
-            setQuizzes(res.data);
-            console.log(res.data);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-    }
-
     useEffect(()=>
     {
         loadQuizzes();
@@ -40,11 +18,6 @@ const QuizList = () =>
         const this_time=date.split("T")[1];
         return `${this_date.split("-")[2]}-${this_date.split("-")[1]}-${this_date.split("-")[0]} ${this_time.slice(0, 8)}`;
     }
-
-    const getClickableLink = (link) => 
-    {
-        return link.startsWith("http://") || link.startsWith("https://") ? link : `https://${link}`;
-    };
 
     return(
         <div className="QuizList_list">
@@ -60,7 +33,7 @@ const QuizList = () =>
                     <div className="col-lg-3">{q.quiz_name}</div>
                     <div className="col-lg-3">{parseDates(q.start_time)}</div>
                     <div className="col-lg-3">{parseDates(q.end_time)}</div>
-                    <div className="col-lg-3"><a href={getClickableLink(q.quiz_link)} target="_blank" rel="noreferrer"><button className="Quizzes__view-quiz">View Quiz</button></a></div>
+                    <div className="col-lg-3"><a href = {`//${q.quiz_link}`} target = "_blank" rel = "noreferrer"><button className = "Quizzes__view-quiz">View Quiz</button></a></div>
                 </div>
             ))):(
                 <>
