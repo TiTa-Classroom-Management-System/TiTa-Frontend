@@ -47,26 +47,6 @@ const ResourceList = () =>
 
     return(
         <div className="ResourceList_list">
-             {/* <div id="ResourceList__header" className="row">
-                 <div className="col-lg-3"><h5>Resource Name</h5></div>
-                 <div className="col-lg-3"><h5>Uploaded At</h5></div>
-                 <div className="col-lg-3"><h5>Description</h5></div>
-                 <div className="col-lg-3"><h5>Resource Link</h5></div>
-             </div
-             {(resources && resources.length>0) ? (resources.map((r)=>(
-                 <div className="ResourceList_object row">
-                     <div className="col-lg-3">{r.name}</div>
-                     <div className="col-lg-3">{parseDates(r.uploaded_at)}</div>
-                     <div className="col-lg-3">{r.description}</div>
-                     <div className="col-lg-3"><a href={r.link} target="_blank" rel="noreferrer"><button className="Resources__view-resource">View Resource</button></a></div>
-              
-                 </div>
-             ))):(
-                 <>
-                     <hr/>
-                     <p className="text-center">Sorry, you haven't created any Resources for this class yet.</p>
-                 </>
-             )} */}
              {(resources && resources.length>0) ? (resources.map((r)=>(
                 <Card className="Resources_Card">
                 <CardHeader className="Resources_CardHeader" onClick={() => {r.id===toggleQuestion ? setToggequestion():setToggequestion(r.id)} }>
@@ -83,8 +63,7 @@ const ResourceList = () =>
                  
              ))):(
                  <>
-                     <hr/>
-                     <p className="text-center">Sorry, you haven't created any Resources for this class yet.</p>
+                     <p className="text-center">Sorry, you haven't received any Resources for this class yet.</p>
                  </>
              )}
             <hr/>

@@ -1,5 +1,5 @@
 .row {
-  margin-right: 0px
+  margin-right: 0px;
 }
 .profile-box {
   align-items: right;
@@ -82,7 +82,7 @@
 
 .logout-btn {
   padding: 7px 10px;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   background-color: #6673fd;
   color: #f5f5ff;
   border: none;
