@@ -52,7 +52,7 @@ const App = ({ user }) => {
                     path="/students/classrooms/:id"
                     component={() => <StudentClassroom />}
                 />
-                <Route strict path = "/todolist" component = {() => <ToDoList />}/>
+                <Route strict path="/todolist" component={() => <ToDoList />} />
                 <Redirect exact to="/studtimetable" />
             </Switch>
         );
@@ -61,38 +61,41 @@ const App = ({ user }) => {
         console.log(user.type);
         console.log(user);
         routes = (
-            <Switch>
-                <Route strict path="/login" component={() => <Login />} />
-                <Route
-                    strict
-                    path="/teacher"
-                    component={() => <TeacherNav />}
-                />
-                <Route
-                    strict
-                    path="/teachtimetable"
-                    component={() => <TeachTimetablePage />}
-                />
+            <div>
+                <TeacherNav />
+                <Switch>
+                    <Route strict path="/login" component={() => <Login />} />
+                    <Route
+                        strict
+                        path="/teacher"
+                        component={() => <TeacherNav />}
+                    />
+                    <Route
+                        strict
+                        path="/teachtimetable"
+                        component={() => <TeachTimetablePage />}
+                    />
 
-                <Route
-                    strict
-                    path="/teacherclassrooms"
-                    component={() => <TeacherClassrooms />}
-                />
+                    <Route
+                        strict
+                        path="/teacherclassrooms"
+                        component={() => <TeacherClassrooms />}
+                    />
 
-                <Route
-                    strict
-                    path="/teachers/classrooms/:id"
-                    component={() => <TeacherClassroom />}
-                />
+                    <Route
+                        strict
+                        path="/teachers/classrooms/:id"
+                        component={() => <TeacherClassroom />}
+                    />
 
-                <Route
-                    strict
-                    path="/teachers/:class_id/assignments/:assignment_id"
-                    component={() => <AssignmentsSolved />}
-                />
-                <Redirect exact to="/teachtimetable" />
-            </Switch>
+                    <Route
+                        strict
+                        path="/teachers/:class_id/assignments/:assignment_id"
+                        component={() => <AssignmentsSolved />}
+                    />
+                    <Redirect exact to="/teachtimetable" />
+                </Switch>
+            </div>
         );
     }
     return <div className="App">{routes}</div>;
