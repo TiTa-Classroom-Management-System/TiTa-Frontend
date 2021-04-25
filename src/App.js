@@ -30,31 +30,33 @@ const App = ({ user }) => {
     } else if (user.type === "student") {
         console.log(user.type);
         routes = (
-            <Switch>
-                <Route strict path="/login" component={() => <Login />} />
-                <Route
-                    strict
-                    path="/student"
-                    component={() => <StudentNav />}
-                />
-                <Route
-                    strict
-                    path="/studtimetable"
-                    component={() => <StudTimetablePage />}
-                />
-                <Route
-                    strict
-                    path="/studentclassrooms"
-                    component={() => <StudentClassrooms />}
-                />
-                <Route
-                    strict
-                    path="/students/classrooms/:id"
-                    component={() => <StudentClassroom />}
-                />
-                <Route strict path="/todolist" component={() => <ToDoList />} />
-                <Redirect exact to="/studtimetable" />
-            </Switch>
+            <div>
+                <StudentNav />
+                <Switch>
+                    <Route strict path="/login" component={() => <Login />} />
+                    <Route
+                        strict
+                        path="/studtimetable"
+                        component={() => <StudTimetablePage />}
+                    />
+                    <Route
+                        strict
+                        path="/studentclassrooms"
+                        component={() => <StudentClassrooms />}
+                    />
+                    <Route
+                        strict
+                        path="/students/classrooms/:id"
+                        component={() => <StudentClassroom />}
+                    />
+                    <Route
+                        strict
+                        path="/todolist"
+                        component={() => <ToDoList />}
+                    />
+                    <Redirect exact to="/studtimetable" />
+                </Switch>
+            </div>
         );
     } else if (user.type === "teacher") {
         console.log("hello");
