@@ -6,32 +6,9 @@ import { Collapse, CardBody, Card, CardHeader} from 'reactstrap';
 
 import "./Resources.css";
 
-const ResourceList = () =>
+const ResourceList = ({loadResources, resources}) =>
 {
-    const params=useParams();
-
-    const [resources, setResources]=useState([]);
     const [toggleQuestion, setToggequestion] = useState();
-
-    const loadResources=()=>
-    {
-        axios(
-            {
-                method: "GET",
-                url: `${process.env.REACT_APP_API}/teachers/resource/${params.id}`
-            }
-        )
-        .then((res) =>
-        {
-            setResources(res.data);
-            console.log(res.data);
-        })
-        .catch((err) =>
-        {
-            console.log(err);
-        })
-    }
-
     useEffect(()=>
     {
         loadResources();
@@ -63,7 +40,7 @@ const ResourceList = () =>
                  
              ))):(
                  <>
-                     <p className="text-center">Sorry, you haven't received any Resources for this class yet.</p>
+                     <p className="text-center">Sorry, you haven't created any Resources for this class yet.</p>
                  </>
              )}
             <hr/>

@@ -63,7 +63,7 @@ const ResourceList = () =>
                  
              ))):(
                  <>
-                     <p className="text-center">Sorry, you haven't created any Resources for this class yet.</p>
+                     <p className="text-center">Sorry, you haven't received any Resources for this class yet.</p>
                  </>
              )}
             <hr/>
