@@ -1,5 +1,9 @@
 .row {
+<<<<<<< HEAD
     margin-right: 0px;
+=======
+  margin-right: 0px;
+>>>>>>> b02cfbff0b7c2c5ab5a08723406069d9cd335d1d
 }
 .profile-box {
     align-items: right;
@@ -81,12 +85,12 @@
 }
 
 .logout-btn {
-    padding: 7px 10px;
-    border-radius: 0.25rem;
-    background-color: #6673fd;
-    color: #f5f5ff;
-    border: none;
-    width: 130%;
+  padding: 7px 10px;
+  border-radius: 0.25rem;
+  background-color: #6673fd;
+  color: #f5f5ff;
+  border: none;
+  width: 130%;
 }
 .logout-btn:hover {
     background-color: #f19b84;
