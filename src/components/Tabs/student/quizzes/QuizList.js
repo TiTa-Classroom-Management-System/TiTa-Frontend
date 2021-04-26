@@ -37,7 +37,6 @@ const QuizList = () =>
         )
         .then((res)=>{
             setQuizzes(res.data);
-            console.log(quizzes);
         })
         .catch((err)=>{
             console.log(err);
@@ -55,7 +54,6 @@ const QuizList = () =>
         .then((res) =>
         {
             setThisquizstat(res.data);
-            console.log(thisquizstat);
         })
         .catch((err) =>
         {
@@ -175,7 +173,7 @@ const QuizList = () =>
 
                     <Modal className = "QuizList__modal" toggle = {toggleResModal} isOpen = {resmodal}>
                         <ModalHeader>
-                            Analysis for: {q.quiz_name}
+                            Analysis
                         </ModalHeader>
                         <ModalBody>
                         <div class = "row QuizList__chart-row-1">

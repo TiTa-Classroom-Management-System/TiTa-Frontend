@@ -74,6 +74,7 @@ const QuizList = ({ loadQuizzes, quizzes }) =>
         {
             console.log(err);
         });
+        setResmodal((prev) => (!prev));
     }
 
     return(
@@ -108,7 +109,7 @@ const QuizList = ({ loadQuizzes, quizzes }) =>
                             />
                         </ModalBody>
                         <ModalFooter>
-                            <button onClick = {handleResultUpload}>Submit</button>
+                            <button className = "Quizzes__view-quiz" onClick = {handleResultUpload}>Submit</button>
                         </ModalFooter>
                     </Modal>
                 </div>
