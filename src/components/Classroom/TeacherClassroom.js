@@ -23,7 +23,6 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
 import Timetable from "../Timetable/Timetable";
-import TeacherNav from "../Navbar/teacher/teacherNav";
 import Assignments from "../Tabs/teacher/assignments/Assignments";
 import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
 import Resources from "../Tabs/teacher/resources/Resources";
@@ -121,9 +120,6 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     return (
         <div>
             <div class="row">
-                <div class="col-12">
-                    <TeacherNav />
-                </div>
                 <div class="col-11 Timetable__timetable-component">
                     <Nav tabs>
                         <NavItem>
@@ -242,7 +238,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                                         options={options}
                                         className="basic-multi-select"
                                         classNamePrefix="select"
-                                        components = {animatedComponents}
+                                        components={animatedComponents}
                                         onChange={(selectedOption) => {
                                             SetGroups(() =>
                                                 selectedOption.map((ob) =>
@@ -353,7 +349,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     </TabPane>
                     <TabPane tabId="2">
                         <div class="col-11 Timetable__timetable-component">
-                            <Resources/>
+                            <Resources />
                         </div>
                     </TabPane>
                     <TabPane tabId="3">
@@ -363,7 +359,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     </TabPane>
                     <TabPane tabId="4">
                         <div class="col-11 Timetable__timetable-component">
-                            <Quizzes/>
+                            <Quizzes />
                         </div>
                     </TabPane>
                 </TabContent>
