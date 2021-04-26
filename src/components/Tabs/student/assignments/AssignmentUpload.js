@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
 
 import "./Assignments.css";
-import logo from "../../../Navbar/logo.png";
+import TiTa_Load from "./TiTa_Load.gif";
 
 const AssignmentUpload = ({ assign, loadAssignments }) =>
 {
@@ -100,7 +100,7 @@ const AssignmentUpload = ({ assign, loadAssignments }) =>
                 ) : (
                     <ModalBody>
                         <div className = "Assignments__loading">
-                            <img className = "logo-image2" src = {logo} alt = "tita-logo" />
+                            <img className = "tita-load" src = {TiTa_Load} alt = "tita-logo" />
                             <h5>Uploading Solution...</h5>
                         </div>
                     </ModalBody>

@@ -78,18 +78,18 @@
 .ResourceList_object div {
   padding: 1%;
 }
-.Resources_Card{
+.Resources_Card {
   margin-bottom: 1%;
 }
-.Resources_CardHeader:hover{
+.Resources_CardHeader:hover {
   background-color: #6673fd;
   transition: 0.5s;
   color: whitesmoke;
 }
-.Resources_Description{
+.Resources_Description {
   padding: 1.5%;
 }
-.Resources_Link{
+.Resources_Link {
   padding: 0% 1.5%;
 }
 
@@ -114,14 +114,20 @@
   color: white;
 }
 
-.Resources_Name{
+.Resources_Name {
   float: left;
 }
 
-.Resources_Date{
+.Resources_Date {
   float: right;
 }
 
 .Resources__loading {
   text-align: center;
+}
+
+.Resources__loading .tita-load {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 50px;
 }
