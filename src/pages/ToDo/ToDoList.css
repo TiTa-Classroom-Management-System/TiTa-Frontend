@@ -73,6 +73,12 @@
     border-radius: 5px;
 }
 
+.Todolist__quizzes-item-button:hover
+{
+    background-color: #6673fd;
+    transition: 0.5s;
+}
+
 .Todolist__quizzes-item .card .card-body i
 {
     font-size: x-large;
