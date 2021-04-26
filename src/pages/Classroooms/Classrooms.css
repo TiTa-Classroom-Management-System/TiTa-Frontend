@@ -1,16 +1,22 @@
 .heading {
-  margin-left: 15vw;
-  margin-bottom: 5vh;
+    margin-left: 15vw;
+    margin-bottom: 5vh;
 }
 
 .cards-row {
-  margin-left: 15vw;
-  display: flex;
-  flex-direction: row;
-  margin-right: 5vw;
-  width: 100%;
+    margin-left: 15vw;
+    display: flex;
+    flex-direction: row;
+    margin-right: 5vw;
+    width: 100%;
 }
 
 .class-loading {
-  margin-left: 12rem;
+    margin-left: 12rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .cards-row {
+        margin-left: "2px !important";
+    }
 }
