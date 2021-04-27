@@ -14,9 +14,9 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
 import ResourceList from "./ResourceList";
-import "./Resources.css";
 
-import logo from "../../../Navbar/logo.png";
+import "./Resources.css";
+import TiTa_Load from "./TiTa_Load.gif";
 
 const Resources=()=>{
     const [resmodal,setResmodal]=useState(false);
@@ -25,6 +25,7 @@ const Resources=()=>{
     const [resdesc,setResDesc]=useState("");
     const [grps,setGrps]=useState([]);
     const [loading,setLoading]=useState(false);
+    const [resources, setResources]=useState([]);
 
     const classrooms=useStore().getState().classrooms;
     const params=useParams();
@@ -62,10 +63,10 @@ const Resources=()=>{
         return formData;
     }
 
-    const handleResSubmit = () =>
+    const handleResSubmit = async () =>
     {
         setLoading(true);
-        axios({
+        await axios({
             method: "POST",
             url: `${process.env.REACT_APP_API}/resource/create`,
             data: createFormData()
@@ -79,6 +80,27 @@ const Resources=()=>{
             setLoading(false);
             console.log(err);
         });
+        loadResources();
+        toggleResModal();
+    }
+
+    const loadResources=()=>
+    {
+        axios(
+            {
+                method: "GET",
+                url: `${process.env.REACT_APP_API}/teachers/resource/${params.id}`
+            }
+        )
+        .then((res) =>
+        {
+            setResources(res.data);
+            console.log(res.data);
+        })
+        .catch((err) =>
+        {
+            console.log(err);
+        })
     }
 
     return (
@@ -145,14 +167,14 @@ const Resources=()=>{
                 ) : (
                     <ModalBody>
                         <div className = "Resources__loading">
-                            <img className = "logo-image2" src = {logo} alt = "tita-logo" />
+                            <img className = "tita-load" src = {TiTa_Load} alt = "tita-logo" />
                             <h5>Uploading resource...</h5>
                         </div>
                     </ModalBody>
                 )}
             </Modal>
             <hr />
-            <ResourceList/>
+            <ResourceList loadResources = {loadResources} resources = {resources} />
         </div>
       );
 }

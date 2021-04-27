@@ -90,3 +90,7 @@
 .Assignments__loading {
   text-align: center;
 }
+
+.Assignments__loading .tita-load {
+  text-align: center;
+}

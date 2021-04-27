@@ -15,9 +15,8 @@ import makeAnimated from "react-select/animated";
 
 import QuizList from "./QuizList";
 
-
 import "./Quizzes.css";
-import logo from "../../../Navbar/logo.png";
+import TiTa_Load from "./TiTa_Load.gif";
 
 const Quizzes = () => {
   const [quizmodal, setQuizmodal] = useState(false);
@@ -213,7 +212,7 @@ const Quizzes = () => {
         ) : (
           <ModalBody>
           <div className = "Quizzes__loading">
-            <img className = "logo-image2" src = {logo} alt = "tita-logo" />
+            <img className = "tita-load" src = {TiTa_Load} alt = "tita-logo" />
             <h5>Uploading quiz...</h5>
           </div>
           </ModalBody>

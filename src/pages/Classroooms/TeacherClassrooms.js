@@ -9,7 +9,6 @@ import axios from "axios";
 
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
 import "./Classrooms.css";
-import TeacherNav from "../../components/Navbar/teacher/teacherNav";
 
 const TeacherClassrooms = ({dispatch, classrooms }) => {
   const [classroom, setClassroom] = useState(null);
@@ -77,23 +76,23 @@ const TeacherClassrooms = ({dispatch, classrooms }) => {
       });
   };
 
-  const loadTimetable = (user) => {
-    axios({
-      method: "GET",
-      url: `${process.env.REACT_APP_API}/teachers/timetable/${user.email}`,
-    })
-      .then((res) => {
-        dispatch(updateTimetable(res.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+    const loadTimetable = (user) => {
+        axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API}/teachers/timetable/${user.email}`,
+        })
+            .then((res) => {
+                dispatch(updateTimetable(res.data));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
-  useEffect(() => {
-    loadClassroom(user);
-    loadTimetable(user);
-  }, []);
+    useEffect(() => {
+        loadClassroom(user);
+        loadTimetable(user);
+    }, []);
 
   return (
     <div class="row">
