@@ -1,94 +1,104 @@
 .row {
-  margin-right: 0px;
+    margin-right: 0px;
 }
 .profile-box {
-  align-items: right;
-  /* padding-left: 78vw; */
-  padding-top: 2.1vh;
-  margin-left: 75vw;
-  height: 7rem;
+    align-items: right;
+    /* padding-left: 78vw; */
+    padding-top: 2.1vh;
+    margin-left: 75vw;
+    height: 7rem;
 }
 
 .profile-text {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  height: 9vh;
-  width: 17vw;
-  text-align: right;
-  padding-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 9vh;
+    width: 17vw;
+    text-align: right;
+    padding-left: 5px;
 }
 .profile-image {
-  width: 45px;
-  height: 45px;
-  border-radius: 20px;
-  /* margin-left: 0.5vw; */
-  align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 20px;
+    /* margin-left: 0.5vw; */
+    align-items: center;
 }
 
 .dropbtn {
-  background-color: #fff;
-  color: white;
-  margin-top: 0px;
-  margin-left: 10px;
-  padding-top: 0px;
-  font-size: 16px;
-  border: none;
-  height: 65px;
-  width: 70px;
-  border-radius: 30px;
+    background-color: #fff;
+    color: white;
+    margin-top: 0px;
+    margin-left: 10px;
+    padding-top: 0px;
+    font-size: 16px;
+    border: none;
+    height: 65px;
+    width: 70px;
+    border-radius: 30px;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
-  height: 65px;
-  width: 70px;
-  margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    height: 65px;
+    width: 70px;
+    margin-left: 10px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  height: 38px;
-  width: 90px;
-  z-index: 1;
-  padding-top: 5px;
-  margin-right: 10px;
+    display: none;
+    height: 38px;
+    width: 90px;
+    z-index: 1;
+    padding-top: 5px;
+    margin-right: 10px;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
-  /* padding: 12px 16px; */
-  text-decoration: none;
-  display: inline-block;
+    color: black;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: inline;
+    display: inline;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .logout-btn {
-  padding: 7px 10px;
-  border-radius: 0.25rem;
-  background-color: #6673fd;
-  color: #f5f5ff;
-  border: none;
-  width: 130%;
+    padding: 7px 10px;
+    border-radius: 0.25rem;
+    background-color: #6673fd;
+    color: #f5f5ff;
+    border: none;
+    width: 130%;
 }
 .logout-btn:hover {
-  background-color: #f19b84;
-  transition: 500ms;
+    background-color: #f19b84;
+    transition: 500ms;
+}
+
+@media screen and (max-width: 1200px) {
+    .profile-box {
+        margin-left: 15%;
+    }
+
+    .profile-text {
+        width: 50vw;
+    }
 }

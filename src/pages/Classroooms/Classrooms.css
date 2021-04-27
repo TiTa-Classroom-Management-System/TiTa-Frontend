@@ -1,16 +1,44 @@
 .heading {
-  margin-left: 15vw;
-  margin-bottom: 5vh;
+    margin-left: 15vw;
+    margin-bottom: 5vh;
 }
 
 .cards-row {
-  margin-left: 15vw;
-  display: flex;
-  flex-direction: row;
-  margin-right: 5vw;
-  width: 100%;
+    margin-left: 15vw;
+    display: flex;
+    flex-direction: row;
+    margin-right: 5vw;
+    width: 100%;
 }
 
 .class-loading {
-  margin-left: 12rem;
+    margin-left: 12rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .cards-row {
+        margin-left: 2px !important;
+    }
+}
+
+.Create_Classroom, .Join_Classroom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  background-color: #f19b84;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  width:200px;
+}
+.create{
+  color: white;
+}
+
+.Create_Classroom:hover {
+  background-color: #f19b84;
+  box-shadow: none;
 }

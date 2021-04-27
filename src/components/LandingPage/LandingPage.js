@@ -67,13 +67,13 @@ const LandingPage = (props) => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item ">
+                                <li className="outer_nav-item ">
                                     <a className="nav-link" href="#">Home</a>
                                 </li>
-                                <li className="nav-item">
+                                <li className="outer_nav-item">
                                     <a className="nav-link" href="#features">Features</a>
                                 </li>
-                                <li className="nav-item">
+                                <li className="outer_nav-item">
                                     <a className="nav-link" href="#team">Team</a>
                                 </li>
                             </ul>

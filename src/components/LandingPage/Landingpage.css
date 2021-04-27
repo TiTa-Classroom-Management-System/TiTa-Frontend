@@ -36,8 +36,8 @@ h2 {
   overflow: hidden;
 }
 
-.nav-item {
-  padding: 0 18px;
+.outer_nav-item {
+  padding: 0 20px;
 }
 .nav-link {
   font-size: 1.2rem;
