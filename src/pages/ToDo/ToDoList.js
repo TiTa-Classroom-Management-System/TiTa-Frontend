@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Redirect, withRouter, useHistory } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
 import axios from "axios";
 import { Collapse, button, CardBody, Card } from "reactstrap";

@@ -148,8 +148,23 @@
         width: 100vw;
     }
 
-    .flex-column {
-        flex-direction: row;
+    .navbar-nav {
+        flex-direction: row !important;
+        width: 100%;
+        justify-content: space-around;
+        padding-left: 0 !important;
+    }
+
+    .nav-item:first-child {
+        display: none;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .link-text {
+        display: none !important;
     }
 }
 

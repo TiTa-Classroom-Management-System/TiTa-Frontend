@@ -119,7 +119,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
 
     return (
         <div>
-            <div class="row">
+            <div class="row" style={{ marginLeft: "10px" }}>
                 <div class="col-11 Timetable__timetable-component">
                     <Nav tabs>
                         <NavItem>
