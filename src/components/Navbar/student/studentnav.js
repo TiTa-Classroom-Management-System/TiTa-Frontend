@@ -68,7 +68,7 @@ const StudentNav = ({history}) => {
 
   return (
     <div>
-      <Navbar light expand="lg">
+      <Navbar light expand="lg" className="inner_navbar">
         <Nav navbar className="flex-column">
           <NavbarBrand>
             <Link className="logo" to="#">
@@ -80,27 +80,27 @@ const StudentNav = ({history}) => {
             </Link>
           </NavbarBrand>
           <NavItem>
-            <Link className="nav-link" to="/studtimetable">
+            <Link className="inner_nav-link" to="/studtimetable">
               <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Time table</span>
+              <span className="inner_link-text"> Time table</span>
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="/studentclassrooms">
+            <Link className="inner_nav-link" to="/studentclassrooms">
               <i className="fa fa-users fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Classroom</span>
+              <span className="inner_link-text"> Classroom</span>
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="/todolist">
+            <Link className="inner_nav-link" to="/todolist">
               <i className="fa fa-folder fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> To-Do List</span>
+              <span className="inner_link-text"> To-Do List</span>
             </Link>
           </NavItem>
           <NavItem onClick={toggleModal}>
-            <Link className="nav-link" to="#">
+            <Link className="inner_nav-link" to="#">
               <i className="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Join Classroom</span>
+              <span className="inner_link-text"> Join Classroom</span>
             </Link>
           </NavItem>
         </Nav>

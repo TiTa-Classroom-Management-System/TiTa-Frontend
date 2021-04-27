@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import LandingPage from "./components/LandingPage/LandingPage"
 import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
 import Login from "./components/Login/Login";
@@ -23,7 +24,8 @@ const App = ({ user }) => {
         console.log(routes);
         routes = (
             <Switch>
-                <Route strict path="/login" component={() => <Login />} />
+                <Route exact path="/" component={() => <LandingPage />} />
+                <Route exact path="/login" component={() => <Login />} />
             </Switch>
         );
         console.log(routes);

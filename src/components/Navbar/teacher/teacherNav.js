@@ -67,7 +67,7 @@ const TeacherNav = ({ dispatch, classrooms }) => {
 
   return (
     <div>
-      <Navbar light expand="lg">
+      <Navbar light expand="lg" className="inner_navbar">
         <Nav navbar className="flex-column">
           <NavItem>
             <Link className="logo2" to="#">
@@ -79,21 +79,21 @@ const TeacherNav = ({ dispatch, classrooms }) => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="/teachtimetable">
+            <Link className="inner_nav-link" to="/teachtimetable">
               <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Time table</span>
+              <span className="inner_link-text"> Time table</span>
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="/teacherclassrooms">
+            <Link className="inner_nav-link" to="/teacherclassrooms">
               <i className="fa fa-users fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Classrooms</span>
+              <span className="inner_link-text"> Classrooms</span>
             </Link>
           </NavItem>
           <NavItem onClick={toggleModal}>
-            <Link className="nav-link" to="#">
+            <Link className="inner_nav-link" to="#">
               <i className="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-              <span className="link-text"> Create Classroom</span>
+              <span className="inner_link-text"> Create Classroom</span>
             </Link>
           </NavItem>
         </Nav>

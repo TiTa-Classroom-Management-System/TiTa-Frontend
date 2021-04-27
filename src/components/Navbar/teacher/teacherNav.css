@@ -1,4 +1,4 @@
-.navbar {
+.inner_navbar {
   top: 0;
   width: 5rem;
   height: 100vh;
@@ -10,17 +10,17 @@
   z-index: 100;
 }
 
-.navbar:hover {
+.inner_navbar:hover {
   width: 11rem;
 }
 
-.navbar:hover .link-text {
+.inner_navbar:hover .inner_link-text {
   display: block;
   color: #fd7b7b;
   transition: opacity 300ms;
 }
 
-.nav-link {
+.inner_nav-link {
   display: flex;
   align-items: center;
   height: 5rem;
@@ -30,16 +30,17 @@
   transition: 600ms;
 }
 
-.nav-link:hover {
+.inner_nav-link:hover {
+  text-decoration: none;
   filter: grayscale(0%);
 }
 
-.link-text {
+.inner_link-text {
   display: none;
   margin-left: 1rem;
 }
 
-.nav-link i {
+.inner_nav-link i {
   min-width: 2rem;
 }
 
@@ -53,18 +54,18 @@
   margin-left: 1rem;
 }
 
-.navbar:hover .logo-text2 {
+.inner_navbar:hover .logo-text2 {
   display: block;
 }
 
 .logo2 {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    text-decoration: none;
-    transition: 600ms;
-    padding-bottom: 10vh;
-    padding-top: 10vh;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  text-decoration: none;
+  transition: 600ms;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
 }
 
 .logo-image2 {
@@ -74,26 +75,21 @@
   margin-bottom: 20vh;
 }
 
-.classModal input  {
-    font-size: 15px;
+.classModal input {
+  font-size: 15px;
 }
 
-.createClass__model-footer
-{
-    text-align: center;
-    padding-bottom: 10px;
+.createClass__model-footer {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
-.createClass__model-footer button
-{
-    margin: 10px;
+.createClass__model-footer button {
+  margin: 10px;
 }
 
-
-@media only screen and (max-width : 768px)
-{
-  .navbar
-  {
+@media only screen and (max-width: 768px) {
+  .inner_navbar {
     display: none;
   }
 }
