@@ -97,23 +97,20 @@ const TeacherClassrooms = ({dispatch, classrooms }) => {
   return (
     <div class="row">
       <div class="col-12">
-        <TeacherNav />
         <div class="row">
-        <div class="col-lg-3">
-          <h3 className="heading">Classrooms</h3>
-        </div>
-        <div class="col-lg-6">
+          <div class="col-lg-3">
+            <h3 className="heading">Classrooms</h3>
+          </div>
+          <div class="col-lg-6">
 
-        </div>
-        <div class="col-lg-3"> 
-          <button class="Create_Classroom" onClick={toggleModal}>
-            <h6>Create Classroom</h6><i className="fa fa-plus-circle fa-2x create" aria-hidden="true"></i>
-          </button>
+          </div>
+          <div class="col-lg-3"> 
+            <button class="Create_Classroom" onClick={toggleModal}>
+              <h6>Create Classroom</h6><i className="fa fa-plus-circle fa-2x create" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
                 
-        </div>
-
-        
         {modal ? (
         <ClassModal
           code={code}
