@@ -1,0 +1,48 @@
+:root {
+    --fc-border-color: #cccccc;
+  }
+
+.fc-today-button
+{
+    background-color: #fd7b7b !important;
+    border: none !important;
+    border-radius: 5px !important;
+    box-shadow: 4px 4px 8px grey;
+}
+
+.fc-button-group button
+{
+    background-color: #6673fd !important;
+    border: none !important;
+    border-radius: 5px !important;
+    box-shadow: 4px 4px 8px grey;
+}
+
+
+.fc-col-header-cell
+{
+    background-color: #6673fd;
+    color: white;
+}
+
+.fc-timegrid-axis
+{
+    background-color: #6673fd;
+}
+
+.fc-timegrid-slot-label
+{
+    background-color: #6673fd;
+    color: white;
+}
+
+.fc-col-header-cell-cushion
+{
+    color: white;
+} 
+
+.fc-timegrid-slot-label-frame
+{
+    background-color: #6673fd;
+    border: none !important;
+}

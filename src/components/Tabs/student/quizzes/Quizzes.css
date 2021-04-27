@@ -31,3 +31,45 @@
   text-decoration: none;
   color: white;
 }
+
+.Quizzes__view-score
+{
+  background-color: #6673fd;
+  width: 100%;
+  padding: 3%;
+  text-align: center;
+  color: white;
+  box-shadow: 4px 4px 8px #9a9a9a;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: none;
+}
+
+.Quizzes__view-score:hover
+{
+  box-shadow: none;
+}
+
+.QuizList__modal
+{
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  max-width: 100vh !important;
+}
+
+.QuizList__modal .modal-content
+{
+  height: 100%;
+  width: 100%;
+}
+
+.QuizList__modal .modal-content .modal-body
+{
+
+}
+
+.QuizList__chart-row-1
+{
+
+}
