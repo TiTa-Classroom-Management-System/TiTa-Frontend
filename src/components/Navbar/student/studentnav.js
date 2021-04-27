@@ -13,42 +13,42 @@ import Profile from "../../Profile/profile";
 const StudentNav = () => {
     return (
         <div>
-            <Navbar light expand="lg">
+            <Navbar light expand="lg" className="inner_navbar">
                 <Nav navbar className="flex-column">
                     <NavbarBrand>
-                        <Link className="logo" to="#">
-                            <img className="logo-image" src={logo} alt="logo" />
-                            <span className="logo-text">
+                        <Link className="logo2" to="#">
+                            <img className="logo-image2" src={logo} alt="logo" />
+                            <span className="logo-text2">
                                 {" "}
                                 <img src={logoText} alt="TITA" />
                             </span>
                         </Link>
                     </NavbarBrand>
                     <NavItem>
-                        <Link className="nav-link" to="/studtimetable">
+                        <Link className="inner_nav-link" to="/studtimetable">
                             <i
                                 className="fa fa-calendar fa-2x"
                                 aria-hidden="true"
                             ></i>
-                            <span className="link-text"> Time table</span>
+                            <span className="inner_link-text"> Time table</span>
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/studentclassrooms">
+                        <Link className="inner_nav-link" to="/studentclassrooms">
                             <i
                                 className="fa fa-users fa-2x"
                                 aria-hidden="true"
                             ></i>
-                            <span className="link-text"> Classroom</span>
+                            <span className="inner_link-text"> Classroom</span>
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/todolist">
+                        <Link className="inner_nav-link" to="/todolist">
                             <i
                                 className="fa fa-folder fa-2x"
                                 aria-hidden="true"
                             ></i>
-                            <span className="link-text"> To-Do List</span>
+                            <span className="inner_link-text"> To-Do List</span>
                         </Link>
                     </NavItem>
                 </Nav>
