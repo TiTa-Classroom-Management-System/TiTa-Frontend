@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
@@ -12,10 +12,6 @@ import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
 import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";
 import AssignmentsSolved from "./components/Tabs/teacher/assignments/AssignmentsSolved";
 import ToDoList from "./pages/ToDo/ToDoList";
-import PrivateRoute, {
-    TeacherRoute,
-    StudentRoute,
-} from "./components/PrivateRoute/PrivateRoute";
 
 const App = ({ user }) => {
     let routes = null;
