@@ -1,10 +1,11 @@
-.AssignmentList__object {
+.AssignmentList__object-student {
   text-align: center;
   border-bottom: solid grey;
 }
 
-.AssignmentList__object div {
+.AssignmentList__object-student div {
   padding: 1%;
+  text-align: center;
 }
 
 #Assignments__upload-ass {
