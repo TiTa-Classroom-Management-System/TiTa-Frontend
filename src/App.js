@@ -1,6 +1,7 @@
 import React from "react";
-import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import LandingPage from "./components/LandingPage/LandingPage"
 import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
 import Login from "./components/Login/Login";
@@ -12,23 +13,17 @@ import TeacherClassrooms from "./pages/Classroooms/TeacherClassrooms";
 import StudentClassrooms from "./pages/Classroooms/StudentClassrooms";
 import AssignmentsSolved from "./components/Tabs/teacher/assignments/AssignmentsSolved";
 import ToDoList from "./pages/ToDo/ToDoList";
-import PrivateRoute, {
-    TeacherRoute,
-    StudentRoute,
-} from "./components/PrivateRoute/PrivateRoute";
 
 const App = ({ user }) => {
     let routes = null;
     if (user === null || user.type === null) {
-        console.log(routes);
         routes = (
             <Switch>
-                <Route strict path="/login" component={() => <Login />} />
+                <Route exact path="/" component={() => <LandingPage />} />
+                <Route exact path="/login" component={() => <Login />} />
             </Switch>
         );
-        console.log(routes);
     } else if (user.type === "student") {
-        console.log(user.type);
         routes = (
             <div>
                 <StudentNav />
@@ -59,9 +54,6 @@ const App = ({ user }) => {
             </div>
         );
     } else if (user.type === "teacher") {
-        console.log("hello");
-        console.log(user.type);
-        console.log(user);
         routes = (
             <div>
                 <TeacherNav />

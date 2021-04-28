@@ -1,0 +1,292 @@
+body {
+  font-family: "Montserrat";
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+#title {
+  background-color: #6673fd;
+  color: #fff;
+}
+#title-box {
+  padding: 2% 12% 7.6%;
+}
+h1 {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+h2 {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+/* navigation bar */
+#nav-bar {
+  padding: 0 0 4.5rem;
+  overflow: hidden;
+}
+
+.outer_nav-item {
+  padding: 0 20px;
+}
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.logoimage {
+  margin-top: 0px;
+  padding-top: 0;
+  bottom: 20px;
+  height: 12%;
+  width: 12%;
+}
+
+#logo-text {
+  font-family: Ubuntu;
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 60%;
+}
+
+/* download buttons */
+.login {
+  margin: 5% 2% 5% 3%;
+}
+/* title image */
+.title {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+.title-image {
+  width: 90%;
+  position: absolute;
+  right: 5%;
+}
+
+.tita {
+  width: 10rem;
+}
+/* features section */
+
+#features {
+  padding: 7% 10%;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.feature-box {
+  text-align: center;
+  padding: 3%;
+}
+
+.feature-title {
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
+.feature-icon {
+  width: 150px;
+  height: 150px;
+}
+h3 {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+p {
+  color: #8f8f8f;
+}
+
+/* team */
+#team {
+  background-color: #6673fd;
+  padding: 80px 60px 50px 60px;
+  text-align: center;
+}
+
+.team-title {
+  padding-bottom: 60px;
+  color: white;
+  font-weight: bold;
+}
+
+.our-team {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10%;
+  box-shadow: 2px 2px 10px black;
+  transition: 0.5s;
+}
+
+.our-team:hover {
+  box-shadow: none;
+}
+
+.our-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+  height: 100%;
+}
+
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.our-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-team:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
+}
+
+.our-team .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .social {
+  bottom: 0;
+}
+
+.our-team .social li {
+  display: inline-block;
+}
+
+.our-team .social li a {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.our-team .social li a:hover {
+  color: #1369ce;
+  background-color: #f7f5ec;
+}
+
+/* footer */
+#footer {
+  padding: 3% 15%;
+  text-align: center;
+}
+
+.copyright {
+  color: black;
+}
+
+@media (max-width: 1028px) {
+  .navbar-nav {
+    align-items: right;
+  }
+  #title-body {
+    text-align: center;
+  }
+  .title {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+  .tita {
+    width: 7rem;
+  }
+  .outer_nav-item {
+    text-align: right;
+  }
+  .logoimage {
+    margin-top: 0px;
+    padding-top: 0;
+    bottom: 20px;
+    height: 22%;
+    width: 22%;
+  }
+  #team {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .our-team {
+    padding: 30px 10px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-image {
+    display: none;
+  }
+  .logoimage {
+    margin-top: 0px;
+    padding-top: 0;
+    bottom: 20px;
+    height: 28%;
+    width: 28%;
+  }
+}
