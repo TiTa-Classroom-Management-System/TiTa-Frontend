@@ -1,0 +1,36 @@
+#StudentList__header {
+  text-align: center;
+}
+
+.StudentList_object {
+  text-align: center;
+  border-bottom: solid 1px #cccc;
+}
+
+.StudentList_object div {
+  padding: 1%;
+}
+
+@media only screen and (max-width: 768px) {
+  #StudentList__header {
+    display: none;
+  }
+
+  .StudentList_list .StudentList_object {
+    border-bottom: none;
+    border: solid 1px #ccc;
+    padding: 5px;
+    margin: 0;
+  }
+
+  .StudentList_list .StudentList_object div:first-child,
+  .StudentList_list .StudentList_object div:nth-child(2) {
+    font-weight: 500;
+    font-size: 17px;
+    width: 50%;
+  }
+
+  .StudentList_list .StudentList_object div:nth-child(3) {
+    width: 100%;
+  }
+}
