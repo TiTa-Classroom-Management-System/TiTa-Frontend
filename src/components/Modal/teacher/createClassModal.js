@@ -17,7 +17,6 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
         {
             setClipboard(`Copied to Clipboard.`);
             setCbicon(`fas fa-clipboard-check`);
-            console.log("Copied.");
         })
         .catch((err) =>
         {

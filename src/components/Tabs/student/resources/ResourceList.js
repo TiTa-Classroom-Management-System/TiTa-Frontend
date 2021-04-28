@@ -25,7 +25,6 @@ const ResourceList = () =>
         .then((res) =>
         {
             setResources(res.data);
-            console.log(res.data);
         })
         .catch((err) =>
         {

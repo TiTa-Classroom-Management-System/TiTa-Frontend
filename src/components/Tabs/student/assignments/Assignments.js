@@ -23,7 +23,6 @@ const Assignments = () =>
         )
         .then((res) =>
         {
-            console.log(res.data);
             setAssignments(res.data);
         })
         .catch((err) =>

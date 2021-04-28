@@ -70,7 +70,6 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
             url: `${process.env.REACT_APP_API}/classroom/count/${id}`,
         }).then((res) => {
             setNumGroups(() => res.data.count);
-            console.log(numGroups);
         });
     };
 

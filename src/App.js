@@ -17,16 +17,13 @@ import ToDoList from "./pages/ToDo/ToDoList";
 const App = ({ user }) => {
     let routes = null;
     if (user === null || user.type === null) {
-        console.log(routes);
         routes = (
             <Switch>
                 <Route exact path="/" component={() => <LandingPage />} />
                 <Route exact path="/login" component={() => <Login />} />
             </Switch>
         );
-        console.log(routes);
     } else if (user.type === "student") {
-        console.log(user.type);
         routes = (
             <div>
                 <StudentNav />
@@ -57,9 +54,6 @@ const App = ({ user }) => {
             </div>
         );
     } else if (user.type === "teacher") {
-        console.log("hello");
-        console.log(user.type);
-        console.log(user);
         routes = (
             <div>
                 <TeacherNav />
