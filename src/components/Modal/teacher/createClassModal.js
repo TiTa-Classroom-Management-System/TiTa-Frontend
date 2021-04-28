@@ -36,9 +36,11 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
                         id = "createClass__branch-year" 
                         value = {values.branchYear} 
                         name = "branchYear" 
-                        onChange = {handleChange} />
-                        <select name = "branchName" className = "createClass__drop-down" onChange = {handleChange}>
-                            <option>Select Branch Name</option>
+                        onChange = {handleChange} 
+                        required
+                        />
+                        <select name = "branchName" className = "createClass__drop-down" onChange = {handleChange} required>
+                            <option value="">Select Branch Name</option>
                             {branches.map((b) => (
                                 <option key = {b} value = {b}>{b}</option>
                             ))}
@@ -50,12 +52,16 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
                         placeholder = "Subject Name" 
                         value = {values.subjectName} 
                         name = "subjectName" 
-                        onChange = {handleChange} />
+                        onChange = {handleChange} 
+                        required
+                        />
                     <Input 
                         placeholder = "Subject Code" 
                         value = {values.subjectCode} 
                         name = "subjectCode" 
-                        onChange = {handleChange} />
+                        onChange = {handleChange} 
+                        required
+                        />
                 </InputGroup>
                 <hr />
                 <InputGroup>
@@ -63,7 +69,12 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
                         placeholder = "Number of Sub-Groups" 
                         value = {values.subGroups} 
                         name = "subGroups" 
-                        onChange = {handleChange} />
+                        onChange = {handleChange} 
+                        type= "number"
+                        min= "0"
+                        step="1"
+                        required
+                        />
                 </InputGroup>
             </ModalBody>
             <ModalFooter id = "createClass__modal-footer">

@@ -160,177 +160,182 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                             </button>
                             <hr />
                             <Modal isOpen={modal} toggle={toggleModal}>
-                                <ModalHeader toggle={toggleModal}>
-                                    Add class
-                                </ModalHeader>
-                                <ModalBody>
-                                    <label for="Assignments__submit-date">
-                                        Choose day
-                                    </label>
-                                    Current day: {day}
-                                    <br />
-                                    <Dropdown
-                                        isOpen={dropDown}
-                                        toggle={() => {
-                                            setDropDown((cur) => !cur);
-                                        }}
-                                    >
-                                        <DropdownToggle
-                                            style={{
-                                                backgroundColor: "#6673fd",
-                                            }}
-                                            caret
-                                        >
+                                <form onSubmit={handleTimetableCreation}>
+                                    <ModalHeader toggle={toggleModal}>
+                                        Add class
+                                    </ModalHeader>
+                                    <ModalBody>
+                                        <label for="Assignments__submit-date">
                                             Choose day
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setDay(() => "Monday")
-                                                }
-                                            >
-                                                Monday
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setDay(() => "Tuesday")
-                                                }
-                                            >
-                                                Tuesday
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setDay(() => "Wednesday")
-                                                }
-                                            >
-                                                Wednesday
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setDay(() => "Thursday")
-                                                }
-                                            >
-                                                Thursday
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setDay(() => "Friday")
-                                                }
-                                            >
-                                                Friday
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setDay(() => "Saturday")
-                                                }
-                                            >
-                                                Saturday
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </Dropdown>
-                                    <label for="Assignments__submit-date">
-                                        Choose groups
-                                    </label>
-                                    <Select
-                                        isMulti
-                                        name="colors"
-                                        options={options}
-                                        className="basic-multi-select"
-                                        classNamePrefix="select"
-                                        components={animatedComponents}
-                                        onChange={(selectedOption) => {
-                                            SetGroups(() =>
-                                                selectedOption.map((ob) =>
-                                                    parseInt(ob.value)
-                                                )
-                                            );
-                                        }}
-                                    />
-                                    <br />
-                                    <label for="Assignments__submit-date">
-                                        Choose class start time
-                                    </label>
-                                    <input
-                                        class="col-lg-5"
-                                        id="Assignments__submit-time"
-                                        type="time"
-                                        value={startTime}
-                                        onChange={(e) =>
-                                            setStartTime(e.target.value)
-                                        }
-                                    />
-                                    <label for="Assignments__submit-date">
-                                        Choose class end time
-                                    </label>
-                                    <input
-                                        class="col-lg-5"
-                                        id="Assignments__submit-time"
-                                        type="time"
-                                        value={endTime}
-                                        onChange={(e) => {
-                                            console.log(e.target.value);
-                                            return setEndTime(e.target.value);
-                                        }}
-                                    />
-                                    <br />
-                                    <label for="Assignments__submit-date">
-                                        Choose type
-                                    </label>
-                                    Current type: {type}
-                                    <br />
-                                    <Dropdown
-                                        isOpen={typeDropDown}
-                                        toggle={() => {
-                                            setTypeDropDown((cur) => !cur);
-                                        }}
-                                    >
-                                        <DropdownToggle
-                                            style={{
-                                                backgroundColor: "#6673fd",
+                                        </label>
+                                        Current day: {day}
+                                        <br />
+                                        <Dropdown
+                                            isOpen={dropDown}
+                                            toggle={() => {
+                                                setDropDown((cur) => !cur);
                                             }}
-                                            caret
                                         >
-                                            Choose class type
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setType(() => "Lecture")
-                                                }
+                                            <DropdownToggle
+                                                style={{
+                                                    backgroundColor: "#6673fd",
+                                                }}
+                                                caret
                                             >
-                                                Lecture
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setType(() => "Tutorial")
-                                                }
+                                                Choose day
+                                            </DropdownToggle>
+                                            <DropdownMenu>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setDay(() => "Monday")
+                                                    }
+                                                >
+                                                    Monday
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setDay(() => "Tuesday")
+                                                    }
+                                                >
+                                                    Tuesday
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setDay(() => "Wednesday")
+                                                    }
+                                                >
+                                                    Wednesday
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setDay(() => "Thursday")
+                                                    }
+                                                >
+                                                    Thursday
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setDay(() => "Friday")
+                                                    }
+                                                >
+                                                    Friday
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setDay(() => "Saturday")
+                                                    }
+                                                >
+                                                    Saturday
+                                                </DropdownItem>
+                                            </DropdownMenu>
+                                        </Dropdown>
+                                        <label for="Assignments__submit-date">
+                                            Choose groups
+                                        </label>
+                                        <Select
+                                            isMulti
+                                            name="colors"
+                                            options={options}
+                                            className="basic-multi-select"
+                                            classNamePrefix="select"
+                                            components={animatedComponents}
+                                            onChange={(selectedOption) => {
+                                                SetGroups(() =>
+                                                    selectedOption.map((ob) =>
+                                                        parseInt(ob.value)
+                                                    )
+                                                );
+                                            }}
+                                        />
+                                        <br />
+                                        <label for="Assignments__submit-date">
+                                            Choose class start time
+                                        </label>
+                                        <input
+                                            class="col-lg-5"
+                                            id="Assignments__submit-time"
+                                            type="time"
+                                            value={startTime}
+                                            onChange={(e) =>
+                                                setStartTime(e.target.value)
+                                            }
+                                            required
+                                        />
+                                        <label for="Assignments__submit-date">
+                                            Choose class end time
+                                        </label>
+                                        <input
+                                            class="col-lg-5"
+                                            id="Assignments__submit-time"
+                                            type="time"
+                                            value={endTime}
+                                            onChange={(e) => {
+                                                console.log(e.target.value);
+                                                return setEndTime(e.target.value);
+                                            }}
+                                            required
+                                        />
+                                        <br />
+                                        <label for="Assignments__submit-date">
+                                            Choose type
+                                        </label>
+                                        Current type: {type}
+                                        <br />
+                                        <Dropdown
+                                            isOpen={typeDropDown}
+                                            toggle={() => {
+                                                setTypeDropDown((cur) => !cur);
+                                            }}
+                                        >
+                                            <DropdownToggle
+                                                style={{
+                                                    backgroundColor: "#6673fd",
+                                                }}
+                                                caret
                                             >
-                                                Tutorial
-                                            </DropdownItem>
-                                            <DropdownItem
-                                                onClick={() =>
-                                                    setType(() => "Lab")
-                                                }
-                                            >
-                                                Lab
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </Dropdown>
-                                </ModalBody>
-                                <ModalFooter>
-                                    <Button
-                                        className="Assignments__submit"
-                                        onClick={handleTimetableCreation}
-                                    >
-                                        Create and Upload
-                                    </Button>{" "}
-                                    <Button
-                                        className="Assignments__submit"
-                                        onClick={toggleModal}
-                                    >
-                                        Cancel
-                                    </Button>
-                                </ModalFooter>
+                                                Choose class type
+                                            </DropdownToggle>
+                                            <DropdownMenu>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setType(() => "Lecture")
+                                                    }
+                                                >
+                                                    Lecture
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setType(() => "Tutorial")
+                                                    }
+                                                >
+                                                    Tutorial
+                                                </DropdownItem>
+                                                <DropdownItem
+                                                    onClick={() =>
+                                                        setType(() => "Lab")
+                                                    }
+                                                >
+                                                    Lab
+                                                </DropdownItem>
+                                            </DropdownMenu>
+                                        </Dropdown>
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Button
+                                            className="Assignments__submit"
+                                            disabled={groups.length==0}
+                                        >
+                                            Create and Upload
+                                        </Button>{" "}
+                                        <Button
+                                            className="Assignments__submit"
+                                            onClick={toggleModal}
+                                        >
+                                            Cancel
+                                        </Button>
+                                    </ModalFooter>
+                                </form>
+                                
                             </Modal>
                             {tt ? (
                                 tt.length > 0 ? (

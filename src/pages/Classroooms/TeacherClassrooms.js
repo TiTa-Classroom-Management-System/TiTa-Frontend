@@ -18,7 +18,7 @@ const TeacherClassrooms = ({dispatch, classrooms }) => {
   const [code, setCode] = useState(null);
   const initialState = {
     branchYear: "",
-    branchName: "Choose Branch",
+    branchName: "",
     subjectName: "",
     subjectCode: "",
     subGroups: "",

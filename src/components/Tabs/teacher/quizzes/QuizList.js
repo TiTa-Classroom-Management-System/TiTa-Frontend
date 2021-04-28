@@ -109,7 +109,8 @@ const QuizList = ({ loadQuizzes, quizzes }) => {
                         </div>
 
                         <Modal isOpen={resmodal} toggle={toggleResModal}>
-                            <ModalHeader>Upload Quiz Result</ModalHeader>
+                        <form onSubmit={handleResultUpload}>
+                            <ModalHeader >Upload Quiz Result</ModalHeader>
                             <ModalBody>
                                 <label for="quiz_res_upload">
                                     Choose Result File (.csv)
@@ -119,16 +120,17 @@ const QuizList = ({ loadQuizzes, quizzes }) => {
                                     type="file"
                                     accept=".csv"
                                     onChange={quizresSelect}
+                                    required
                                 />
                             </ModalBody>
                             <ModalFooter>
                                 <button
                                     className="Quizzes__view-quiz"
-                                    onClick={handleResultUpload}
                                 >
                                     Submit
                                 </button>
                             </ModalFooter>
+                        </form>
                         </Modal>
                     </div>
                 ))

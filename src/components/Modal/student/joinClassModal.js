@@ -16,15 +16,15 @@ const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChang
             
                 
                 {/* You are about to join ----- classroom */}
-                {!classroom ? <Input placeholder="Enter Classroom Code" name="c_code" value={code} onChange={handleChange} /> : 
+                {!classroom ? <Input placeholder="Enter Classroom Code" name="c_code" value={code} onChange={handleChange} required minLength={8} maxLength={8}/> : 
                 <>
                   <h4>You are about to join:</h4>
                   <h3>Course Name:{classroom.split('+')[0]}</h3>
                   <h3>Course Code:{classroom.split('+')[1]}</h3>
                   <h3>Branch Name:{classroom.split('+')[2]}</h3>
                   <h3>Branch Year:{classroom.split('+')[3]}</h3>
-                  <select name = "group_num" className = "group_num__drop-down" onChange = {handleSelect}>
-                      <option>Select Group Number</option>
+                  <select name = "group_num" className = "group_num__drop-down" onChange = {handleSelect} required>
+                      <option value="">Select Group Number</option>
                       {([...Array(parseInt(classroom.split('+')[4])+1).keys()].slice(1)).map((o) => (
                         <option key = {o} value={o}>{`Group ${o}`}</option>
                       ))}
