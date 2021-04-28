@@ -28,6 +28,7 @@ import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
 import Resources from "../Tabs/teacher/resources/Resources";
 
 import "../../pages/Timetable/Timetable.css";
+import "./Classroom.css";
 
 const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     const { user } = useSelector((state) => ({ ...state }));
@@ -119,7 +120,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     return (
         <div>
             <div class="row" style={{ marginLeft: "10px" }}>
-                <div class="col-11 Timetable__timetable-component">
+                <div class="col-lg-11 Timetable__timetable-component">
                     <Nav tabs>
                         <NavItem>
                             <NavLink onClick={() => toggle("1")}>
@@ -145,7 +146,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                 </div>
                 <TabContent activeTab={activeTab} style={{ width: "100%" }}>
                     <TabPane tabId="1">
-                        <div class="col-11 Timetable__timetable-component">
+                        <div class="col-lg-11 Timetable__timetable-component">
                             <h2>
                                 <strong>Timetable</strong>
                             </h2>
@@ -352,17 +353,17 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                         </div>
                     </TabPane>
                     <TabPane tabId="2">
-                        <div class="col-11 Timetable__timetable-component">
+                        <div class="col-lg-11 Timetable__timetable-component">
                             <Resources />
                         </div>
                     </TabPane>
                     <TabPane tabId="3">
-                        <div class="col-11 Timetable__timetable-component">
+                        <div class="col-lg-11 Timetable__timetable-component">
                             <Assignments />
                         </div>
                     </TabPane>
                     <TabPane tabId="4">
-                        <div class="col-11 Timetable__timetable-component">
+                        <div class="col-lg-11 Timetable__timetable-component">
                             <Quizzes />
                         </div>
                     </TabPane>

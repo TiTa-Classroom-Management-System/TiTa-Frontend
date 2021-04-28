@@ -98,3 +98,27 @@
     transition: 1s;
 }
 
+
+@media only screen and (max-width: 768px)
+{
+    .Todolist .Todolist__assignments, .Todolist__quizzes
+    {
+        padding: 0;
+
+    }
+
+    .Todolist__assignments-item .card, .Todolist__quizzes-item .card
+    {
+        height: max-content;
+    }
+
+    .Todolist .Todolist__assignments-item-due .collapse .card .card-body
+    {
+        display: block;
+    }
+
+    .Todolist .Todolist__assignments-item-due .collapse .card .card-body p:first-child, .Todolist .Todolist__assignments-item:first-child .collapse .card .card-body p:nth-child(2)
+    {
+        width: 100%;
+    }
+}

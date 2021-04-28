@@ -115,7 +115,7 @@ const ToDoList = () => {
                 <div className="row">
                     <div className="col-lg-5 Todolist__assignments">
                         <h4>Assignments</h4>
-                        <div className="Todolist__assignments-item">
+                        <div className="Todolist__assignments-item Todolist__assignments-item-due">
                             <button
                                 className="Todolist__assignments-item-button"
                                 color="primary"

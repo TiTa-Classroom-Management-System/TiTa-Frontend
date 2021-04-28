@@ -131,3 +131,24 @@
   width: 150px;
   margin-bottom: 50px;
 }
+
+
+@media only screen and (max-width: 768px)
+{
+  #Resources__create-res
+  {
+    width: 100%;
+  }
+
+  .ResourceList_list
+  {
+    margin-bottom: 5rem;
+  }
+
+  .ResourceList_list .Resources_Link a button
+  {
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px;
+  }
+}

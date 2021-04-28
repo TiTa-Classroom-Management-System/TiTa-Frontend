@@ -166,7 +166,7 @@ const QuizList = () =>
                                 loadQuizResult(q.quiz_id);
                             }} id = {q.quiz_id} onMouseLeave = {(e) => (document.getElementById(e.target.id).innerHTML = `${q.score_obtained} / ${q.max_score}`)} onMouseOver = {(e) => (document.getElementById(e.target.id).innerHTML = "Analysis")} className="Quizzes__view-score">{q.score_obtained} / {q.max_score}</button>
                         ) : (
-                            <p>Result not uploaded yet</p>
+                            <p>Result not uploaded</p>
                         )}
                     </div>
 
