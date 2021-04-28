@@ -70,19 +70,16 @@
   text-align: center;
 }
 
-.AssignmentList__object
-{
+.AssignmentList__object {
   text-align: center;
-  border-bottom: solid grey;
+  border-bottom: solid 1px #cccc;
 }
 
-.AssignmentList__object div
-{
+.AssignmentList__object div {
   padding: 1%;
 }
 
-.Assignments__view-assignment
-{
+.Assignments__view-assignment {
   width: 100%;
   background-color: #f19b84;
   padding: 2%;
@@ -94,19 +91,16 @@
   border: none;
 }
 
-.Assignments__view-assignment:hover
-{
+.Assignments__view-assignment:hover {
   box-shadow: none;
 }
 
-.Assignments__view-assignment a
-{
+.Assignments__view-assignment a {
   text-decoration: none;
   color: white;
 }
 
-.Assignments__submissions
-{
+.Assignments__submissions {
   width: 100%;
   background-color: #6673fd;
   padding: 2%;
@@ -118,150 +112,129 @@
   border: none;
 }
 
-.Assignments__submissions:hover
-{
+.Assignments__submissions:hover {
   box-shadow: none;
 }
 
-.Assignments__submissions a
-{
+.Assignments__submissions a {
   text-decoration: none;
   color: white;
 }
 
-.Assignments__loading
-{
+.Assignments__loading {
   text-align: center;
 }
 
-.Assignments__loading .tita-load
-{
+.Assignments__loading .tita-load {
   height: 150px;
   width: 150px;
   margin-bottom: 50px;
 }
 
-.Assignment_Solved
-{
+.Assignment_Solved {
   margin-left: 7.5%;
 }
 
-.Assignment_Solved__header
-{
+.Assignment_Solved__header {
   display: flex;
   justify-content: center;
   margin-bottom: 1%;
 }
 
-.Assignment_Solved__header div
-{
+.Assignment_Solved__header div {
   text-align: center;
 }
 
-.Assignment_Solved__object
-{
+.Assignment_Solved__object {
   text-align: center;
   justify-content: center;
   border-bottom: solid grey;
 }
 
-.Assignment_Solved__object div
-{
+.Assignment_Solved__object div {
   padding: 1%;
 }
 
-.Assignment_Solved__on-time
-{
+.Assignment_Solved__on-time {
   color: #9ede73;
   font-size: large;
 }
 
-.Assignment_Solved__late
-{
+.Assignment_Solved__late {
   color: #fb3640;
   font-size: large;
 }
 
-@media only screen and (max-width: 768px)
-{
+@media only screen and (max-width: 768px) {
   /* List Start */
-  #AssignmentList__header
-  {
+  #AssignmentList__header {
     display: none;
   }
 
-  .AssignmentList__list
-  {
+  .AssignmentList__list {
     height: 50vh;
     overflow-y: scroll;
     margin-bottom: 5rem;
   }
 
-  .AssignmentList__list .AssignmentList__object
-  {
+  .AssignmentList__list .AssignmentList__object {
     border: solid 1px #ccc;
     margin: none;
     border-radius: 5px;
     padding: 5px;
   }
 
-  .AssignmentList__list .AssignmentList__object div:first-child
-  {
+  .AssignmentList__list .AssignmentList__object div:first-child {
     font-size: 20px;
     font-weight: 500;
   }
 
-  .AssignmentList__list .AssignmentList__object div:nth-child(2), .AssignmentList__list .AssignmentList__object div:nth-child(3)  
-  {
+  .AssignmentList__list .AssignmentList__object div:nth-child(2),
+  .AssignmentList__list .AssignmentList__object div:nth-child(3) {
     width: 50%;
   }
 
-  .AssignmentList__list .AssignmentList__object div:nth-child(4), .AssignmentList__list .AssignmentList__object div:nth-child(5)
-  {
+  .AssignmentList__list .AssignmentList__object div:nth-child(4),
+  .AssignmentList__list .AssignmentList__object div:nth-child(5) {
     width: 50%;
     font-size: 15px;
   }
 
-  .AssignmentList__list .AssignmentList__object div:nth-child(4) button, .AssignmentList__list .AssignmentList__object div:nth-child(5) button
-  {
+  .AssignmentList__list .AssignmentList__object div:nth-child(4) button,
+  .AssignmentList__list .AssignmentList__object div:nth-child(5) button {
     padding: 5px;
   }
   /* List End */
 
   /* Solved Start */
-  .Assignment_Solved
-  {
+  .Assignment_Solved {
     width: 95% !important;
     padding: 0;
     margin: 0;
   }
 
-  .Assignment_Solved .Assignment_Solved__header
-  {
+  .Assignment_Solved .Assignment_Solved__header {
     display: none;
   }
 
-  .Assignment_Solved .Assignment_Solved__object
-  {
+  .Assignment_Solved .Assignment_Solved__object {
     border-bottom: none;
     border: solid 1px #ccc;
     border-radius: 5px;
     padding: 10px;
   }
 
-  .Assignment_Solved .Assignment_Solved__object div:nth-child(1), .Assignment_Solved .Assignment_Solved__object div:nth-child(2)
-  {
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(1),
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(2) {
     width: 50%;
-  } 
+  }
 
-  .Assignment_Solved .Assignment_Solved__object div:nth-child(3)
-  {
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(3) {
     font-weight: 500;
     font-size: 20px;
   }
 
-  .Assignment_Solved .Assignment_Solved__object div:nth-child(3) i
-  {
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(3) i {
     font-size: 20px;
   }
 

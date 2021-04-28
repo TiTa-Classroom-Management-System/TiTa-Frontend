@@ -4,7 +4,7 @@
 
 .QuizList_object {
   text-align: center;
-  border-bottom: solid grey;
+  border-bottom: solid 1px #cccc;
 }
 
 .QuizList_object div {
@@ -32,8 +32,7 @@
   color: white;
 }
 
-.Quizzes__view-score
-{
+.Quizzes__view-score {
   background-color: #6673fd;
   width: 100%;
   padding: 3%;
@@ -45,21 +44,18 @@
   border: none;
 }
 
-.Quizzes__view-score:hover
-{
+.Quizzes__view-score:hover {
   box-shadow: none;
 }
 
-.QuizList__modal
-{
+.QuizList__modal {
   display: flex;
   justify-content: center;
   height: 80vh;
   max-width: 100vh !important;
 }
 
-.QuizList__modal .modal-content
-{
+.QuizList__modal .modal-content {
   height: 100%;
   width: 100%;
 }

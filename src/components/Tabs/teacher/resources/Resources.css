@@ -72,7 +72,7 @@
 
 .ResourceList_object {
   text-align: center;
-  border-bottom: solid grey;
+  border-bottom: solid 1px #cccc;
 }
 
 .ResourceList_object div {
@@ -132,21 +132,16 @@
   margin-bottom: 50px;
 }
 
-
-@media only screen and (max-width: 768px)
-{
-  #Resources__create-res
-  {
+@media only screen and (max-width: 768px) {
+  #Resources__create-res {
     width: 100%;
   }
 
-  .ResourceList_list
-  {
+  .ResourceList_list {
     margin-bottom: 5rem;
   }
 
-  .ResourceList_list .Resources_Link a button
-  {
+  .ResourceList_list .Resources_Link a button {
     margin-top: 10px;
     width: 100%;
     padding: 5px;

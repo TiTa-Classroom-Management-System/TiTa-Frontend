@@ -26,6 +26,7 @@ import Timetable from "../Timetable/Timetable";
 import Assignments from "../Tabs/teacher/assignments/Assignments";
 import Quizzes from "../Tabs/teacher/quizzes/Quizzes";
 import Resources from "../Tabs/teacher/resources/Resources";
+import StudentList from "../Tabs/teacher/studentList/studentList"
 
 import "../../pages/Timetable/Timetable.css";
 import "./Classroom.css";
@@ -140,6 +141,11 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                         <NavItem>
                             <NavLink onClick={() => toggle("4")}>
                                 Quizzes
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink onClick={() => toggle("5")}>
+                                Student List
                             </NavLink>
                         </NavItem>
                     </Nav>
@@ -360,6 +366,11 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                     <TabPane tabId="4">
                         <div class="col-lg-11 Timetable__timetable-component">
                             <Quizzes />
+                        </div>
+                    </TabPane>
+                    <TabPane tabId="5">
+                        <div class="col-lg-11 Timetable__timetable-component">
+                            <StudentList />
                         </div>
                     </TabPane>
                 </TabContent>
