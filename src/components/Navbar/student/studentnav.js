@@ -14,8 +14,8 @@ const StudentNav = () => {
     return (
         <div>
             <Navbar light expand="lg" className="inner_navbar">
-                <Nav navbar className="flex-column">
-                    <NavbarBrand>
+                <Nav navbar className="flex-column inner_navbar-nav">
+                    <NavbarBrand className="first">
                         <Link className="logo2" to="#">
                             <img className="logo-image2" src={logo} alt="logo" />
                             <span className="logo-text2">

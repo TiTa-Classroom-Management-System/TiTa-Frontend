@@ -55,12 +55,9 @@ const Assignments = () => {
 
     const handleDateChange = (e) => {
         setDeadline(e.target.value);
-        console.log(deadline);
     };
     const handleTimeChange = (e) => {
         setDeadlinetime(e.target.value);
-        console.log(e.target.value);
-        console.log(grps);
     };
 
     const createFormData = () => {
@@ -92,7 +89,6 @@ const Assignments = () => {
         })
             .then((res) => {
                 setAssignments(res.data);
-                console.log(res.data);
             })
             .catch((err) => {
                 console.log(err);
