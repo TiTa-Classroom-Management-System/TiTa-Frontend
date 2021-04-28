@@ -71,7 +71,6 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
             url: `${process.env.REACT_APP_API}/classroom/count/${id}`,
         }).then((res) => {
             setNumGroups(() => res.data.count);
-            console.log(numGroups);
         });
     };
 
@@ -151,7 +150,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                             <h2>
                                 <strong>Timetable</strong>
                             </h2>
-                            <p>View classroom timetable.</p>
+                            <p>Schedule and View classroom timetable.</p>
                             <button
                                 id="Assignments__create-ass"
                                 onClick={() => {

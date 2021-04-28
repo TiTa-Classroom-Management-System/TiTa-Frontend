@@ -10,7 +10,6 @@ const Profile = ({ user, dispatch, history }) => {
   const logout = () => {
     history.push("/login");
     dispatch(logoutUser());
-    console.log("pushing");
   };
 
   return (

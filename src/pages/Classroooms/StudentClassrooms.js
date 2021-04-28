@@ -27,8 +27,6 @@ const StudentClassrooms = ({ history, dispatch }) => {
     getClassroom(code)
       .then((res) => {
         setClassroom(`${res.data.course_name}+${res.data.course_code}+${res.data.branchName}+${res.data.branchYear}+${res.data.num_groups}+${user.email}`)
-        console.log(res);
-        console.log(classroom)
       })
       .catch((err) => {
         console.log(err);
@@ -36,14 +34,12 @@ const StudentClassrooms = ({ history, dispatch }) => {
   };
   const handleJoin=(e)=>{
     e.preventDefault()
-    console.log(code,user.email,grp)
     joinClassroom({
       classid: code,
       email: user.email,
       selected_grp_no: grp
     })
     .then((res) => {
-      console.log(res);
       history.push(`/students/classrooms/${code}`)
     })
     .catch((err) => {
@@ -53,11 +49,9 @@ const StudentClassrooms = ({ history, dispatch }) => {
 
   const handleChange = (e) => {
     setCode(e.target.value);
-    console.log(code)
   };
   const handleSelect = (e) =>
   {
-    console.log(e.target.value);
     setGrp(e.target.value);
   }
 

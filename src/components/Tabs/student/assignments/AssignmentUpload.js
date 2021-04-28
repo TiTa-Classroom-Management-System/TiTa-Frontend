@@ -22,7 +22,6 @@ const AssignmentUpload = ({ assign, loadAssignments }) =>
     {
         setAssmodal(!assmodal);
         setAssignment(null);
-        console.log(assign);
     }
 
     const assSelect = (e) =>

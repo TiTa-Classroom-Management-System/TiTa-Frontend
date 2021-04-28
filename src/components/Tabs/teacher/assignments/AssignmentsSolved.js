@@ -17,7 +17,6 @@ const Assignments_Solved = () => {
             .then((res) => {
                 setLoading(false);
                 setAllass(res.data);
-                console.log(res.data);
             })
             .catch((err) => {
                 setLoading(false);

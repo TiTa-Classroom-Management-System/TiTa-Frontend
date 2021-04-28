@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Tooltip} from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import { InputGroup, Input } from 'reactstrap';
 
 import "./createClassModal.css";
@@ -17,7 +17,6 @@ const ClassModal = ({ code,setCode,toggle, className, modal, values, setValues, 
         {
             setClipboard(`Copied to Clipboard.`);
             setCbicon(`fas fa-clipboard-check`);
-            console.log("Copied.");
         })
         .catch((err) =>
         {

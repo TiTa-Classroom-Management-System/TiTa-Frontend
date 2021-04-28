@@ -18,8 +18,8 @@ const TeacherNav = () => {
   return (
     <div>
       <Navbar light expand="lg" className="inner_navbar">
-        <Nav navbar className="flex-column">
-          <NavItem>
+        <Nav navbar className="flex-column inner_navbar-nav">
+          <NavItem className="first">
             <Link className="logo2" to="#">
               <img className="logo-image2" src={logo} alt="logo" />
               <span className="logo-text2">

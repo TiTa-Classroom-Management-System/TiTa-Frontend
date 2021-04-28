@@ -108,14 +108,14 @@
     width: 100vw;
   }
 
-  .navbar-nav {
+  .inner_navbar-nav {
     flex-direction: row !important;
     width: 100%;
     justify-content: space-around;
     padding-left: 0 !important;
   }
 
-  .inner_nav-item:first-child {
+  .first {
     display: none;
   }
 
@@ -123,7 +123,7 @@
     display: none;
   }
 
-  .link-text {
+  .inner_link-text {
     display: none !important;
   }
 }

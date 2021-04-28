@@ -46,7 +46,6 @@ const ToDoList = () => {
         })
             .then((res) => {
                 setAllassignments(res.data);
-                console.log(res.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -64,7 +63,6 @@ const ToDoList = () => {
         })
             .then((res) => {
                 setAllquizzes(res.data);
-                console.log(res.data);
             })
             .catch((err) => {
                 console.log(err);
