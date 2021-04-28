@@ -113,7 +113,7 @@ const Resources=()=>{
             </button>
             <Modal isOpen={resmodal} toggle={toggleResModal}>
                 {!loading ? (
-                    <>
+                    <form onSubmit={handleResSubmit}>
                         <ModalHeader toggle={toggleResModal}>Create Resource</ModalHeader>
                         <ModalBody>
                             <div class="Resource__file-upload">
@@ -126,6 +126,7 @@ const Resources=()=>{
                                     type="file"
                                     accept="application/pdf, .csv, application/msword, .odt, text/plain"
                                     onChange={resSelect}
+                                    required
                                 />
                             </div>
                             {resource && resource.length > 0 && (
@@ -135,6 +136,7 @@ const Resources=()=>{
                             <Input
                                 placeholder="Name of the resource"
                                 onChange={(e) => setResname(e.target.value)}
+                                required
                             ></Input>
                             <hr />     
                             <Input type="textarea" name="desc" id="desc" placeholder="Enter Description" onChange={(e)=>setResDesc(e.target.value)}/>
@@ -154,14 +156,14 @@ const Resources=()=>{
                             />
                         </ModalBody>
                         <ModalFooter>
-                            <Button className="Resources__submit" onClick={handleResSubmit}>
+                            <Button className="Resources__submit"  disabled={grps.length==0}>
                                 Create and Upload
-                                </Button>{" "}
+                            </Button>{" "}
                             <Button className="Resources__submit" onClick={toggleResModal}>
                                 Cancel
                             </Button>
                         </ModalFooter>
-                    </>
+                    </form>
                 ) : (
                     <ModalBody>
                         <div className = "Resources__loading">

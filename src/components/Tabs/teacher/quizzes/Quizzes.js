@@ -9,6 +9,7 @@ import {
     ModalBody,
     ModalFooter,
     Input,
+    InputGroup,
 } from "reactstrap";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
@@ -29,13 +30,15 @@ const Quizzes = () => {
     const [endtime, setEndtime] = useState(null);
     const [loading, setLoading] = useState(false);
     const [quizzes, setQuizzes] = useState([]);
+    
+    
+    
 
     const classrooms = useStore().getState().classrooms;
     const params = useParams();
 
     const animatedComponents = makeAnimated();
-    const num_grps = classrooms.find((c) => c.classroom_id === params.id)
-        .num_groups;
+    const num_grps = classrooms.find((c) => c.classroom_id === params.id).num_groups;
     const options = [];
     Array.from(Array(num_grps).keys()).forEach((v) => {
         options.push({ value: v + 1, label: `Group ${v + 1}` });
@@ -128,114 +131,124 @@ const Quizzes = () => {
             <button id="Quizzes__create-quiz" onClick={toggleQuizModal}>
                 Create New Quiz
             </button>
-            <Modal isOpen={quizmodal} toggle={toggleQuizModal}>
-                {!loading ? (
-                    <>
-                        <ModalHeader toggle={toggleQuizModal}>
-                            Create Quiz
-                        </ModalHeader>
+            
+                <Modal isOpen={quizmodal} toggle={toggleQuizModal}>
+                    {!loading ? (
+                        <>
+                        <form onSubmit={handleQuizSubmit}>
+                            <ModalHeader toggle={toggleQuizModal}>
+                                Create Quiz
+                            </ModalHeader>
+                            <ModalBody>
+                                <div className="Quizzes_quiz-link">
+                                    <Input
+                                        placeholder="Enter Quiz Link"
+                                        onChange={(e) =>
+                                            setQuizlink(e.target.value)
+                                        }
+                                        required
+                                    ></Input>
+                                </div>
+                                <div className="Quizzes_quiz-name">
+                                    <Input
+                                        placeholder="Name of the quiz"
+                                        onChange={(e) =>
+                                            setQuizname(e.target.value)
+                                        }
+                                        required
+                                    ></Input>
+                                </div>
+
+                                <hr className="Quiz_Modal-hr" />
+
+                                <label for="Quizzes__start-date">
+                                    Choose Start Time
+                                </label>
+                                <div class="Quizzes__start-date-time row">
+                                    <input
+                                        class="col-lg-5"
+                                        id="Quizzes__start-date"
+                                        type="date"
+                                        onChange={handleStartDateChange}
+                                        required
+                                    />
+                                    <input
+                                        class="col-lg-5"
+                                        id="Quizzes__start-time"
+                                        type="time"
+                                        onChange={handleStartTimeChange}
+                                        required
+                                    />
+                                </div>
+
+                                <label for="Quizzes__end-date">
+                                    Choose End Time
+                                </label>
+                                <div class="Quizzes__end-date-time row">
+                                    <input
+                                        class="col-lg-5"
+                                        id="Quizzes__end-date"
+                                        type="date"
+                                        onChange={handleEndDateChange}
+                                        required
+                                    />
+                                    <input
+                                        class="col-lg-5"
+                                        id="Quizzes__end-time"
+                                        type="time"
+                                        onChange={handleEndTimeChange}
+                                        required
+                                    />
+                                </div>
+                                <hr className="Quiz_Modal-hr" />
+
+                                {/* Add Group Numbers from State */}
+                                <h6>Choose Groups:</h6>
+                                <Select
+                                    isMulti
+                                    options={options}
+                                    className="basic-multi-select"
+                                    classNamePrefix="select"
+                                    components={animatedComponents}
+                                    onChange={(selectedValues) => {
+                                        setGrps(
+                                            selectedValues.map(
+                                                (value) => value.value
+                                            )
+                                        );
+                                    }}
+                                />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button
+                                    className="Quizzes__submit"
+                                    disabled={grps.length==0}
+                                >
+                                    Create and Upload
+                                </Button>{" "}
+                                <Button
+                                    className="Quizzes__submit"
+                                    onClick={toggleQuizModal}
+                                >
+                                    Cancel
+                                </Button>
+                            </ModalFooter>
+                        </form>
+                        </>
+                    ) : (
                         <ModalBody>
-                            <div className="Quizzes_quiz-link">
-                                <Input
-                                    placeholder="Enter Quiz Link"
-                                    onChange={(e) =>
-                                        setQuizlink(e.target.value)
-                                    }
-                                ></Input>
-                            </div>
-                            <div className="Quizzes_quiz-name">
-                                <Input
-                                    placeholder="Name of the quiz"
-                                    onChange={(e) =>
-                                        setQuizname(e.target.value)
-                                    }
-                                ></Input>
-                            </div>
-
-                            <hr className="Quiz_Modal-hr" />
-
-                            <label for="Quizzes__start-date">
-                                Choose Start Time
-                            </label>
-                            <div class="Quizzes__start-date-time row">
-                                <input
-                                    class="col-lg-5"
-                                    id="Quizzes__start-date"
-                                    type="date"
-                                    onChange={handleStartDateChange}
+                            <div className="Quizzes__loading">
+                                <img
+                                    className="tita-load"
+                                    src={TiTa_Load}
+                                    alt="tita-logo"
                                 />
-                                <input
-                                    class="col-lg-5"
-                                    id="Quizzes__start-time"
-                                    type="time"
-                                    onChange={handleStartTimeChange}
-                                />
+                                <h5>Uploading quiz...</h5>
                             </div>
-
-                            <label for="Quizzes__end-date">
-                                Choose End Time
-                            </label>
-                            <div class="Quizzes__end-date-time row">
-                                <input
-                                    class="col-lg-5"
-                                    id="Quizzes__end-date"
-                                    type="date"
-                                    onChange={handleEndDateChange}
-                                />
-                                <input
-                                    class="col-lg-5"
-                                    id="Quizzes__end-time"
-                                    type="time"
-                                    onChange={handleEndTimeChange}
-                                />
-                            </div>
-                            <hr className="Quiz_Modal-hr" />
-
-                            {/* Add Group Numbers from State */}
-                            <h6>Choose Groups:</h6>
-                            <Select
-                                isMulti
-                                options={options}
-                                className="basic-multi-select"
-                                classNamePrefix="select"
-                                components={animatedComponents}
-                                onChange={(selectedValues) => {
-                                    setGrps(
-                                        selectedValues.map(
-                                            (value) => value.value
-                                        )
-                                    );
-                                }}
-                            />
                         </ModalBody>
-                        <ModalFooter>
-                            <Button
-                                className="Quizzes__submit"
-                                onClick={handleQuizSubmit}
-                            >
-                                Create and Upload
-                            </Button>{" "}
-                            <Button
-                                className="Quizzes__submit"
-                                onClick={toggleQuizModal}
-                            >
-                                Cancel
-                            </Button>
-                        </ModalFooter>
-                    </>
-                ) : (
-                    <ModalBody>
-                        <div className="Quizzes__loading">
-                            <img
-                                className="tita-load"
-                                src={TiTa_Load}
-                                alt="tita-logo"
-                            />
-                            <h5>Uploading quiz...</h5>
-                        </div>
-                    </ModalBody>
-                )}
-            </Modal>
+                    )}
+                </Modal>
+            
             <hr />
             <QuizList loadQuizzes={loadQuizzes} quizzes={quizzes} />
         </div>

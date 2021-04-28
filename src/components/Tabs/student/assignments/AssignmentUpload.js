@@ -77,34 +77,34 @@ const AssignmentUpload = ({ assign, loadAssignments }) =>
             {!uploaded ? (
             <div className = "col-lg-3">
                 <button id = "Assignments__upload-ass" onClick={toggleAssModal}>Upload</button>
-            <Modal isOpen={assmodal} toggle={toggleAssModal}>
-                {!loading ? (
-                    <>
-                    <ModalHeader toggle={toggleAssModal}>Upload Assignment</ModalHeader>
-                <ModalBody>
-                    <div class = "Assignment__file-upload">
-                        <label for = "file-upload" id = "Assignments__file-upload">Choose File to Upload</label>
-                        <input hidden id = "file-upload" type = "file" accept = "application/pdf, .csv, application/msword, .odt, text/plain" onChange = {assSelect} />
-                    </div>
-                    {assignment && assignment.length > 0 && (
-                        <p>File added: {assignment[0].name}</p>
-                    )}
-                    <hr />
-                </ModalBody>
-                <ModalFooter>
-                    <Button className = "Assignments__submit" onClick={handleAssSubmit}>Upload</Button>{' '}
-                    <Button className = "Assignments__submit" onClick={toggleAssModal}>Cancel</Button>
-                </ModalFooter>
-                    </>
-                ) : (
-                    <ModalBody>
-                        <div className = "Assignments__loading">
-                            <img className = "tita-load" src = {TiTa_Load} alt = "tita-logo" />
-                            <h5>Uploading Solution...</h5>
-                        </div>
-                    </ModalBody>
-                )}
-            </Modal>
+                <Modal isOpen={assmodal} toggle={toggleAssModal}>
+                    {!loading ? (
+                        <form onSubmit={handleAssSubmit}>
+                            <ModalHeader toggle={toggleAssModal}>Upload Assignment</ModalHeader>
+                            <ModalBody>
+                                <div class = "Assignment__file-upload">
+                                    <label for = "file-upload" id = "Assignments__file-upload">Choose File to Upload</label>
+                                    <input hidden id = "file-upload" type = "file" accept = "application/pdf, .csv, application/msword, .odt, text/plain" onChange = {assSelect} required/>
+                                </div>
+                                {assignment && assignment.length > 0 && (
+                                    <p>File added: {assignment[0].name}</p>
+                                )}
+                                <hr />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button className = "Assignments__submit" disabled={!assignment}>Upload</Button>{' '}
+                                <Button className = "Assignments__submit" onClick={toggleAssModal}>Cancel</Button>
+                            </ModalFooter>
+                        </form>
+                        ) : (
+                            <ModalBody>
+                                <div className = "Assignments__loading">
+                                    <img className = "tita-load" src = {TiTa_Load} alt = "tita-logo" />
+                                    <h5>Uploading Solution...</h5>
+                                </div>
+                            </ModalBody>
+                        )}
+                </Modal>
             </div>
             ) : 
             solution && (<><a href={solution} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" ></button></a></>)

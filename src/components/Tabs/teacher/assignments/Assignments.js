@@ -126,7 +126,7 @@ const Assignments = () => {
             </button>
             <Modal isOpen={assmodal} toggle={toggleAssModal}>
                 {!loading ? (
-                    <>
+                    <form onSubmit={handleAssSubmit}>
                         <ModalHeader toggle={toggleAssModal}>
                             Create Assignment
                         </ModalHeader>
@@ -144,6 +144,7 @@ const Assignments = () => {
                                     type="file"
                                     accept="application/pdf, .csv, application/msword, .odt, text/plain"
                                     onChange={assSelect}
+                                    required
                                 />
                             </div>
                             {assignment && assignment.length > 0 && (
@@ -154,6 +155,7 @@ const Assignments = () => {
                             <Input
                                 placeholder="Name of the assignment"
                                 onChange={(e) => setAssname(e.target.value)}
+                                required
                             ></Input>
                             <hr />
 
@@ -166,12 +168,14 @@ const Assignments = () => {
                                     id="Assignments__submit-date"
                                     type="date"
                                     onChange={handleDateChange}
+                                    required
                                 />
                                 <input
                                     class="col-lg-5"
                                     id="Assignments__submit-time"
                                     type="time"
                                     onChange={handleTimeChange}
+                                    required
                                 />
                             </div>
                             <hr />
@@ -196,7 +200,7 @@ const Assignments = () => {
                         <ModalFooter>
                             <Button
                                 className="Assignments__submit"
-                                onClick={handleAssSubmit}
+                                disabled={grps.length==0}
                             >
                                 Create and Upload
                             </Button>{" "}
@@ -207,7 +211,7 @@ const Assignments = () => {
                                 Cancel
                             </Button>
                         </ModalFooter>
-                    </>
+                    </form>
                 ) : (
                     <ModalBody>
                         <div className="Assignments__loading">
