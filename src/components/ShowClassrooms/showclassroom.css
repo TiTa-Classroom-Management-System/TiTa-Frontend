@@ -23,11 +23,12 @@
   color: white;
 }
 
-.branch {
+.card-heading p {
   color: white;
 }
 
-#teacher {
+#teacher
+{
   width: 70%;
 }
 

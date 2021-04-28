@@ -54,7 +54,7 @@ const Assignments = () =>
 
             {(assignments && Array.isArray(assignments) && assignments.length > 0) ? (
                 assignments.map((a) => 
-                <div className = "AssignmentList__object row">
+                <div className = "AssignmentList__object-student row">
                     <div className = "col-lg-3">{a.assignment_name}</div>
                     <div className = "col-lg-2">{parseDates(a.submission_date)}</div>
                     <div className = "col-lg-3"><a href={a.assignment_link} target="_blank" rel = "noreferrer"><button id = "Assignments__view-ass" >View Assignment</button></a></div>

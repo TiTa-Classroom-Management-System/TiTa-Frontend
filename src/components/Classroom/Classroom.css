@@ -1,0 +1,96 @@
+.Timetable__timetable-component .nav .nav-item .nav-link
+{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px)
+{
+    /* Tabs Start */
+    .Timetable__timetable-component .nav
+    {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0;
+    } 
+
+    .Timetable__timetable-component .nav::-webkit-scrollbar 
+    {
+        display: none;
+    }
+
+    .Timetable__timetable-component .nav 
+    {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .Timetable__timetable-component .nav .nav-item:first-child
+    {
+        display: block;
+    }
+
+    .Timetable__timetable-component .nav .nav-item
+    {
+        border-right: solid 1px #ccc;
+    }
+    /* Tabs End */
+
+    /* Timetable Start */
+    .Timetable__timetable-component
+    {
+        width: 95%;
+        padding: 0;
+    }
+
+    #Assignments__create-ass
+    {
+        width: 100%;
+    }
+
+    .Timetable__timetable-component .fc-header-toolbar
+    {
+        display: block;
+        text-align: center;
+    }
+
+    .Timetable__timetable-component .fc-header-toolbar .fc-toolbar-chunk h2
+    {
+        font-size: 20px;
+    }
+
+    .Timetable__timetable-component .fc-header-toolbar .fc-toolbar-chunk:nth-child(3)
+    {
+        margin-top: 10px;
+    }
+
+    .Timetable__timetable-component .fc-header-toolbar .fc-toolbar-chunk:nth-child(3) .fc-today-button
+    {
+        width: 40%
+    }
+
+    .Timetable__timetable-component .fc-header-toolbar .fc-toolbar-chunk:nth-child(3) .fc-button-group
+    {
+        width: 40%;
+    }
+
+    .Timetable__timetable-component .fc-header-toolbar .fc-toolbar-chunk:nth-child(3) .fc-button-group button
+    {
+        margin-left: 10px;
+    }
+
+    .Timetable__timetable-component .fc-view-harness
+    {
+        height: 400px !important;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .Timetable__timetable-component .fc-view-harness::-webkit-scrollbar
+    {
+        display: none;
+    } 
+    /* Timetable end */
+}

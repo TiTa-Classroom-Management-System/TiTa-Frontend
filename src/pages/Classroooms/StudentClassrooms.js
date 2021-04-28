@@ -4,7 +4,7 @@ import { connect, useSelector } from "react-redux";
 import axios from "axios";
 
 import ShowClassroom from "../../components/ShowClassrooms/showclassroom";
-import "../Classroooms/Classrooms.css";
+import "./Classrooms.css";
 
 
 import JoinClassModal from "../../components/Modal/student/joinClassModal";
@@ -88,15 +88,15 @@ const StudentClassrooms = ({ history, dispatch }) => {
 
     return (
         <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-lg-3">
+            <div class="col-lg-12">
+                <div class="StudentClassrooms__join row">
+                    <div class="col-lg-3 col-md-3">
                         <h3 className="heading">Classrooms</h3>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
 
                     </div>
-                    <div class="col-lg-3"> 
+                    <div class="StudentClassrooms__join-btn col-lg-3 col-md-3"> 
                         <button class="Join_Classroom" onClick={toggleModal}>
                             <h6>Join Classroom</h6><i className="fa fa-plus-circle fa-2x create" aria-hidden="true"></i>
                         </button>
@@ -119,7 +119,7 @@ const StudentClassrooms = ({ history, dispatch }) => {
                 :""}
             </div>
             
-            <div className="cards-row row">
+            <div className="StudentClassrooms__cards cards-row row">
                 {classrooms && Array.isArray(classrooms) ? (
                     classrooms.length > 0 ? (
                         classrooms.map((c) => (
