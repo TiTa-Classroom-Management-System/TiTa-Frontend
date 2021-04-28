@@ -10,15 +10,7 @@
             content="This is TiTa, the complete online classroom management system"
         />
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <link
-            rel="manifest"
-            href="%PUBLIC_URL%/manifest.json"
-            crossorigin="use-credentials"
-        />
+
         <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -46,19 +38,69 @@
             crossorigin="anonymous"
         ></script>
         <style>
-            .temp__loader {
-                height: 100vh;
-                width: 100vw;
+            main {
+                height: 100%;
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
+            }
+
+            h1 {
+                font-family: "Montserrat";
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 1.2rem;
+                background-color: #6673fd;
+                color: white;
+                border: none;
+            }
+
+            .logo {
+                margin: 20px;
+                height: 100px;
             }
         </style>
         <title>TiTa</title>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-
-        <h1>Please go online to check your classrooms</h1>
+        <img class="logo" src="logo.png" alt="Logo" srcset="" />
+        <main>
+            <img src="socket.png" alt="" srcset="" />
+            <h1>Oops, seems like you're offline!</h1>
+            <p>
+                TiTa, currently does not support offline mode, kindly try
+                connecting to network!
+            </p>
+            <button>Reconnect</button>
+        </main>
     </body>
+    <script>
+        document.querySelector("button").addEventListener("click", () => {
+            window.location.reload();
+        });
+        window.addEventListener("online", () => {
+            window.location.reload();
+        });
+        // async function checkNetworkAndReload() {
+        //     try {
+        //         const response = await fetch(".");
+        //         if (response.status >= 200 && response.status < 500) {
+        //             window.location.reload();
+        //             return;
+        //         }
+        //     } catch {}
+        //     window.setTimeout(checkNetworkAndReload, 2500);
+        // }
+        // checkNetworkAndReload();
+    </script>
 </html>
