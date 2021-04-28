@@ -7,7 +7,6 @@ import {
     ModalHeader,
     ModalBody,
     ModalFooter,
-    Input,
 } from "reactstrap";
 import { Bar } from "react-chartjs-2";
 

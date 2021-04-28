@@ -1,13 +1,11 @@
-.text-left
-{
+.text-left {
   margin-left: 20px;
   margin-bottom: 20px;
   box-shadow: 4px 4px 8px #9a9a9a;
   transition: 0.5s;
 }
 
-.text-left:hover
-{
+.text-left:hover {
   box-shadow: none;
 }
 
@@ -25,8 +23,11 @@
   color: white;
 }
 
-#teacher
-{
+.branch {
+  color: white;
+}
+
+#teacher {
   width: 70%;
 }
 
@@ -48,8 +49,7 @@
   margin: 0 7%;
 }
 
-.card-button:hover
-{
+.card-button:hover {
   background-color: #fd7b7b;
 }
 

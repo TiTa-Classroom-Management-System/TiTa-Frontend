@@ -150,7 +150,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
                             <h2>
                                 <strong>Timetable</strong>
                             </h2>
-                            <p>View classroom timetable.</p>
+                            <p>Schedule and View classroom timetable.</p>
                             <button
                                 id="Assignments__create-ass"
                                 onClick={() => {

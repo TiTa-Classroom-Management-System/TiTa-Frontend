@@ -16,7 +16,7 @@ const ShowClassroom = ({ classR, who }) => {
           {classR.name ? (
             <h6>{classR.name}</h6>
           ) : (
-            <p>
+            <p className="branch">
               {classR.branchName} - {classR.branchYear}
             </p>
           )}
