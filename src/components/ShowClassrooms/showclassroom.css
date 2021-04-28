@@ -25,6 +25,10 @@
   color: white;
 }
 
+.card-heading p {
+  color: white;
+}
+
 #teacher
 {
   width: 70%;

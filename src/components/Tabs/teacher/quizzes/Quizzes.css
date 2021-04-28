@@ -100,3 +100,45 @@
   width: 150px;
   margin-bottom: 50px;
 }
+
+@media only screen and (max-width: 768px) 
+{
+  #Quizzes__create-quiz
+  {
+    width: 100%;
+  }  
+
+  #QuizList__header
+  {
+    display: none;
+  }
+
+  .QuizList_list .QuizList_object
+  {
+    border-bottom: none;
+    border: solid 1px #ccc;
+    padding: 5px;
+    margin: 0;
+  }
+
+  .QuizList_list .QuizList_object div:first-child
+  {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .QuizList_list .QuizList_object div:nth-child(2), .QuizList_list .QuizList_object div:nth-child(3)
+  {
+    width: 50%;
+  }
+
+  .QuizList_list .QuizList_object div:nth-child(4), .QuizList_list .QuizList_object div:nth-child(5)
+  {
+    width: 50%;
+  }
+
+  .QuizList_list .QuizList_object div:nth-child(4) button, .QuizList_list .QuizList_object div:nth-child(5) button
+  {
+    padding: 5px;
+  }
+}

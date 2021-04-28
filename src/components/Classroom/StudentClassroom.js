@@ -44,7 +44,7 @@ const StudentClassroom = ({ dispatch, tt }) => {
 
     return (
         <div class="row" style={{ marginLeft: "10px" }}>
-            <div class="col-11 Timetable__timetable-component">
+            <div class="col-lg-11 Timetable__timetable-component">
                 <Nav tabs>
                     <NavItem>
                         <NavLink onClick={() => toggle("1")}>Timetable</NavLink>
@@ -64,7 +64,7 @@ const StudentClassroom = ({ dispatch, tt }) => {
             </div>
             <TabContent activeTab={activeTab} style={{ width: "100%" }}>
                 <TabPane tabId="1">
-                    <div class="col-11 Timetable__timetable-component">
+                    <div class="col-lg-11 Timetable__timetable-component">
                         {tt ? (
                             <Timetable tt={timetable} />
                         ) : (
@@ -73,17 +73,17 @@ const StudentClassroom = ({ dispatch, tt }) => {
                     </div>
                 </TabPane>
                 <TabPane tabId="2">
-                    <div class="col-11 Timetable__timetable-component">
+                    <div class="col-lg-11 Timetable__timetable-component">
                         <ResourceList />
                     </div>
                 </TabPane>
                 <TabPane tabId="3">
-                    <div class="col-11 Timetable__timetable-component">
+                    <div class="col-lg-11 Timetable__timetable-component">
                         <Assignments />
                     </div>
                 </TabPane>
                 <TabPane tabId="4">
-                    <div class="col-11 Timetable__timetable-component">
+                    <div class="col-lg-11 Timetable__timetable-component">
                         <QuizList />
                     </div>
                 </TabPane>

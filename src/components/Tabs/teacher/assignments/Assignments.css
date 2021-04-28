@@ -181,3 +181,89 @@
   color: #fb3640;
   font-size: large;
 }
+
+@media only screen and (max-width: 768px)
+{
+  /* List Start */
+  #AssignmentList__header
+  {
+    display: none;
+  }
+
+  .AssignmentList__list
+  {
+    height: 50vh;
+    overflow-y: scroll;
+    margin-bottom: 5rem;
+  }
+
+  .AssignmentList__list .AssignmentList__object
+  {
+    border: solid 1px #ccc;
+    margin: none;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .AssignmentList__list .AssignmentList__object div:first-child
+  {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .AssignmentList__list .AssignmentList__object div:nth-child(2), .AssignmentList__list .AssignmentList__object div:nth-child(3)  
+  {
+    width: 50%;
+  }
+
+  .AssignmentList__list .AssignmentList__object div:nth-child(4), .AssignmentList__list .AssignmentList__object div:nth-child(5)
+  {
+    width: 50%;
+    font-size: 15px;
+  }
+
+  .AssignmentList__list .AssignmentList__object div:nth-child(4) button, .AssignmentList__list .AssignmentList__object div:nth-child(5) button
+  {
+    padding: 5px;
+  }
+  /* List End */
+
+  /* Solved Start */
+  .Assignment_Solved
+  {
+    width: 95% !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  .Assignment_Solved .Assignment_Solved__header
+  {
+    display: none;
+  }
+
+  .Assignment_Solved .Assignment_Solved__object
+  {
+    border-bottom: none;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(1), .Assignment_Solved .Assignment_Solved__object div:nth-child(2)
+  {
+    width: 50%;
+  } 
+
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(3)
+  {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .Assignment_Solved .Assignment_Solved__object div:nth-child(3) i
+  {
+    font-size: 20px;
+  }
+
+  /* Solved End */
+}

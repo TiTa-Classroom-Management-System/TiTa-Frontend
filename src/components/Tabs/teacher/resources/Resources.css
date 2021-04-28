@@ -131,3 +131,12 @@
   width: 150px;
   margin-bottom: 50px;
 }
+
+
+@media only screen and (max-width: 768px)
+{
+  #Resources__create-res
+  {
+    width: 100%;
+  }
+}
