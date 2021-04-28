@@ -74,7 +74,6 @@ const Resources=()=>{
         .then((res) => {
             setLoading(false);
             setResource(null);
-            console.log(res);
         })
         .catch((err) => {
             setLoading(false);
@@ -95,7 +94,6 @@ const Resources=()=>{
         .then((res) =>
         {
             setResources(res.data);
-            console.log(res.data);
         })
         .catch((err) =>
         {

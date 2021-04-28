@@ -133,56 +133,56 @@ const LandingPage = (props) => {
                     <div className="col-12 col-sm-6 col-lg-3">
                         <div className="our-team">
                             <div className="picture">
-                                <img className="img-fluid" src={puneet} />
+                                <img className="img-fluid" src={puneet} alt="Puneet" />
                             </div>
                             <div className="team-content">
                                     <h3 className="name">Puneet Bansal</h3>
                             </div>
                             <ul className="social">
-                                <li><a href="https://github.com/bansalpuneet15" target="_blank" className="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="https://www.linkedin.com/in/puneet-bansal15/" target="_blank" className="fa fa-linkedin" aria-hidden="true"></a></li>
+                                <li><a href="https://github.com/bansalpuneet15" target="_blank" rel="noreferrer" className="fa fa-github" aria-hidden="true" ></a></li>
+                                <li><a href="https://www.linkedin.com/in/puneet-bansal15/" target="_blank" rel="noreferrer" className="fa fa-linkedin" aria-hidden="true"></a></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-12 col-sm-6 col-lg-3">
                         <div className="our-team">
                             <div className="picture">
-                                <img className="img-fluid" src={taranjot} />
+                                <img className="img-fluid" src={taranjot} alt="Taranjot" />
                             </div>
                             <div className="team-content">
                                     <h3 className="name">Taranjot Singh</h3>
                             </div>
                             <ul className="social">
-                                <li><a href="https://github.com/TARANJOTS" target="_blank" className="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="https://www.linkedin.com/in/taranjot-singh-809193197/" target="_blank" className="fa fa-linkedin" aria-hidden="true"></a></li>
+                                <li><a href="https://github.com/TARANJOTS" target="_blank" rel="noreferrer" className="fa fa-github" aria-hidden="true"></a></li>
+                                <li><a href="https://www.linkedin.com/in/taranjot-singh-809193197/" target="_blank" rel="noreferrer" className="fa fa-linkedin" aria-hidden="true"></a></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-12 col-sm-6 col-lg-3">
                         <div className="our-team">
                             <div className="picture">
-                                <img className="img-fluid" src={utkarsh} />
+                                <img className="img-fluid" src={utkarsh} alt="Utkarsh" />
                             </div>
                             <div className="team-content">
                                 <h3 className="name">Utkarsh Goel</h3>
                             </div>
                             <ul className="social">
-                                <li><a href="https://github.com/UtkarshGoelUT" target="_blank" className="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="https://www.linkedin.com/in/utkarshgoelut/" target="_blank" className="fa fa-linkedin" aria-hidden="true"></a></li>
+                                <li><a href="https://github.com/UtkarshGoelUT" target="_blank" rel="noreferrer" className="fa fa-github" aria-hidden="true"></a></li>
+                                <li><a href="https://www.linkedin.com/in/utkarshgoelut/" target="_blank" rel="noreferrer" className="fa fa-linkedin" aria-hidden="true"></a></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-12 col-sm-6 col-lg-3">
                         <div className="our-team">
                             <div className="picture">
-                                <img className="img-fluid" src={shubh} />
+                                <img className="img-fluid" src={shubh} alt="Shubh" />
                             </div>
                             <div className="team-content">
                                     <h3 className="name">Shubh Ashish</h3>
                             </div>
                             <ul className="social">
-                                <li><a href="https://github.com/solarconstant" target="_blank" className="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="https://www.linkedin.com/in/shubh-ashish-a4a415190/" target="_blank" className="fa fa-linkedin" aria-hidden="true"></a></li>
+                                <li><a href="https://github.com/solarconstant" target="_blank" rel="noreferrer" className="fa fa-github" aria-hidden="true"></a></li>
+                                <li><a href="https://www.linkedin.com/in/shubh-ashish-a4a415190/" target="_blank" rel="noreferrer" className="fa fa-linkedin" aria-hidden="true"></a></li>
                             </ul>
                         </div>
                     </div>

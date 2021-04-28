@@ -48,22 +48,16 @@ const Quizzes = () => {
 
     const handleStartDateChange = (e) => {
         setStartdate(e.target.value);
-        console.log(startdate);
-        console.log(enddate);
     };
     const handleStartTimeChange = (e) => {
         setStarttime(e.target.value);
-        console.log(e.target.value);
     };
 
     const handleEndDateChange = (e) => {
         setEnddate(e.target.value);
-        console.log(startdate);
-        console.log(enddate);
     };
     const handleEndTimeChange = (e) => {
         setEndtime(e.target.value);
-        console.log(e.target.value);
     };
 
     const getClickableLink = (link) =>
@@ -100,7 +94,6 @@ const Quizzes = () => {
             data: createFormData(),
         })
             .then((res) => {
-                console.log(res);
                 setLoading(false);
                 setQuizlink(null);
             })
@@ -119,7 +112,6 @@ const Quizzes = () => {
         })
             .then((res) => {
                 setQuizzes(res.data);
-                console.log(res.data);
             })
             .catch((err) => {
                 console.log(err);
