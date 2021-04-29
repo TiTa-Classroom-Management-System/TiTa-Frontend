@@ -71,11 +71,12 @@ const AssignmentList = ({ loadAssignments, assignments, params }) => {
                 ))
             ) : (
                 <>
-                    <hr />
+                    <br />
+                    <br/>
                     <p className="text-center">
-                        Sorry, you haven't created any assignments for this
-                        class yet.
+                        Sorry, you haven't created any assignments for this class yet.
                     </p>
+                    <hr/>
                 </>
             )}
         </div>

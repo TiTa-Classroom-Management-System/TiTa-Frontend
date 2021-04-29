@@ -215,8 +215,10 @@ const QuizList = () =>
                 </div>
             ))):(
                 <>
-                    <hr/>
+                    <br/>
+                    <br/>
                     <p className="text-center">Sorry, you haven't received any Quizzes for this class yet.</p>
+                    <hr/>
                 </>
             )}
         </div>
