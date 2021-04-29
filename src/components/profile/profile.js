@@ -8,8 +8,8 @@ import "./profile.css";
 const Profile = ({ user, dispatch, history }) => {
   console.log(history);
   const logout = () => {
-    history.push("/login");
     dispatch(logoutUser());
+    history.push("/");
   };
 
   return (

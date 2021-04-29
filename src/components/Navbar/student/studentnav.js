@@ -39,7 +39,7 @@ const StudentNav = () => {
                                 className="fa fa-users fa-2x"
                                 aria-hidden="true"
                             ></i>
-                            <span className="inner_link-text"> Classroom</span>
+                            <span className="inner_link-text"> Classrooms</span>
                         </Link>
                     </NavItem>
                     <NavItem>

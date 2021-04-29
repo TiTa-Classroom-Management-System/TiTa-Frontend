@@ -5,14 +5,55 @@ hr
     margin-bottom: 5%;
     border-top: dotted 5px #cccccc;
 }
+
+.joinClassModal__modal-body
+{
+    display: block;
+}
+
+.joinClassModal__modal-body h4
+{
+    text-align: center;
+}
+
+.joinClassModal__modal-body .joinClassModal__value
+{
+    float: right;
+}
+
+.joinClassModal__modal-body-course-info
+{
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.joinClassModal__modal-body-select-group
+{
+    display: flex;
+    justify-content: center;
+}
+
+.joinClassModal__modal-body-select-group select
+{
+    width: 80%;
+}
+
+.classModal
+{
+    display: flex;
+    justify-content: center;
+}
+
 .classModal .modal-content
 {
-    width: max-content;
+    width: 100%;
 }
 .joinClassCloseModal
 {
     font-size: 25px;
-    color: #cccccc;
+    color: #6673fd;
     transition: 0.2s;
 }
 .joinClassCloseModal:hover
@@ -35,7 +76,7 @@ hr
 {
     width: 80%;
     text-align: center;
-    background-color: #cccccc;
+    background-color: #6673fd;
     transition: 0.2s;
 }
 

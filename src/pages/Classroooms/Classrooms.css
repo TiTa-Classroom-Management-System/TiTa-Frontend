@@ -57,6 +57,8 @@
   {
     display: flex;
     justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .Create_Classroom
@@ -73,7 +75,6 @@
   {
     margin-bottom: 5rem;
     margin-left: 0;
-    margin-right: 0;
   }
 
   .StudentClassrooms__join
@@ -104,7 +105,6 @@
   {
     margin-bottom: 5rem;
     margin-left: 0;
-    margin-right: 0;
   }
 
   .card-image

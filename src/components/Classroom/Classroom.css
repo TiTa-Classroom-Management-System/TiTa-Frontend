@@ -6,6 +6,13 @@
 @media only screen and (max-width: 768px)
 {
     /* Tabs Start */
+    .Timetable
+    {
+        padding: 0;
+        margin: 0 !important;
+        margin-bottom: 5rem;
+    }
+
     .Timetable__timetable-component .nav
     {
         flex-wrap: nowrap;
@@ -40,8 +47,15 @@
     /* Timetable Start */
     .Timetable__timetable-component
     {
-        width: 95%;
+        width: 100%;
         padding: 0;
+        justify-content: center;
+    }
+
+    .Timetable .tab-content
+    {
+        width: 90% !important;
+        margin-bottom: 5rem;
     }
 
     #Assignments__create-ass
@@ -53,6 +67,16 @@
     {
         display: block;
         text-align: center;
+    }
+
+    .Timetable__timetable-component .tt-small
+    {
+        width: 100%;
+    }
+
+    .Timetable__timetable-component .fc-view-harness
+    {
+        width: 100%;
     }
 
     .Timetable__timetable-component .fc-header-toolbar .fc-toolbar-chunk h2

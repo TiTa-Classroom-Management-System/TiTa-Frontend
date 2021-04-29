@@ -110,6 +110,13 @@
     display: none;
   }
 
+  .QuizList_list
+  {
+    margin-bottom: 4.5rem;
+    overflow-y: scroll;
+    height: 60vh;
+  }
+
   .QuizList_list .QuizList_object {
     border-bottom: none;
     border: solid 1px #ccc;
