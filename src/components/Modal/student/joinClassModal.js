@@ -8,32 +8,31 @@ const JoinClassModal = ({ toggle,code,setCode,classroom,setClassroom,handleChang
  
 
   return (
-    <div>
+    <div className = "joinClassModal">
       <Modal isOpen={modal} toggle={toggle} className={className} >
       <form onSubmit={!classroom ? handleCodeSubmit : handleJoin}>
         <ModalHeader toggle={toggle} close = {<i onClick = {toggle} class="fas fa-times-circle joinClassCloseModal"></i>}>Join A Classroom</ModalHeader>
-        <ModalBody>
-            
-                
-                {/* You are about to join ----- classroom */}
+        <ModalBody className = "joinClassModal__modal-body">
                 {!classroom ? <Input placeholder="Enter Classroom Code" name="c_code" value={code} onChange={handleChange} required minLength={8} maxLength={8}/> : 
                 <>
                   <h4>You are about to join:</h4>
-                  <h3>Course Name:{classroom.split('+')[0]}</h3>
-                  <h3>Course Code:{classroom.split('+')[1]}</h3>
-                  <h3>Branch Name:{classroom.split('+')[2]}</h3>
-                  <h3>Branch Year:{classroom.split('+')[3]}</h3>
-                  <select name = "group_num" className = "group_num__drop-down" onChange = {handleSelect} required>
-                      <option value="">Select Group Number</option>
-                      {([...Array(parseInt(classroom.split('+')[4])+1).keys()].slice(1)).map((o) => (
-                        <option key = {o} value={o}>{`Group ${o}`}</option>
-                      ))}
-                  </select>
+                  <div className = "joinClassModal__modal-body-course-info">
+                    <h5>Course Name:<span className = "joinClassModal__value">{classroom.split('+')[0]}</span></h5>
+                    <h5>Course Code:<span className = "joinClassModal__value">{classroom.split('+')[1]}</span></h5>
+                    <h5>Branch Name:<span className = "joinClassModal__value">{classroom.split('+')[2]}</span></h5>
+                    <h5>Branch Year:<span className = "joinClassModal__value">{classroom.split('+')[3]}</span></h5>
+                  </div>
+                  <hr/>
+                  <div className = "joinClassModal__modal-body-select-group">
+                    <select name = "group_num" className = "group_num__drop-down" onChange = {handleSelect} required>
+                        <option value="">Select Group Number</option>
+                        {([...Array(parseInt(classroom.split('+')[4])+1).keys()].slice(1)).map((o) => (
+                          <option key = {o} value={o}>{`Group ${o}`}</option>
+                        ))}
+                    </select>
+                  </div>
                 </>
                 }
-                {classroom && <hr/>}
-                
-                {/* Give a list of group numbers to select from  */}
             
         </ModalBody>
         <ModalFooter id = "joinClassModalFooter">

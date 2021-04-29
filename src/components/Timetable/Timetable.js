@@ -79,6 +79,7 @@ const Timetable = ({ tt }) => {
                     events={events}
                 />
             </div>
+            <hr />
         </div>
     );
 };

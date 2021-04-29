@@ -42,7 +42,7 @@ const StudentClassroom = ({ dispatch, tt }) => {
     }, []);
 
     return (
-        <div class="row" style={{ marginLeft: "10px" }}>
+        <div class="Timetable row" style={{ marginLeft: "10px" }}>
             <div class="col-lg-11 Timetable__timetable-component">
                 <Nav tabs>
                     <NavItem>

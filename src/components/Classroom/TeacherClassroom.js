@@ -39,8 +39,8 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
     const [modal, setModal] = useState(false);
     const [dropDown, setDropDown] = useState(false);
     const [typeDropDown, setTypeDropDown] = useState(false);
-    const [startTime, setStartTime] = useState("00:00:00");
-    const [endTime, setEndTime] = useState("00:00:00");
+    const [startTime, setStartTime] = useState("09:00:00");
+    const [endTime, setEndTime] = useState("10:00:00");
     const [groups, SetGroups] = useState([]);
     const [day, setDay] = useState("Monday");
     const [type, setType] = useState("Lecture");
@@ -120,7 +120,7 @@ const TeacherClassroom = ({ dispatch, tt, classrooms, params }) => {
 
     return (
         <div>
-            <div class="row" style={{ marginLeft: "10px" }}>
+            <div class="Timetable row" style={{ marginLeft: "10px" }}>
                 <div class="col-lg-11 Timetable__timetable-component">
                     <Nav tabs>
                         <NavItem>

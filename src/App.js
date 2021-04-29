@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import LandingPage from "./components/LandingPage/LandingPage"
 import StudentNav from "./components/Navbar/student/studentnav";
 import TeacherNav from "./components/Navbar/teacher/teacherNav";
-import Login from "./components/Login/Login";
 import TeachTimetablePage from "./pages/Timetable/TeacherTimetable";
 import StudTimetablePage from "./pages/Timetable/StudentTimetable";
 import TeacherClassroom from "./components/Classroom/TeacherClassroom";
@@ -20,7 +19,7 @@ const App = ({ user }) => {
         routes = (
             <Switch>
                 <Route exact path="/" component={() => <LandingPage />} />
-                <Route exact path="/login" component={() => <Login />} />
+                <Redirect exact to = "/" />
             </Switch>
         );
     } else if (user.type === "student") {
@@ -28,7 +27,6 @@ const App = ({ user }) => {
             <div>
                 <StudentNav />
                 <Switch>
-                    <Route strict path="/login" component={() => <Login />} />
                     <Route
                         strict
                         path="/studtimetable"
@@ -58,7 +56,6 @@ const App = ({ user }) => {
             <div>
                 <TeacherNav />
                 <Switch>
-                    <Route strict path="/login" component={() => <Login />} />
                     <Route
                         strict
                         path="/teacher"
