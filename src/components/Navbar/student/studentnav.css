@@ -104,8 +104,10 @@
 @media only screen and (max-width: 768px) {
   .inner_navbar {
     bottom: 0;
-    height: 5rem;
+    height: 4rem;
     width: 100vw;
+    padding-bottom: 2px  !important;
+    align-items: center;
   }
 
   .inner_navbar-nav {
@@ -115,6 +117,10 @@
     padding-left: 0 !important;
   }
 
+  .inner_nav-link{
+    height: 3rem;
+  }
+  
   .first {
     display: none;
   }

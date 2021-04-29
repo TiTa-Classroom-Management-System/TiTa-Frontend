@@ -33,22 +33,28 @@ const StudentList = () =>
 
     return(
         <div className="StudentList_list">
+            <div>
+                <h4>Total Students Enrolled: {list && list.length} </h4>
+            </div>
+            <hr/>
             <div id="StudentList__header" className="row">
-                <div className="col-lg-3"><h5>SID</h5></div>
+                <div className="col-lg-4"><h5>SID</h5></div>
                 <div className="col-lg-4"><h5>Name</h5></div>
                 <div className="col-lg-4"><h5>Email</h5></div>
             </div>
 
             {(list && list.length>0) ? (list.map((l)=>(
                 <div className="StudentList_object row">
-                    <div className="col-lg-3">{l.sid}</div>
+                    <div className="col-lg-4">{l.sid}</div>
                     <div className="col-lg-4">{l.name}</div>
                     <div className="col-lg-4">{l.email}</div>
                 </div>
             ))):(
                 <>
-                    <hr/>
+                    <br/>
+                    <br/>
                     <p className="text-center">Sorry, No one has joined this class yet.</p>
+                    <hr/>
                 </>
             )}
         </div>

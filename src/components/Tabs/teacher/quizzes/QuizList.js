@@ -136,11 +136,12 @@ const QuizList = ({ loadQuizzes, quizzes }) => {
                 ))
             ) : (
                 <>
-                    <hr />
+                    <br/>
+                    <br/>
                     <p className="text-center">
-                        Sorry, you haven't created any Quizzes for this class
-                        yet.
+                        Sorry, you haven't created any Quizzes for this class yet.
                     </p>
+                    <hr />
                 </>
             )}
         </div>
