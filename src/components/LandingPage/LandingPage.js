@@ -56,17 +56,6 @@ const LandingPage = (props) => {
         else history.push("/teachtimetable");
     };
 
-    const videoJsOptions = { // lookup the options in the docs for more options
-        autoplay: true,
-        controls: true,
-        responsive: true,
-        fluid: true,
-        sources: [{
-          src: 'https://youtu.be/mGZCIpgJ7Cs',
-          type: 'video/mp4'
-        }]
-      }
-
     return (
         <>
             <section id="title">
