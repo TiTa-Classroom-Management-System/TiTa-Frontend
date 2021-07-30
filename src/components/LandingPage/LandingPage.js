@@ -55,6 +55,18 @@ const LandingPage = (props) => {
         if (user.type === "student") history.push("/studtimetable");
         else history.push("/teachtimetable");
     };
+
+    const videoJsOptions = { // lookup the options in the docs for more options
+        autoplay: true,
+        controls: true,
+        responsive: true,
+        fluid: true,
+        sources: [{
+          src: 'https://youtu.be/mGZCIpgJ7Cs',
+          type: 'video/mp4'
+        }]
+      }
+
     return (
         <>
             <section id="title">
@@ -92,7 +104,16 @@ const LandingPage = (props) => {
                             />
                         </div>
                         <div className="col-lg-6">
-                            <img className="title-image" src={main} alt="Title-iamge" />
+                            <iframe 
+                                className="title-video"
+                                src="https://www.youtube.com/embed/mGZCIpgJ7Cs" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            >
+                            </iframe>
+                            
                         </div>
                     </div>
                 </div>

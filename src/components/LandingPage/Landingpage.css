@@ -71,10 +71,12 @@ h2 {
   font-size: 3.5rem;
   line-height: 1.5;
 }
-.title-image {
-  width: 90%;
+.title-video {
+  height: 100%;
+  width: 100%;
   position: absolute;
-  right: 5%;
+  right: 0%;
+  box-shadow: black 3px 5px 10px;
 }
 
 .tita {
